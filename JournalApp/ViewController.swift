@@ -7,6 +7,7 @@
 
 // rizki hadir
 // nasha hadir 🙋🏻‍♀️
+// Albert hadir 🙌
 import UIKit
 
 class ViewController: UIViewController {
