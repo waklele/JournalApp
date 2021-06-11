@@ -5,6 +5,7 @@
 //  Created by Rangga Rentya on 11/06/21.
 //
 
+// rizki hadir
 import UIKit
 
 class ViewController: UIViewController {
