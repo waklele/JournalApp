@@ -68,7 +68,7 @@
 		2DE1171A26735718003050BF /* JournalApp */ = {
 			isa = PBXGroup;
 			children = (
-				3045C0B42679EC890062605D /* Models */,
+				97AE7990267A4A6300F5128E /* Models */,
 				3045C0B52679EC9F0062605D /* Views */,
 				3045C0B62679ECA70062605D /* Controllers */,
 				2DE1171B26735718003050BF /* AppDelegate.swift */,
@@ -79,13 +79,6 @@
 				2DE1172426735718003050BF /* JournalApp.xcdatamodeld */,
 			);
 			path = JournalApp;
-			sourceTree = "<group>";
-		};
-		3045C0B42679EC890062605D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		3045C0B52679EC9F0062605D /* Views */ = {
@@ -107,6 +100,13 @@
 				3045C0BD2679F7660062605D /* JournalListCell.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		97AE7990267A4A6300F5128E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
