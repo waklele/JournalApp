@@ -7,7 +7,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "JournalListCell"
 
 class JournalListViewController: UICollectionViewController {
 
