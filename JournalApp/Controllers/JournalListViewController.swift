@@ -8,10 +8,9 @@
 import UIKit
 import CoreData
 
-private let reuseIdentifier = "JournalListCell"
+private let reuseIdentifier = "JournalCell"
 
-class JournalListViewController: UICollectionViewController, UISearchBarDelegate {
-
+class JournalListViewController: UICollectionViewController, UISearchBarDelegate, UICollectionViewDelegateFlowLayout {
     let searchController = UISearchController(searchResultsController: nil)
     var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     var appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -24,8 +23,11 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
+       
+        
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        let nibCell = UINib(nibName: "JournalListCell", bundle: nil)
+        collectionView.register(nibCell, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
         navigationItem.searchController = searchController
@@ -51,13 +53,22 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return journalList.count
+        return 5
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let inset:CGFloat = 10
+        return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width/2-20, height: 136)
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
