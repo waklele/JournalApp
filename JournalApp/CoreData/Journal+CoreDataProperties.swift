@@ -1,0 +1,32 @@
+//
+//  Journal+CoreDataProperties.swift
+//  JournalApp
+//
+//  Created by Muhammad Rizki Miftha Alhamid on 6/16/21.
+//
+//
+
+import Foundation
+import CoreData
+
+
+extension Journal {
+
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Journal> {
+        return NSFetchRequest<Journal>(entityName: "Journal")
+    }
+
+    @NSManaged public var id: UUID?
+    @NSManaged public var title: String?
+    @NSManaged public var puzzle1Detail: String?
+    @NSManaged public var puzzle2Detail: String?
+    @NSManaged public var puzzle3Detail: String?
+    @NSManaged public var puzzle4Detail: String?
+    @NSManaged public var createDate: Date?
+    @NSManaged public var lastUpdateDate: Date?
+
+}
+
+extension Journal : Identifiable {
+
+}

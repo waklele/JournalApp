@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Jounal {
+struct Journal1 {
     
 }
