@@ -52,7 +52,7 @@
         <!--AddJournal-->
         <scene sceneID="Wd6-xK-nte">
             <objects>
-                <viewControllerPlaceholder storyboardName="Journal" referencedIdentifier="AddJournal" id="NNe-9Y-dxo" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="AddJournal" referencedIdentifier="AddJournal" id="NNe-9Y-dxo" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="L44-4j-FRu"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wc-kM-HrD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
