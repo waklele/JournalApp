@@ -6,38 +6,52 @@
 //
 
 import UIKit
+import CoreData
 
 private let reuseIdentifier = "JournalListCell"
 
-class JournalListViewController: UICollectionViewController {
+class JournalListViewController: UICollectionViewController, UISearchBarDelegate {
 
+    let searchController = UISearchController(searchResultsController: nil)
+    var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    var appDelegate = UIApplication.shared.delegate as? AppDelegate
+    
+    var journalList: [Journal] = [Journal]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        navigationItem.searchController = searchController
+        searchController.searchBar.delegate = self
+        
+        managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
+        
+        readData()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
+    func readData() {
+        let journalRequest: NSFetchRequest<Journal> = Journal.fetchRequest()
+        do {
+            try journalList = managedObjectContext.fetch(journalRequest)
+        } catch {
+            print("Error loading the journal list")
+        }
+        self.collectionView.reloadData()
     }
-    */
-
+    
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return journalList.count
     }
 
 
@@ -48,7 +62,6 @@ class JournalListViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
         // Configure the cell
     
         return cell
