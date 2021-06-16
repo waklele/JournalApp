@@ -14,6 +14,7 @@
 		2DE1172626735718003050BF /* JournalApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1172426735718003050BF /* JournalApp.xcdatamodeld */; };
 		2DE1172826735719003050BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DE1172726735719003050BF /* Assets.xcassets */; };
 		2DE1172B26735719003050BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DE1172926735719003050BF /* LaunchScreen.storyboard */; };
+		3045C0B32679EB810062605D /* Journal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3045C0B22679EB810062605D /* Journal.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2DE1172726735719003050BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DE1172A26735719003050BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DE1172C26735719003050BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3045C0B22679EB810062605D /* Journal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Journal.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				2DE1171D26735718003050BF /* SceneDelegate.swift */,
 				2DE1171F26735718003050BF /* ViewController.swift */,
 				2DE1172126735718003050BF /* Main.storyboard */,
+				3045C0B22679EB810062605D /* Journal.storyboard */,
 				2DE1172726735719003050BF /* Assets.xcassets */,
 				2DE1172926735719003050BF /* LaunchScreen.storyboard */,
 				2DE1172C26735719003050BF /* Info.plist */,
@@ -127,6 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3045C0B32679EB810062605D /* Journal.storyboard in Resources */,
 				2DE1172B26735719003050BF /* LaunchScreen.storyboard in Resources */,
 				2DE1172826735719003050BF /* Assets.xcassets in Resources */,
 				2DE1172326735718003050BF /* Main.storyboard in Resources */,
