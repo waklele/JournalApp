@@ -19,6 +19,7 @@
 		3045C0BC2679F7040062605D /* JournalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045C0BB2679F7040062605D /* JournalListViewController.swift */; };
 		3045C0BF2679F7660062605D /* JournalListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045C0BD2679F7660062605D /* JournalListCell.swift */; };
 		3045C0C02679F7660062605D /* JournalListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3045C0BE2679F7660062605D /* JournalListCell.xib */; };
+		97AE7992267A4AD800F5128E /* JournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE7991267A4AD800F5128E /* JournalModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		3045C0BB2679F7040062605D /* JournalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListViewController.swift; sourceTree = "<group>"; };
 		3045C0BD2679F7660062605D /* JournalListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListCell.swift; sourceTree = "<group>"; };
 		3045C0BE2679F7660062605D /* JournalListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalListCell.xib; sourceTree = "<group>"; };
+		97AE7991267A4AD800F5128E /* JournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		97AE7990267A4A6300F5128E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				97AE7991267A4AD800F5128E /* JournalModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				2DE1172026735718003050BF /* ViewController.swift in Sources */,
 				2DE1171C26735718003050BF /* AppDelegate.swift in Sources */,
 				3045C0BF2679F7660062605D /* JournalListCell.swift in Sources */,
+				97AE7992267A4AD800F5128E /* JournalModel.swift in Sources */,
 				2DE1171E26735718003050BF /* SceneDelegate.swift in Sources */,
 				2DE1172626735718003050BF /* JournalApp.xcdatamodeld in Sources */,
 			);
