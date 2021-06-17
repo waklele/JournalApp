@@ -3,43 +3,106 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add New Journal-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="AddJournal" id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddJournal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="AddNewJournalController" customModule="JournalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Halaman Add Journal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7s-cW-bFM">
-                                <rect key="frame" x="126" y="171" width="163" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OhQ-0S-Sx8">
+                                <rect key="frame" x="20" y="98" width="374" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="d4u-NT-yPf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozm-Ql-Lny">
+                                <rect key="frame" x="20" y="164" width="66.5" height="26"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5X-cW-fgQ">
-                                <rect key="frame" x="181" y="770" width="53" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <segue destination="Fbs-xe-b8W" kind="show" id="oD5-kR-PwZ"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7s-cW-bFM">
+                                <rect key="frame" x="20" y="64" width="42" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="4ma-VO-OhJ"/>
+                                    <constraint firstAttribute="height" constant="26" id="JWC-tV-Ldq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Unm-MV-yV0">
+                                <rect key="frame" x="20" y="198" width="374" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="ZtF-SS-pdj"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eG-23-EdV">
+                                <rect key="frame" x="20" y="797" width="374" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5X-cW-fgQ">
+                                        <rect key="frame" x="160.5" y="4" width="53" height="42"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Fbs-xe-b8W" kind="show" id="oD5-kR-PwZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2HA-BI-4IR"/>
+                                    <constraint firstItem="N5X-cW-fgQ" firstAttribute="centerX" secondItem="1eG-23-EdV" secondAttribute="centerX" id="Lft-O5-z1v"/>
+                                    <constraint firstItem="N5X-cW-fgQ" firstAttribute="centerY" secondItem="1eG-23-EdV" secondAttribute="centerY" id="dBT-bP-FUo"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OhQ-0S-Sx8" secondAttribute="trailing" constant="20" id="80s-uT-4sf"/>
+                            <constraint firstItem="OhQ-0S-Sx8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Cfu-ki-dEX"/>
+                            <constraint firstItem="1eG-23-EdV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="GmI-qY-nk8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Unm-MV-yV0" secondAttribute="trailing" constant="20" id="UPb-e6-PST"/>
+                            <constraint firstItem="V7s-cW-bFM" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="aAv-SF-2gC"/>
+                            <constraint firstItem="Unm-MV-yV0" firstAttribute="top" secondItem="ozm-Ql-Lny" secondAttribute="bottom" constant="8" symbolic="YES" id="ayN-8n-Umb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="1eG-23-EdV" secondAttribute="bottom" constant="15" id="bgk-Dn-8zQ"/>
+                            <constraint firstItem="V7s-cW-bFM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="eMp-Iv-H2r"/>
+                            <constraint firstItem="ozm-Ql-Lny" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="fbl-xo-n3f"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1eG-23-EdV" secondAttribute="trailing" constant="20" id="gIK-Lh-5pO"/>
+                            <constraint firstItem="OhQ-0S-Sx8" firstAttribute="top" secondItem="V7s-cW-bFM" secondAttribute="bottom" constant="8" symbolic="YES" id="kGx-LB-ek7"/>
+                            <constraint firstItem="ozm-Ql-Lny" firstAttribute="top" secondItem="OhQ-0S-Sx8" secondAttribute="bottom" constant="24" id="obM-go-ISh"/>
+                            <constraint firstItem="Unm-MV-yV0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="vfA-XH-W9S"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Add New Journal" largeTitleDisplayMode="never" id="nwx-fJ-DyJ">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="dln-sH-Nfj"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="detailsTextView" destination="Unm-MV-yV0" id="ADN-yv-Eb2"/>
+                        <outlet property="saveButton" destination="1eG-23-EdV" id="eES-SV-mFF"/>
+                        <outlet property="titleTextField" destination="OhQ-0S-Sx8" id="hPW-io-uTy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="94"/>
+            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
         </scene>
         <!--JournalPuzzle-->
         <scene sceneID="BsT-Wv-lnX">
@@ -53,6 +116,12 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

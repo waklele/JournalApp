@@ -39,6 +39,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Dashboard" largeTitleDisplayMode="always" id="QOp-SQ-6DS">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="3oJ-yX-LsU"/>
                         <barButtonItem key="rightBarButtonItem" title="Add New Journal" image="plus" catalog="system" id="v5E-m9-A0T">
                             <connections>
                                 <segue destination="NNe-9Y-dxo" kind="show" id="x63-Jp-NcI"/>
