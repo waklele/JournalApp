@@ -16,16 +16,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Puzzle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNo-9m-eiJ">
-                                <rect key="frame" x="176" y="292" width="51" height="21"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="puzzle3" translatesAutoresizingMaskIntoConstraints="NO" id="bX8-Aw-VHK">
+                                <rect key="frame" x="161" y="256" width="199" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efw-e0-Ig3">
-                                <rect key="frame" x="181" y="738" width="53" height="42"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="puzzle2" translatesAutoresizingMaskIntoConstraints="NO" id="qsk-EG-vIV">
+                                <rect key="frame" x="163" y="113" width="196" height="198"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="puzzle4" translatesAutoresizingMaskIntoConstraints="NO" id="eaw-4w-WtZ">
+                                <rect key="frame" x="52" y="303" width="159" height="205"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="puzzle1" translatesAutoresizingMaskIntoConstraints="NO" id="Toy-go-BMA">
+                                <rect key="frame" x="28" y="149" width="206" height="206"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efw-e0-Ig3">
+                                <rect key="frame" x="160" y="781" width="104" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="yoH-7I-jvT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
@@ -35,14 +46,23 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="efw-e0-Ig3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="160" id="Ta7-s4-Elx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="efw-e0-Ig3" secondAttribute="bottom" constant="23" id="oAf-v0-eBQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="efw-e0-Ig3" secondAttribute="trailing" constant="150" id="tvg-Xb-x3k"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="88"/>
+            <point key="canvasLocation" x="18.840579710144929" y="87.723214285714278"/>
         </scene>
     </scenes>
     <resources>
+        <image name="puzzle1" width="175" height="218"/>
+        <image name="puzzle2" width="218" height="218"/>
+        <image name="puzzle3" width="216" height="218"/>
+        <image name="puzzle4" width="175" height="222"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
