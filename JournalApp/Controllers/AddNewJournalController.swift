@@ -6,11 +6,22 @@
 //
 
 import UIKit
+import CoreData
+
+protocol journalSavedDelegate: class {
+    func journalSaved()
+}
 
 class AddNewJournalController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     @IBOutlet weak var detailsTextView: UITextView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var saveButton: UIView!
+    
+    var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    var appDelegate = UIApplication.shared.delegate as? AppDelegate
+    
+    var journalList = [Journal]()
+    var journalSavedDelegate: journalSavedDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +41,8 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
         detailsTextView.delegate = self
         detailsTextView.text = "Insert detail here..."
         detailsTextView.textColor = UIColor.lightGray
+        
+        managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -57,9 +70,34 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
     func textViewDidEndEditing(_ textView: UITextView) {
 
         if detailsTextView.text == "" {
-
             detailsTextView.text = "Insert detail here..."
             detailsTextView.textColor = UIColor.lightGray
         }
     }
+    
+    @IBAction func saveJournal(_ sender: Any) {
+        let journalRequest: NSFetchRequest<Journal> = Journal.fetchRequest()
+        do {
+            try journalList = managedObjectContext.fetch(journalRequest)
+            
+            let entity = NSEntityDescription.entity(forEntityName: "Journal", in: managedObjectContext)
+            let newJournal = NSManagedObject(entity: entity!, insertInto: managedObjectContext)
+            // id here
+            
+            
+            newJournal.setValue(titleTextField.text, forKey: "title")
+            newJournal.setValue(detailsTextView.text, forKey: "puzzle1Detail")
+            //set date
+            
+            try managedObjectContext.save()
+            print("save success")
+            //delegate
+            journalSavedDelegate?.journalSaved()
+            
+        } catch {
+            print("save error")
+        }
+    }
+    
+    
 }

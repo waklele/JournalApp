@@ -27,6 +27,26 @@ class JournalListCell: UICollectionViewCell {
         puzzleProgress.minimumScaleFactor = 0.2
         puzzleProgress.numberOfLines = 1
     }
+    
+    public func configureJournal(with model: Journal) {
+        titleJournal.text = model.title
+        
+        var journalProcessCounter = 0
+        if !(model.puzzle1Detail?.isEmpty ?? true) {
+            journalProcessCounter += 1
+        }
+        if !(model.puzzle2Detail?.isEmpty ?? true) {
+            journalProcessCounter += 1
+        }
+        if !(model.puzzle3Detail?.isEmpty ?? true) {
+            journalProcessCounter += 1
+        }
+        if !(model.puzzle4Detail?.isEmpty ?? true) {
+            journalProcessCounter += 1
+        }
+        
+        puzzleProgress.text = "\(journalProcessCounter) out of 4"
+    }
 
 }
 
