@@ -28,13 +28,13 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="VfW-Lp-4C9"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 of 4 puzzles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnG-sw-mjz">
-                                        <rect key="frame" x="48" y="52" width="75" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="48" y="55" width="75" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -44,7 +44,7 @@
                                     <constraint firstAttribute="trailing" secondItem="vP1-tB-H8q" secondAttribute="trailing" constant="8" id="9vY-zc-C95"/>
                                     <constraint firstItem="vP1-tB-H8q" firstAttribute="top" secondItem="rrh-6P-U9o" secondAttribute="top" constant="35" id="WUQ-nd-ny1"/>
                                     <constraint firstAttribute="trailing" secondItem="vnG-sw-mjz" secondAttribute="trailing" constant="15" id="YM7-47-wMW"/>
-                                    <constraint firstItem="vnG-sw-mjz" firstAttribute="top" secondItem="vP1-tB-H8q" secondAttribute="bottom" constant="-8" id="w92-5Y-nOD"/>
+                                    <constraint firstItem="vnG-sw-mjz" firstAttribute="top" secondItem="vP1-tB-H8q" secondAttribute="bottom" constant="-5" id="w92-5Y-nOD"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconDuduk" translatesAutoresizingMaskIntoConstraints="NO" id="fao-6Z-Y3E">

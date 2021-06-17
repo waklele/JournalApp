@@ -32,7 +32,7 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
         titleTextField.layer.borderWidth = 1.0
         titleTextField.layer.cornerRadius = 5
         titleTextField.delegate = self
-        titleTextField.text = "Insert detail here..."
+        titleTextField.text = "Insert title here..."
         titleTextField.textColor = UIColor.lightGray
 
         detailsTextView.layer.borderColor = UIColor.gray.cgColor
@@ -84,16 +84,18 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
             let newJournal = NSManagedObject(entity: entity!, insertInto: managedObjectContext)
             // id here
             
-            
-            newJournal.setValue(titleTextField.text, forKey: "title")
-            newJournal.setValue(detailsTextView.text, forKey: "puzzle1Detail")
-            //set date
-            
-            try managedObjectContext.save()
-            print("save success")
-            //delegate
-            journalSavedDelegate?.journalSaved()
-            
+            if titleTextField.text == "Insert title here..." || detailsTextView.text == "Insert detail here..." {
+                print("Isi dulu")
+            } else {
+                newJournal.setValue(titleTextField.text, forKey: "title")
+                newJournal.setValue(detailsTextView.text, forKey: "puzzle1Detail")
+                //set date
+                
+                try managedObjectContext.save()
+                print("save success")
+                //delegate
+                journalSavedDelegate?.journalSaved()
+            }
         } catch {
             print("save error")
         }
