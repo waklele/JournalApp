@@ -1,8 +1,8 @@
 //
-//  JournalListViewController.swift
+//  DashboardViewController.swift
 //  JournalApp
 //
-//  Created by Muhammad Rizki Miftha Alhamid on 6/16/21.
+//  Created by Muhammad Rizki Miftha Alhamid on 6/21/21.
 //
 
 import UIKit
@@ -10,8 +10,14 @@ import CoreData
 
 private let reuseIdentifier = "JournalCell"
 
-class JournalListViewController: UICollectionViewController, UISearchBarDelegate, UICollectionViewDelegateFlowLayout {
-    let searchController = UISearchController(searchResultsController: nil)
+class DashboardViewController: UIViewController {
+    
+    @IBOutlet weak var bgImage: UIImageView!
+    @IBOutlet weak var imageLabel: UILabel!
+    @IBOutlet weak var imageButton: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     var appDelegate = UIApplication.shared.delegate as? AppDelegate
     
@@ -20,22 +26,17 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
-       
-        
-        // Register cell classes
         let nibCell = UINib(nibName: "JournalListCell", bundle: nil)
         collectionView.register(nibCell, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
-        navigationItem.searchController = searchController
-        searchController.searchBar.delegate = self
         
         managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
+        // Do any additional setup after loading the view.
         
         readData()
+        checkTodaysJournal()
     }
     
     func readData() {
@@ -51,27 +52,24 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
         self.collectionView.reloadData()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? AddNewJournalController {
-            vc.journalSavedDelegate = self
-        }
+    func checkTodaysJournal() -> Bool {
+        let currentDate = Date()
+        let lastJournalDate = journalList[0].createDate ?? Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
         
-    }
-    
-    
-    
-    
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        if dateFormatter.string(from: currentDate) == dateFormatter.string(from: lastJournalDate) {
+            return true
+        }
+        return false
     }
 
+}
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return journalList.count
+extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        2
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -82,9 +80,8 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width/2-20, height: 136)
     }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? JournalListCell else {
             return UICollectionViewCell()
         }
@@ -96,12 +93,6 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
 
         return cell
     }
-
-
-}
-
-extension JournalListViewController: journalSavedDelegate {
-    func journalSaved() {
-        readData()
-    }
+    
+    
 }

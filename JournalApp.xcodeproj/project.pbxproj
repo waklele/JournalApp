@@ -22,6 +22,7 @@
 		3045C0C3267A53710062605D /* Journal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045C0C1267A53710062605D /* Journal+CoreDataClass.swift */; };
 		3045C0C4267A53710062605D /* Journal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045C0C2267A53710062605D /* Journal+CoreDataProperties.swift */; };
 		3045C0C7267B2F9F0062605D /* JournalPuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045C0C6267B2F9F0062605D /* JournalPuzzleViewController.swift */; };
+		3045C0C926809D720062605D /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045C0C826809D720062605D /* DashboardViewController.swift */; };
 		9772F79E267B33F400CA1F67 /* AddNewJournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9772F79D267B33F400CA1F67 /* AddNewJournalController.swift */; };
 		97AE7992267A4AD800F5128E /* JournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE7991267A4AD800F5128E /* JournalModel.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		3045C0C1267A53710062605D /* Journal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3045C0C2267A53710062605D /* Journal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3045C0C6267B2F9F0062605D /* JournalPuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalPuzzleViewController.swift; sourceTree = "<group>"; };
+		3045C0C826809D720062605D /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashboardViewController.swift; path = JournalApp/Views/DashboardViewController.swift; sourceTree = SOURCE_ROOT; };
 		9772F79D267B33F400CA1F67 /* AddNewJournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewJournalController.swift; sourceTree = "<group>"; };
 		97AE7991267A4AD800F5128E /* JournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				2DE1171F26735718003050BF /* ViewController.swift */,
+				3045C0C826809D720062605D /* DashboardViewController.swift */,
 				3045C0BB2679F7040062605D /* JournalListViewController.swift */,
 				3045C0BD2679F7660062605D /* JournalListCell.swift */,
 				9772F79D267B33F400CA1F67 /* AddNewJournalController.swift */,
@@ -212,6 +215,7 @@
 				3045C0BF2679F7660062605D /* JournalListCell.swift in Sources */,
 				97AE7992267A4AD800F5128E /* JournalModel.swift in Sources */,
 				3045C0C3267A53710062605D /* Journal+CoreDataClass.swift in Sources */,
+				3045C0C926809D720062605D /* DashboardViewController.swift in Sources */,
 				2DE1171E26735718003050BF /* SceneDelegate.swift in Sources */,
 				3045C0C4267A53710062605D /* Journal+CoreDataProperties.swift in Sources */,
 				3045C0C7267B2F9F0062605D /* JournalPuzzleViewController.swift in Sources */,

@@ -31,10 +31,7 @@ class JournalListCell: UICollectionViewCell {
     public func configureJournal(with model: Journal) {
         titleJournal.text = model.title
         
-        var journalProcessCounter = 0
-        if !(model.puzzle1Detail?.isEmpty ?? true) {
-            journalProcessCounter += 1
-        }
+        var journalProcessCounter = 1
         if !(model.puzzle2Detail?.isEmpty ?? true) {
             journalProcessCounter += 1
         }
