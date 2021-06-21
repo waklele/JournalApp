@@ -25,7 +25,8 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
+
         saveButton.layer.cornerRadius = 10
         
         titleTextField.layer.borderColor = UIColor.gray.cgColor
@@ -102,4 +103,11 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
     }
     
     
+}
+
+extension AddNewJournalController {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
