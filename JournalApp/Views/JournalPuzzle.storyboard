@@ -16,25 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="puzzle3" translatesAutoresizingMaskIntoConstraints="NO" id="bX8-Aw-VHK">
-                                <rect key="frame" x="161" y="256" width="199" height="215"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="puzzle2" translatesAutoresizingMaskIntoConstraints="NO" id="qsk-EG-vIV">
-                                <rect key="frame" x="163" y="113" width="196" height="198"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="puzzle4" translatesAutoresizingMaskIntoConstraints="NO" id="eaw-4w-WtZ">
-                                <rect key="frame" x="52" y="303" width="159" height="205"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="puzzle1" translatesAutoresizingMaskIntoConstraints="NO" id="Toy-go-BMA">
-                                <rect key="frame" x="28" y="149" width="206" height="206"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efw-e0-Ig3">
-                                <rect key="frame" x="160" y="781" width="104" height="58"/>
+                                <rect key="frame" x="162" y="781" width="90" height="58"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="jY8-DX-0kL"/>
                                     <constraint firstAttribute="height" constant="58" id="yoH-7I-jvT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
@@ -43,15 +28,23 @@
                                     <action selector="saveJournal:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qqW-lo-Lp8"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPuzzle" translatesAutoresizingMaskIntoConstraints="NO" id="R0k-eA-EN6">
+                                <rect key="frame" x="70" y="114" width="274" height="432"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="efw-e0-Ig3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="160" id="Ta7-s4-Elx"/>
+                            <constraint firstItem="efw-e0-Ig3" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="8J4-U6-IDH"/>
+                            <constraint firstItem="R0k-eA-EN6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="70" id="iOE-WY-46z"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="efw-e0-Ig3" secondAttribute="bottom" constant="23" id="oAf-v0-eBQ"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="efw-e0-Ig3" secondAttribute="trailing" constant="150" id="tvg-Xb-x3k"/>
+                            <constraint firstItem="R0k-eA-EN6" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="70" id="rDz-1Y-d8i"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="R0k-eA-EN6" secondAttribute="trailing" constant="70" id="uLZ-ke-WMq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="puzzle" destination="R0k-eA-EN6" id="TH5-Rm-6Zd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,10 +52,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="puzzle1" width="175" height="218"/>
-        <image name="puzzle2" width="218" height="218"/>
-        <image name="puzzle3" width="216" height="218"/>
-        <image name="puzzle4" width="175" height="222"/>
+        <image name="defaultPuzzle" width="336" height="432"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
