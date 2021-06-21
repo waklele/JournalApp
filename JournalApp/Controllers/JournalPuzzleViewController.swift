@@ -21,11 +21,9 @@ class JournalPuzzleViewController: UIViewController {
     @objc func tapAction(sender: UITapGestureRecognizer) {
 
          let touchPoint = sender.location(in: self.puzzle)
-         print(touchPoint)
 
         let z1 = touchPoint.x
         let z2 = touchPoint.y
-         print("Before Alert Touched point (\(z1), \(z2)")
 
          //convert point into Percentage
          let z1per =  z1 * 100 / self.puzzle.frame.size.width
@@ -33,7 +31,15 @@ class JournalPuzzleViewController: UIViewController {
 
          print("After Alert Touched point (\(z1per), \(z2per)")
         
-        
+        if z1per > 50 && z2per < 50 {
+            print("Kanan atas")
+        } else if z1per > 50 && z2per > 50 {
+            print("Kanan bawah")
+        } else if z1per < 50 && z2per < 50 {
+            print("Kiri atas")
+        } else {
+            print("Kiri bawah")
+        }
    }
     
     
