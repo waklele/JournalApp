@@ -33,6 +33,8 @@ class JournalPuzzleViewController: UIViewController {
         
         if z1per > 50 && z2per < 50 {
             print("Kanan atas")
+            let vc = UIStoryboard.init(name: "TextToText", bundle: Bundle.main).instantiateViewController(withIdentifier: "textToText")
+            self.navigationController?.pushViewController(vc, animated: true)
         } else if z1per > 50 && z2per > 50 {
             print("Kanan bawah")
         } else if z1per < 50 && z2per < 50 {

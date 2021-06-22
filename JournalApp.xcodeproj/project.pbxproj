@@ -23,6 +23,7 @@
 		3045C0C4267A53710062605D /* Journal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045C0C2267A53710062605D /* Journal+CoreDataProperties.swift */; };
 		3045C0C7267B2F9F0062605D /* JournalPuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045C0C6267B2F9F0062605D /* JournalPuzzleViewController.swift */; };
 		3045C0C926809D720062605D /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045C0C826809D720062605D /* DashboardViewController.swift */; };
+		971824732680DDAE00C6BA62 /* TextToText.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 971824722680DDAE00C6BA62 /* TextToText.storyboard */; };
 		9772F79E267B33F400CA1F67 /* AddNewJournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9772F79D267B33F400CA1F67 /* AddNewJournalController.swift */; };
 		97AE7992267A4AD800F5128E /* JournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE7991267A4AD800F5128E /* JournalModel.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		3045C0C2267A53710062605D /* Journal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3045C0C6267B2F9F0062605D /* JournalPuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalPuzzleViewController.swift; sourceTree = "<group>"; };
 		3045C0C826809D720062605D /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashboardViewController.swift; path = JournalApp/Views/DashboardViewController.swift; sourceTree = SOURCE_ROOT; };
+		971824722680DDAE00C6BA62 /* TextToText.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TextToText.storyboard; sourceTree = "<group>"; };
 		9772F79D267B33F400CA1F67 /* AddNewJournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewJournalController.swift; sourceTree = "<group>"; };
 		97AE7991267A4AD800F5128E /* JournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +103,7 @@
 				3045C0B22679EB810062605D /* AddJournal.storyboard */,
 				3045C0B72679EF120062605D /* JournalPuzzle.storyboard */,
 				3045C0BE2679F7660062605D /* JournalListCell.xib */,
+				971824722680DDAE00C6BA62 /* TextToText.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3045C0B32679EB810062605D /* AddJournal.storyboard in Resources */,
+				971824732680DDAE00C6BA62 /* TextToText.storyboard in Resources */,
 				2DE1172B26735719003050BF /* LaunchScreen.storyboard in Resources */,
 				3045C0B82679EF120062605D /* JournalPuzzle.storyboard in Resources */,
 				3045C0C02679F7660062605D /* JournalListCell.xib in Resources */,
