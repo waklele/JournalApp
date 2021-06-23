@@ -13,7 +13,7 @@
         <!--Jurnal-Ku-->
         <scene sceneID="ySR-gF-rL1">
             <objects>
-                <collectionViewController storyboardIdentifier="Dashboard" id="FA4-eu-Tfo" customClass="JournalListViewController" customModule="JournalApp" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="FA4-eu-Tfo" customClass="JournalListViewController" customModule="JournalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rW8-bx-NSy">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="949.27536231884062" y="792.1875"/>
         </scene>
-        <!--AddJournal-->
+        <!--addJournal-->
         <scene sceneID="Wd6-xK-nte">
             <objects>
-                <viewControllerPlaceholder storyboardName="AddJournal" referencedIdentifier="AddJournal" id="NNe-9Y-dxo" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="AddJournal" referencedIdentifier="addJournal" id="NNe-9Y-dxo" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="L44-4j-FRu"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wc-kM-HrD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -109,15 +109,15 @@
                                 <rect key="frame" x="0.0" y="139" width="390" height="274"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVR-r4-RPW">
-                                <rect key="frame" x="50" y="305" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVR-r4-RPW">
+                                <rect key="frame" x="50" y="309" width="300" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0m2-Ca-qMh">
-                                <rect key="frame" x="304" y="346" width="46" height="30"/>
+                                <rect key="frame" x="225" y="338" width="125" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
@@ -140,16 +140,38 @@
                         <outlet property="collectionView" destination="D0T-UX-LTU" id="xc2-Kr-NLO"/>
                         <outlet property="imageButton" destination="0m2-Ca-qMh" id="clN-Tb-502"/>
                         <outlet property="imageLabel" destination="tVR-r4-RPW" id="zzV-Wq-7bm"/>
+                        <segue destination="g7K-ci-WoG" kind="show" identifier="addJournal" id="Kh4-fD-qR6"/>
+                        <segue destination="fb3-ev-Euo" kind="show" identifier="journalList" id="64q-dh-00C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9od-Zs-TnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-952.30769230769226" y="791.23222748815158"/>
         </scene>
+        <!--addJournal-->
+        <scene sceneID="Hj7-A4-bOV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddJournal" referencedIdentifier="addJournal" id="g7K-ci-WoG" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="vA2-Z8-Ahd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="18k-C6-2K5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1312" y="1238"/>
+        </scene>
+        <!--journalList-->
+        <scene sceneID="f8J-lb-mwv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="journalList" id="fb3-ev-Euo" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="A0C-yB-dok"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u3o-Ae-Zbt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-612" y="1238"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="sx8-hW-fBM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vfp-bO-Mx0" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="journalList" automaticallyAdjustsScrollViewInsets="NO" id="vfp-bO-Mx0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="eVN-vf-0hT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="a5f-wp-kvT">
@@ -173,7 +195,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dashboard1" width="728" height="644"/>
+        <image name="dashboard1" width="1092" height="966"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

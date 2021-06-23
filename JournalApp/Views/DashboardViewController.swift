@@ -35,6 +35,10 @@ class DashboardViewController: UIViewController {
         managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
         // Do any additional setup after loading the view.
         
+        imageButton.backgroundColor = .init(red: 221/255, green: 66/255, blue: 123/255, alpha: 1)
+        imageButton.layer.cornerRadius = 15
+        imageButton.tintColor = .white
+        
         readData()
         checkTodaysJournal()
     }
@@ -52,17 +56,59 @@ class DashboardViewController: UIViewController {
         self.collectionView.reloadData()
     }
     
-    func checkTodaysJournal() -> Bool {
+    func checkTodaysJournal() {
         let currentDate = Date()
         let lastJournalDate = journalList[0].createDate ?? Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         
         if dateFormatter.string(from: currentDate) == dateFormatter.string(from: lastJournalDate) {
-            return true
+            
+            imageButton.setTitle("Lihat Jurnal", for: .normal)
+            // set tujuan button
+            imageButton.addTarget(self, action: #selector(seeTodaysJournal(_:)), for: .touchUpInside)
+            
+            if isTodaysJournalComplete() {
+                bgImage.image = UIImage(named: "dashboard3")
+                imageLabel.text = "Yeay, catatan kamu terisi lengkap hari ini"
+            } else {
+                bgImage.image = UIImage(named: "dashboard2")
+                imageLabel.text = "Kamu belum lengkapin catatan loh hari ini"
+            }
+        } else {
+            bgImage.image = UIImage(named: "dashboard1")
+            imageLabel.text = "Duh.. Kamu belum buat catatan hari ini"
+            imageButton.setTitle("Buat Jurnal", for: .normal)
+            // set tujuan button
+            imageButton.addTarget(self, action: #selector(createJournal(_:)), for: .touchUpInside)
         }
-        return false
+        
     }
+
+    func isTodaysJournalComplete() -> Bool {
+        if journalList[0].puzzle2Detail?.isEmpty ?? true {
+            return false
+        }
+        if journalList[0].puzzle3Detail?.isEmpty ?? true {
+            return false
+        }
+        if journalList[0].puzzle4Detail?.isEmpty ?? true {
+            return false
+        }
+        
+        return true
+    }
+    
+    @objc func createJournal(_ sender: UIButton) {
+        print("buat journal hari ini")
+        performSegue(withIdentifier: "addJournal", sender: nil)
+    }
+    
+    @objc func seeTodaysJournal(_ sender: UIButton) {
+        print("journal hari ini")
+        performSegue(withIdentifier: "journalList", sender: nil)
+    }
+    
 
 }
 
