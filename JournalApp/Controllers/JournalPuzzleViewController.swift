@@ -10,12 +10,61 @@ import UIKit
 class JournalPuzzleViewController: UIViewController {
     @IBOutlet weak var puzzle: UIImageView!
     
+    public var readingTitle = String()
+    public var puzzle1Detail = String()
+    public var puzzle2Detail = String()
+    public var puzzle3Detail = String()
+    public var puzzle4Detail = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         puzzle.isUserInteractionEnabled = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapAction))
         self.puzzle.addGestureRecognizer(tapGestureRecognizer)
+        
+        adjustPuzzle()
+    }
+    
+    func adjustPuzzle() {
+        if !puzzle2Detail.isEmpty {
+            if !puzzle3Detail.isEmpty {
+                if !puzzle4Detail.isEmpty {
+                    // full
+                    puzzle.image = UIImage(named: "puzzleFull")
+                } else {
+                    // 1, 2, 3
+                    puzzle.image = UIImage(named: "puzzleIncomplete2.1")
+                }
+            } else {
+                if !puzzle4Detail.isEmpty {
+                    // 1, 2, 4
+                    puzzle.image = UIImage(named: "puzzleIncomplete2.2")
+                } else {
+                    // 1, 2
+                    puzzle.image = UIImage(named: "puzzleIncomplete1.1")
+                }
+            }
+        } else {
+            if !puzzle3Detail.isEmpty {
+                if !puzzle4Detail.isEmpty {
+                    // 1, 3, 4
+                    puzzle.image = UIImage(named: "puzzleIncomplete2.3")
+                } else {
+                    // 1, 3
+                    puzzle.image = UIImage(named: "puzzleIncomplete1.2")
+                }
+            } else {
+                if !puzzle4Detail.isEmpty {
+                    // 1, 4
+                    puzzle.image = UIImage(named: "puzzleIncomplete1.3")
+                } else {
+                    // 1
+                    print("\(puzzle1Detail)")
+                    puzzle.image = UIImage(named: "defaultPuzzle")
+                }
+            }
+        }
     }
     
     @objc func tapAction(sender: UITapGestureRecognizer) {

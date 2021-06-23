@@ -16,6 +16,7 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
     var appDelegate = UIApplication.shared.delegate as? AppDelegate
     
     var journalList: [Journal] = [Journal]()
+    var journalSelectionIndex = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +56,13 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
         if let vc = segue.destination as? AddNewJournalController {
             vc.journalSavedDelegate = self
         }
-        
+        if let vc = segue.destination as? JournalPuzzleViewController {
+            vc.title = journalList[journalSelectionIndex].title
+            vc.puzzle1Detail = journalList[journalSelectionIndex].puzzle1Detail ?? ""
+            vc.puzzle2Detail = journalList[journalSelectionIndex].puzzle2Detail ?? ""
+            vc.puzzle3Detail = journalList[journalSelectionIndex].puzzle3Detail ?? ""
+            vc.puzzle4Detail = journalList[journalSelectionIndex].puzzle4Detail ?? ""
+        }
     }
     
     
@@ -99,6 +106,7 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("\(journalList[indexPath.row].title)")
+        journalSelectionIndex = indexPath.row
         performSegue(withIdentifier: "editJournal", sender: nil)
     }
 

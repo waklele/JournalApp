@@ -180,7 +180,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3o-Ae-Zbt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-612" y="1238"/>
+            <point key="canvasLocation" x="-688" y="1238"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sx8-hW-fBM">
@@ -209,7 +209,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4fa-y8-qTr"/>
+        <segue reference="y4G-tN-VKd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="dashboard1" width="1092" height="966"/>
