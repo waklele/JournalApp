@@ -47,6 +47,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="2q8-KK-ci3" kind="show" identifier="editJournal" id="y4G-tN-VKd"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTw-Ox-UVG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,7 +63,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wc-kM-HrD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="704"/>
+            <point key="canvasLocation" x="1713" y="673"/>
+        </scene>
+        <!--JournalPuzzle-->
+        <scene sceneID="Zqo-60-K5l">
+            <objects>
+                <viewControllerPlaceholder storyboardName="JournalPuzzle" referencedIdentifier="JournalPuzzle" id="2q8-KK-ci3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="S24-PR-hZQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sIV-bA-rDP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="949" y="1276"/>
         </scene>
         <!--Dashboard View Controller-->
         <scene sceneID="egu-qN-xlS">
@@ -142,6 +155,7 @@
                         <outlet property="imageLabel" destination="tVR-r4-RPW" id="zzV-Wq-7bm"/>
                         <segue destination="g7K-ci-WoG" kind="show" identifier="addJournal" id="Kh4-fD-qR6"/>
                         <segue destination="fb3-ev-Euo" kind="show" identifier="journalList" id="64q-dh-00C"/>
+                        <segue destination="2q8-KK-ci3" kind="show" identifier="editRecentJournal" id="4fa-y8-qTr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9od-Zs-TnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -194,6 +208,9 @@
             <point key="canvasLocation" x="37.681159420289859" y="791.51785714285711"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4fa-y8-qTr"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="dashboard1" width="1092" height="966"/>
         <image name="plus" catalog="system" width="128" height="113"/>
