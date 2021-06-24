@@ -98,6 +98,13 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
             } else {
                 
                 // id here
+                var incrementId = 0
+                if journalList.count == 0 {
+                    incrementId = 1
+                } else {
+                    incrementId = Int(bitPattern: journalList.last!.id) + 1
+                }
+                
                 newJournal.setValue(titleTextField.text, forKey: "title")
                 newJournal.setValue(detailsTextView.text, forKey: "puzzle1Detail")
                 //set date
