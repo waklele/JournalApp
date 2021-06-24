@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iJx-hr-LNx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O1g-lX-PyN">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -13,9 +12,9 @@
         <!--Jurnal-Ku-->
         <scene sceneID="ySR-gF-rL1">
             <objects>
-                <collectionViewController id="FA4-eu-Tfo" customClass="JournalListViewController" customModule="JournalApp" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="journalList" id="FA4-eu-Tfo" customClass="JournalListViewController" customModule="JournalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rW8-bx-NSy">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gdf-sq-tLS">
@@ -39,7 +38,7 @@
                             <outlet property="delegate" destination="FA4-eu-Tfo" id="JK8-8T-ouv"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Jurnal-Ku" leftItemsSupplementBackButton="YES" id="QOp-SQ-6DS">
+                    <navigationItem key="navigationItem" title="Jurnal-Ku" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="QOp-SQ-6DS">
                         <barButtonItem key="backBarButtonItem" title="Back" id="3oJ-yX-LsU"/>
                         <barButtonItem key="rightBarButtonItem" title="Add New Journal" image="plus" catalog="system" id="v5E-m9-A0T">
                             <connections>
@@ -53,7 +52,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTw-Ox-UVG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="949.27536231884062" y="792.1875"/>
+            <point key="canvasLocation" x="1878.4615384615383" y="791.94312796208533"/>
         </scene>
         <!--addJournal-->
         <scene sceneID="Wd6-xK-nte">
@@ -63,7 +62,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wc-kM-HrD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="673"/>
+            <point key="canvasLocation" x="2640.7692307692305" y="672.51184834123217"/>
         </scene>
         <!--JournalPuzzle-->
         <scene sceneID="Zqo-60-K5l">
@@ -75,7 +74,7 @@
             </objects>
             <point key="canvasLocation" x="949" y="1276"/>
         </scene>
-        <!--Dashboard View Controller-->
+        <!--Jouzzle-->
         <scene sceneID="egu-qN-xlS">
             <objects>
                 <viewController id="iJx-hr-LNx" customClass="DashboardViewController" customModule="JournalApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -111,13 +110,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jouzzle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kr4-4W-Tko">
-                                <rect key="frame" x="20" y="94" width="179" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dashboard1" translatesAutoresizingMaskIntoConstraints="NO" id="hcR-Dd-jjb">
                                 <rect key="frame" x="0.0" y="139" width="390" height="274"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -141,13 +133,14 @@
                                     <color key="titleColor" systemColor="systemRedColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vfp-bO-Mx0" kind="show" id="3w2-yP-gOF"/>
+                                    <segue destination="FA4-eu-Tfo" kind="show" id="IMP-4G-lJG"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JgB-we-hfa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Jouzzle" largeTitleDisplayMode="always" id="Qlv-Mk-VLo"/>
                     <connections>
                         <outlet property="bgImage" destination="hcR-Dd-jjb" id="LcW-3O-fMt"/>
                         <outlet property="collectionView" destination="D0T-UX-LTU" id="xc2-Kr-NLO"/>
@@ -160,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9od-Zs-TnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-952.30769230769226" y="791.23222748815158"/>
+            <point key="canvasLocation" x="340" y="805"/>
         </scene>
         <!--addJournal-->
         <scene sceneID="Hj7-A4-bOV">
@@ -183,40 +176,30 @@
             <point key="canvasLocation" x="-688" y="1238"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="sx8-hW-fBM">
+        <scene sceneID="kve-ag-joX">
             <objects>
-                <navigationController storyboardIdentifier="journalList" automaticallyAdjustsScrollViewInsets="NO" id="vfp-bO-Mx0" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O1g-lX-PyN" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="eVN-vf-0hT"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="a5f-wp-kvT">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="108"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mVO-xP-3cv">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" name="AccentColor"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" name="AccentColor"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="FA4-eu-Tfo" kind="relationship" relationship="rootViewController" id="PXE-BX-MC3"/>
+                        <segue destination="iJx-hr-LNx" kind="relationship" relationship="rootViewController" id="lv1-Mg-KIo"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="axI-8u-Kh8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cCt-pA-bht" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37.681159420289859" y="791.51785714285711"/>
+            <point key="canvasLocation" x="-952.30769230769226" y="791.23222748815158"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="y4G-tN-VKd"/>
+        <segue reference="4fa-y8-qTr"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="dashboard1" width="1092" height="966"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
