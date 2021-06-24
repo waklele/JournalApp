@@ -44,6 +44,18 @@ class DashboardViewController: UIViewController {
         checkTodaysJournal()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if !Core.shared.isNewUser() {
+            // show onboarding
+            let controller = storyboard?.instantiateViewController(identifier: "onboarding") as! OnboardingViewController
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .crossDissolve
+            present(controller, animated: true, completion: nil)
+        }
+    }
+    
     func readData() {
         let journalRequest: NSFetchRequest<Journal> = Journal.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "lastUpdateDate", ascending: false)
@@ -173,5 +185,18 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
 extension DashboardViewController: journalSavedDelegate {
     func journalSaved() {
         readData()
+    }
+}
+
+
+class Core {
+    static let shared = Core()
+    
+    func isNewUser()-> Bool {
+        return UserDefaults.standard.bool(forKey: "isNewUser")
+    }
+    
+    func setIsNotNewUser() {
+        UserDefaults.standard.set(true, forKey: "isNewUser")
     }
 }
