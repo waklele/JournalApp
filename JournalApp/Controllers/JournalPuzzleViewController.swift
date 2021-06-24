@@ -31,37 +31,37 @@ class JournalPuzzleViewController: UIViewController {
             if !puzzle3Detail.isEmpty {
                 if !puzzle4Detail.isEmpty {
                     // full
-                    puzzle.image = UIImage(named: "puzzleFull")
+                    puzzle.image = UIImage(named: "Puzzle Full")
                 } else {
                     // 1, 2, 3
-                    puzzle.image = UIImage(named: "puzzleIncomplete2.1")
+                    puzzle.image = UIImage(named: "Puzzle Incomplete 2.1")
                 }
             } else {
                 if !puzzle4Detail.isEmpty {
                     // 1, 2, 4
-                    puzzle.image = UIImage(named: "puzzleIncomplete2.2")
+                    puzzle.image = UIImage(named: "Puzzle Incomplete 2.2")
                 } else {
                     // 1, 2
-                    puzzle.image = UIImage(named: "puzzleIncomplete1.1")
+                    puzzle.image = UIImage(named: "Puzzle Incomplete 1.1")
                 }
             }
         } else {
             if !puzzle3Detail.isEmpty {
                 if !puzzle4Detail.isEmpty {
                     // 1, 3, 4
-                    puzzle.image = UIImage(named: "puzzleIncomplete2.3")
+                    puzzle.image = UIImage(named: "Puzzle Incomplete 2.3")
                 } else {
                     // 1, 3
-                    puzzle.image = UIImage(named: "puzzleIncomplete1.2")
+                    puzzle.image = UIImage(named: "Puzzle Incomplete 1.2")
                 }
             } else {
                 if !puzzle4Detail.isEmpty {
                     // 1, 4
-                    puzzle.image = UIImage(named: "puzzleIncomplete1.3")
+                    puzzle.image = UIImage(named: "Puzzle Incomplete 1.3")
                 } else {
                     // 1
                     print("\(puzzle1Detail)")
-                    puzzle.image = UIImage(named: "defaultPuzzle")
+                    puzzle.image = UIImage(named: "Puzzle Incomplete")
                 }
             }
         }

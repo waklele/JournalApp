@@ -9,46 +9,65 @@ import UIKit
 
 class JournalListCell: UICollectionViewCell {
     @IBOutlet weak var titleJournal: UILabel!
-    @IBOutlet weak var puzzleProgress: UILabel!
     @IBOutlet weak var background: UIView!
+    @IBOutlet weak var puzzleImage: UIImageView!
+    
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        background.layer.cornerRadius = 20
-        background.backgroundColor = .random
+        background.layer.cornerRadius = 40
+        background.backgroundColor = .white
+        background.layer.borderColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
+        background.layer.borderWidth = 3
         
         titleJournal.adjustsFontSizeToFitWidth = true
         titleJournal.minimumScaleFactor = 0.2
         titleJournal.numberOfLines = 1
-        
-        puzzleProgress.adjustsFontSizeToFitWidth = true
-        puzzleProgress.minimumScaleFactor = 0.2
-        puzzleProgress.numberOfLines = 1
     }
     
     public func configureJournal(with model: Journal) {
         titleJournal.text = model.title
         
-        var journalProcessCounter = 1
         if !(model.puzzle2Detail?.isEmpty ?? true) {
-            journalProcessCounter += 1
-        }
-        if !(model.puzzle3Detail?.isEmpty ?? true) {
-            journalProcessCounter += 1
-        }
-        if !(model.puzzle4Detail?.isEmpty ?? true) {
-            journalProcessCounter += 1
+            if !(model.puzzle3Detail?.isEmpty ?? true) {
+                if !(model.puzzle4Detail?.isEmpty ?? true) {
+                    // full
+                    puzzleImage.image = UIImage(named: "Puzzle Full")
+                } else {
+                    // 1, 2, 3
+                    puzzleImage.image = UIImage(named: "Puzzle Incomplete 2.1")
+                }
+            } else {
+                if !(model.puzzle4Detail?.isEmpty ?? true) {
+                    // 1, 2, 4
+                    puzzleImage.image = UIImage(named: "Puzzle Incomplete 2.2")
+                } else {
+                    // 1, 2
+                    puzzleImage.image = UIImage(named: "Puzzle Incomplete 1.1")
+                }
+            }
+        } else {
+            if !(model.puzzle3Detail?.isEmpty ?? true) {
+                if !(model.puzzle4Detail?.isEmpty ?? true) {
+                    // 1, 3, 4
+                    puzzleImage.image = UIImage(named: "Puzzle Incomplete 2.3")
+                } else {
+                    // 1, 3
+                    puzzleImage.image = UIImage(named: "Puzzle Incomplete 1.2")
+                }
+            } else {
+                if !(model.puzzle4Detail?.isEmpty ?? true) {
+                    // 1, 4
+                    puzzleImage.image = UIImage(named: "Puzzle Incomplete 1.3")
+                } else {
+                    // 1
+                    puzzleImage.image = UIImage(named: "Puzzle Incomplete")
+                }
+            }
         }
         
-        puzzleProgress.text = "\(journalProcessCounter) out of 4"
     }
 
-}
-
-extension UIColor {
-    static var random: UIColor {
-        return .init(hue: .random(in: 0...1), saturation: 1, brightness: 1, alpha: 1)
-    }
 }

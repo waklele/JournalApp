@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OhQ-0S-Sx8">
-                                <rect key="frame" x="20" y="98" width="374" height="42"/>
+                                <rect key="frame" x="20" y="229" width="374" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="d4u-NT-yPf"/>
                                 </constraints>
@@ -26,23 +26,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozm-Ql-Lny">
-                                <rect key="frame" x="20" y="164" width="66.5" height="26"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7s-cW-bFM">
-                                <rect key="frame" x="20" y="64" width="42" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="4ma-VO-OhJ"/>
-                                    <constraint firstAttribute="height" constant="26" id="JWC-tV-Ldq"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="295" width="66.5" height="26"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Unm-MV-yV0">
-                                <rect key="frame" x="20" y="198" width="374" height="300"/>
+                                <rect key="frame" x="20" y="329" width="374" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="ZtF-SS-pdj"/>
@@ -77,15 +67,29 @@
                                     <constraint firstAttribute="trailing" secondItem="N5X-cW-fgQ" secondAttribute="trailing" id="eVN-Ue-VWv"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tambah Jurnal Baru Dong" translatesAutoresizingMaskIntoConstraints="NO" id="Dh5-eB-93W">
+                                <rect key="frame" x="20" y="49" width="374" height="141"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7s-cW-bFM">
+                                <rect key="frame" x="20" y="195" width="42" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="4ma-VO-OhJ"/>
+                                    <constraint firstAttribute="height" constant="26" id="JWC-tV-Ldq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="V7s-cW-bFM" firstAttribute="top" secondItem="Dh5-eB-93W" secondAttribute="bottom" constant="5" id="5lH-P8-AzU"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OhQ-0S-Sx8" secondAttribute="trailing" constant="20" id="80s-uT-4sf"/>
                             <constraint firstItem="OhQ-0S-Sx8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Cfu-ki-dEX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Dh5-eB-93W" secondAttribute="trailing" constant="20" id="GUa-0T-kAq"/>
                             <constraint firstItem="1eG-23-EdV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="GmI-qY-nk8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Unm-MV-yV0" secondAttribute="trailing" constant="20" id="UPb-e6-PST"/>
-                            <constraint firstItem="V7s-cW-bFM" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="aAv-SF-2gC"/>
                             <constraint firstItem="Unm-MV-yV0" firstAttribute="top" secondItem="ozm-Ql-Lny" secondAttribute="bottom" constant="8" symbolic="YES" id="ayN-8n-Umb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="1eG-23-EdV" secondAttribute="bottom" constant="15" id="bgk-Dn-8zQ"/>
                             <constraint firstItem="V7s-cW-bFM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="eMp-Iv-H2r"/>
@@ -93,6 +97,8 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1eG-23-EdV" secondAttribute="trailing" constant="20" id="gIK-Lh-5pO"/>
                             <constraint firstItem="OhQ-0S-Sx8" firstAttribute="top" secondItem="V7s-cW-bFM" secondAttribute="bottom" constant="8" symbolic="YES" id="kGx-LB-ek7"/>
                             <constraint firstItem="ozm-Ql-Lny" firstAttribute="top" secondItem="OhQ-0S-Sx8" secondAttribute="bottom" constant="24" id="obM-go-ISh"/>
+                            <constraint firstItem="Dh5-eB-93W" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="q7d-ye-Uzv"/>
+                            <constraint firstItem="Dh5-eB-93W" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="sQt-G5-CZM"/>
                             <constraint firstItem="Unm-MV-yV0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="vfA-XH-W9S"/>
                         </constraints>
                     </view>
@@ -121,6 +127,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Tambah Jurnal Baru Dong" width="336" height="141"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

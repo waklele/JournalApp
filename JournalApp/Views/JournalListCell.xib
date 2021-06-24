@@ -21,48 +21,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="164" height="137"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrh-6P-U9o">
-                                <rect key="frame" x="26" y="0.0" width="138" height="137"/>
+                                <rect key="frame" x="0.0" y="0.0" width="164" height="137"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timus Mas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vP1-tB-H8q">
-                                        <rect key="frame" x="47" y="35" width="83" height="25"/>
+                                        <rect key="frame" x="32" y="112" width="100" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="VfW-Lp-4C9"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 of 4 puzzles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnG-sw-mjz">
-                                        <rect key="frame" x="48" y="55" width="75" height="21.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Puzzle Full" translatesAutoresizingMaskIntoConstraints="NO" id="BDY-CK-fr1">
+                                        <rect key="frame" x="20" y="5" width="124" height="107"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="vP1-tB-H8q" secondAttribute="trailing" constant="8" id="9vY-zc-C95"/>
-                                    <constraint firstItem="vP1-tB-H8q" firstAttribute="top" secondItem="rrh-6P-U9o" secondAttribute="top" constant="35" id="WUQ-nd-ny1"/>
-                                    <constraint firstAttribute="trailing" secondItem="vnG-sw-mjz" secondAttribute="trailing" constant="15" id="YM7-47-wMW"/>
-                                    <constraint firstItem="vnG-sw-mjz" firstAttribute="top" secondItem="vP1-tB-H8q" secondAttribute="bottom" constant="-5" id="w92-5Y-nOD"/>
+                                    <constraint firstAttribute="trailing" secondItem="BDY-CK-fr1" secondAttribute="trailing" constant="20" id="8dq-p8-r8r"/>
+                                    <constraint firstItem="vP1-tB-H8q" firstAttribute="leading" secondItem="rrh-6P-U9o" secondAttribute="leading" constant="32" id="BOA-mM-cIj"/>
+                                    <constraint firstItem="BDY-CK-fr1" firstAttribute="top" secondItem="rrh-6P-U9o" secondAttribute="top" constant="5" id="CIT-x3-cTr"/>
+                                    <constraint firstAttribute="bottom" secondItem="vP1-tB-H8q" secondAttribute="bottom" id="Cs3-VL-kzm"/>
+                                    <constraint firstItem="BDY-CK-fr1" firstAttribute="leading" secondItem="rrh-6P-U9o" secondAttribute="leading" constant="20" id="TYt-I2-nVL"/>
+                                    <constraint firstItem="vP1-tB-H8q" firstAttribute="top" secondItem="BDY-CK-fr1" secondAttribute="bottom" id="q8n-8N-3uI"/>
+                                    <constraint firstAttribute="trailing" secondItem="vP1-tB-H8q" secondAttribute="trailing" constant="32" id="yrv-AG-FKy"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconDuduk" translatesAutoresizingMaskIntoConstraints="NO" id="fao-6Z-Y3E">
-                                <rect key="frame" x="0.0" y="5" width="80" height="127"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="fao-6Z-Y3E" secondAttribute="bottom" constant="5" id="Dvw-AO-1F9"/>
-                            <constraint firstItem="vP1-tB-H8q" firstAttribute="leading" secondItem="fao-6Z-Y3E" secondAttribute="trailing" constant="-7" id="EsN-G7-LR3"/>
-                            <constraint firstItem="rrh-6P-U9o" firstAttribute="top" secondItem="v3k-CO-Jvb" secondAttribute="top" id="Foa-Ym-ePh"/>
-                            <constraint firstItem="rrh-6P-U9o" firstAttribute="leading" secondItem="v3k-CO-Jvb" secondAttribute="leading" constant="26" id="JfN-Sr-W6q"/>
+                            <constraint firstItem="rrh-6P-U9o" firstAttribute="leading" secondItem="v3k-CO-Jvb" secondAttribute="leading" id="DTP-u6-1p5"/>
+                            <constraint firstAttribute="bottom" secondItem="rrh-6P-U9o" secondAttribute="bottom" id="DZG-hM-UAs"/>
+                            <constraint firstItem="rrh-6P-U9o" firstAttribute="top" secondItem="v3k-CO-Jvb" secondAttribute="top" id="DnW-Zp-V8k"/>
                             <constraint firstAttribute="trailing" secondItem="rrh-6P-U9o" secondAttribute="trailing" id="Lzp-fT-dSG"/>
-                            <constraint firstItem="fao-6Z-Y3E" firstAttribute="leading" secondItem="v3k-CO-Jvb" secondAttribute="leading" id="SFA-SS-ONS"/>
-                            <constraint firstAttribute="bottom" secondItem="rrh-6P-U9o" secondAttribute="bottom" id="ZUx-uL-HX0"/>
-                            <constraint firstItem="fao-6Z-Y3E" firstAttribute="top" secondItem="v3k-CO-Jvb" secondAttribute="top" constant="5" id="nqV-Mx-7i8"/>
-                            <constraint firstItem="vnG-sw-mjz" firstAttribute="leading" secondItem="fao-6Z-Y3E" secondAttribute="trailing" constant="-6" id="siJ-FS-tiq"/>
-                            <constraint firstItem="rrh-6P-U9o" firstAttribute="leading" secondItem="fao-6Z-Y3E" secondAttribute="trailing" constant="-54" id="zgk-1C-F4c"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -76,15 +67,15 @@
             </constraints>
             <size key="customSize" width="133" height="88"/>
             <connections>
-                <outlet property="background" destination="rrh-6P-U9o" id="wkK-Dr-qIZ"/>
-                <outlet property="puzzleProgress" destination="vnG-sw-mjz" id="UMm-Us-HwS"/>
+                <outlet property="background" destination="rrh-6P-U9o" id="FZb-iw-k7k"/>
+                <outlet property="puzzleImage" destination="BDY-CK-fr1" id="kxL-x9-HOv"/>
                 <outlet property="titleJournal" destination="vP1-tB-H8q" id="zfd-Nm-EgL"/>
             </connections>
             <point key="canvasLocation" x="184.05797101449278" y="77.34375"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="IconDuduk" width="211" height="318"/>
+        <image name="Puzzle Full" width="336" height="432"/>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
