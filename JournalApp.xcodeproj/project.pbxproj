@@ -26,6 +26,10 @@
 		971824732680DDAE00C6BA62 /* TextToText.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 971824722680DDAE00C6BA62 /* TextToText.storyboard */; };
 		9772F79E267B33F400CA1F67 /* AddNewJournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9772F79D267B33F400CA1F67 /* AddNewJournalController.swift */; };
 		97AE7992267A4AD800F5128E /* JournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE7991267A4AD800F5128E /* JournalModel.swift */; };
+		BD7D549526849636007CAFDD /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D549426849636007CAFDD /* UIButton.swift */; };
+		BD7D549726849641007CAFDD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D549626849641007CAFDD /* UIViewController.swift */; };
+		BD7D549926849656007CAFDD /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D549826849656007CAFDD /* UITextView.swift */; };
+		BD7D549B26849663007CAFDD /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D549A26849663007CAFDD /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		971824722680DDAE00C6BA62 /* TextToText.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TextToText.storyboard; sourceTree = "<group>"; };
 		9772F79D267B33F400CA1F67 /* AddNewJournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewJournalController.swift; sourceTree = "<group>"; };
 		97AE7991267A4AD800F5128E /* JournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModel.swift; sourceTree = "<group>"; };
+		BD7D549426849636007CAFDD /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		BD7D549626849641007CAFDD /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		BD7D549826849656007CAFDD /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		BD7D549A26849663007CAFDD /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,7 @@
 		2DE1171A26735718003050BF /* JournalApp */ = {
 			isa = PBXGroup;
 			children = (
+				BD7D54932684961F007CAFDD /* Extensions */,
 				3045C0C5267A53A90062605D /* CoreData */,
 				97AE7990267A4A6300F5128E /* Models */,
 				3045C0B52679EC9F0062605D /* Views */,
@@ -136,6 +145,17 @@
 				97AE7991267A4AD800F5128E /* JournalModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BD7D54932684961F007CAFDD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BD7D549426849636007CAFDD /* UIButton.swift */,
+				BD7D549626849641007CAFDD /* UIViewController.swift */,
+				BD7D549826849656007CAFDD /* UITextView.swift */,
+				BD7D549A26849663007CAFDD /* UIColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,11 +232,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD7D549726849641007CAFDD /* UIViewController.swift in Sources */,
 				3045C0BC2679F7040062605D /* JournalListViewController.swift in Sources */,
+				BD7D549526849636007CAFDD /* UIButton.swift in Sources */,
 				2DE1172026735718003050BF /* ViewController.swift in Sources */,
 				9772F79E267B33F400CA1F67 /* AddNewJournalController.swift in Sources */,
+				BD7D549B26849663007CAFDD /* UIColor.swift in Sources */,
 				2DE1171C26735718003050BF /* AppDelegate.swift in Sources */,
 				3045C0BF2679F7660062605D /* JournalListCell.swift in Sources */,
+				BD7D549926849656007CAFDD /* UITextView.swift in Sources */,
 				97AE7992267A4AD800F5128E /* JournalModel.swift in Sources */,
 				3045C0C3267A53710062605D /* Journal+CoreDataClass.swift in Sources */,
 				3045C0C926809D720062605D /* DashboardViewController.swift in Sources */,
@@ -371,7 +395,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UG27AN3F2U;
+				DEVELOPMENT_TEAM = RMQNS23DVX;
 				INFOPLIST_FILE = JournalApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -390,7 +414,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UG27AN3F2U;
+				DEVELOPMENT_TEAM = RMQNS23DVX;
 				INFOPLIST_FILE = JournalApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
