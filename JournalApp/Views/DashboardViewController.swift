@@ -58,6 +58,14 @@ class DashboardViewController: UIViewController {
     }
     
     func checkTodaysJournal() {
+        if journalList.isEmpty {
+            bgImage.image = UIImage(named: "dashboard1")
+            imageLabel.text = "Duh.. Kamu belum buat catatan hari ini"
+            imageButton.setTitle("Buat Jurnal", for: .normal)
+            // set tujuan button
+            imageButton.addTarget(self, action: #selector(createJournal(_:)), for: .touchUpInside)
+            return
+        }
         let currentDate = Date()
         let lastJournalDate = journalList[0].createDate ?? Date()
         let dateFormatter = DateFormatter()
@@ -118,6 +126,9 @@ class DashboardViewController: UIViewController {
             vc.puzzle3Detail = journalList[journalSelectionIndex].puzzle3Detail ?? ""
             vc.puzzle4Detail = journalList[journalSelectionIndex].puzzle4Detail ?? ""
         }
+        if let vc = segue.destination as? AddNewJournalController {
+            vc.journalSavedDelegate = self
+        }
     }
 
 }
@@ -125,7 +136,7 @@ class DashboardViewController: UIViewController {
 extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        2
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -143,10 +154,11 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
         }
         
         // Configure the cell
+        if journalList.count < 2 {
+            return cell
+        }
         let journal = journalList[indexPath.row]
-        
         cell.configureJournal(with: journal)
-
         return cell
     }
     
@@ -156,4 +168,10 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
         performSegue(withIdentifier: "editRecentJournal", sender: nil)
     }
     
+}
+
+extension DashboardViewController: journalSavedDelegate {
+    func journalSaved() {
+        readData()
+    }
 }
