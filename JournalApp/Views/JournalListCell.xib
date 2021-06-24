@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,13 +20,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="164" height="159"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrh-6P-U9o">
-                                <rect key="frame" x="0.0" y="0.0" width="164" height="136"/>
+                                <rect key="frame" x="5" y="0.0" width="154" height="136"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Puzzle Full" translatesAutoresizingMaskIntoConstraints="NO" id="BDY-CK-fr1">
-                                        <rect key="frame" x="20" y="10" width="124" height="116"/>
+                                        <rect key="frame" x="20" y="10" width="114" height="116"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="BDY-CK-fr1" secondAttribute="trailing" constant="20" id="8dq-p8-r8r"/>
                                     <constraint firstItem="BDY-CK-fr1" firstAttribute="top" secondItem="rrh-6P-U9o" secondAttribute="top" constant="10" id="CIT-x3-cTr"/>
@@ -47,10 +45,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rrh-6P-U9o" firstAttribute="leading" secondItem="v3k-CO-Jvb" secondAttribute="leading" id="DTP-u6-1p5"/>
+                            <constraint firstItem="rrh-6P-U9o" firstAttribute="leading" secondItem="v3k-CO-Jvb" secondAttribute="leading" constant="5" id="DTP-u6-1p5"/>
                             <constraint firstAttribute="bottom" secondItem="rrh-6P-U9o" secondAttribute="bottom" constant="23" id="DZG-hM-UAs"/>
                             <constraint firstItem="rrh-6P-U9o" firstAttribute="top" secondItem="v3k-CO-Jvb" secondAttribute="top" id="DnW-Zp-V8k"/>
-                            <constraint firstAttribute="trailing" secondItem="rrh-6P-U9o" secondAttribute="trailing" id="Lzp-fT-dSG"/>
+                            <constraint firstAttribute="trailing" secondItem="rrh-6P-U9o" secondAttribute="trailing" constant="5" id="Lzp-fT-dSG"/>
                             <constraint firstItem="vP1-tB-H8q" firstAttribute="leading" secondItem="v3k-CO-Jvb" secondAttribute="leading" constant="32" id="Skk-A8-6qG"/>
                             <constraint firstAttribute="trailing" secondItem="vP1-tB-H8q" secondAttribute="trailing" constant="32" id="W4y-bP-Y1v"/>
                             <constraint firstAttribute="bottom" secondItem="vP1-tB-H8q" secondAttribute="bottom" id="b7l-ie-MRf"/>
@@ -76,8 +74,5 @@
     </objects>
     <resources>
         <image name="Puzzle Full" width="336" height="432"/>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

@@ -19,8 +19,14 @@ class JournalListCell: UICollectionViewCell {
         // Initialization code
         background.layer.cornerRadius = 40
         background.backgroundColor = .white
-        background.layer.borderColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
-        background.layer.borderWidth = 3
+//        background.layer.borderColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
+//        background.layer.borderWidth = 3
+        background.layer.shadowColor = UIColor.black.cgColor
+        background.layer.shadowOffset = CGSize(width: 10.0, height: 5.0)
+        background.layer.shadowRadius = 3
+        background.layer.shadowOpacity = 0.5
+        background.layer.masksToBounds = false;
+        background.layer.shadowPath = UIBezierPath(roundedRect:background.bounds, cornerRadius:background.layer.cornerRadius).cgPath
         
         titleJournal.adjustsFontSizeToFitWidth = true
         titleJournal.minimumScaleFactor = 0.2
