@@ -24,6 +24,10 @@
 		3045C0C7267B2F9F0062605D /* JournalPuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045C0C6267B2F9F0062605D /* JournalPuzzleViewController.swift */; };
 		9772F79E267B33F400CA1F67 /* AddNewJournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9772F79D267B33F400CA1F67 /* AddNewJournalController.swift */; };
 		97AE7992267A4AD800F5128E /* JournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE7991267A4AD800F5128E /* JournalModel.swift */; };
+		BD413B08268471CE002917E9 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD413B07268471CE002917E9 /* UIButton.swift */; };
+		BD413B0A26847A39002917E9 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD413B0926847A39002917E9 /* UIViewController.swift */; };
+		BD413B0C26847B21002917E9 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD413B0B26847B21002917E9 /* UITextView.swift */; };
+		BD413B10268489BE002917E9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD413B0F268489BE002917E9 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		3045C0C6267B2F9F0062605D /* JournalPuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalPuzzleViewController.swift; sourceTree = "<group>"; };
 		9772F79D267B33F400CA1F67 /* AddNewJournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewJournalController.swift; sourceTree = "<group>"; };
 		97AE7991267A4AD800F5128E /* JournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModel.swift; sourceTree = "<group>"; };
+		BD413B07268471CE002917E9 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		BD413B0926847A39002917E9 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		BD413B0B26847B21002917E9 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		BD413B0F268489BE002917E9 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,7 @@
 		2DE1171A26735718003050BF /* JournalApp */ = {
 			isa = PBXGroup;
 			children = (
+				BD413B05268470EF002917E9 /* Extensions */,
 				3045C0C5267A53A90062605D /* CoreData */,
 				97AE7990267A4A6300F5128E /* Models */,
 				3045C0B52679EC9F0062605D /* Views */,
@@ -130,6 +139,17 @@
 				97AE7991267A4AD800F5128E /* JournalModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BD413B05268470EF002917E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BD413B07268471CE002917E9 /* UIButton.swift */,
+				BD413B0926847A39002917E9 /* UIViewController.swift */,
+				BD413B0B26847B21002917E9 /* UITextView.swift */,
+				BD413B0F268489BE002917E9 /* UIColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,13 +229,17 @@
 				2DE1172026735718003050BF /* ViewController.swift in Sources */,
 				9772F79E267B33F400CA1F67 /* AddNewJournalController.swift in Sources */,
 				2DE1171C26735718003050BF /* AppDelegate.swift in Sources */,
+				BD413B10268489BE002917E9 /* UIColor.swift in Sources */,
 				3045C0BF2679F7660062605D /* JournalListCell.swift in Sources */,
 				97AE7992267A4AD800F5128E /* JournalModel.swift in Sources */,
 				3045C0C3267A53710062605D /* Journal+CoreDataClass.swift in Sources */,
+				BD413B0C26847B21002917E9 /* UITextView.swift in Sources */,
+				BD413B0A26847A39002917E9 /* UIViewController.swift in Sources */,
 				2DE1171E26735718003050BF /* SceneDelegate.swift in Sources */,
 				3045C0C4267A53710062605D /* Journal+CoreDataProperties.swift in Sources */,
 				3045C0C7267B2F9F0062605D /* JournalPuzzleViewController.swift in Sources */,
 				2DE1172626735718003050BF /* JournalApp.xcdatamodeld in Sources */,
+				BD413B08268471CE002917E9 /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
