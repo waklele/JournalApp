@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="onboarding" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="OnboardingViewController" customModule="JournalApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Sp-Yu-Mie">
+                                <rect key="frame" x="0.0" y="30" width="390" height="664.33333333333337"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="AlI-8L-Pdf">
+                                    <size key="itemSize" width="413" height="698"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnboardingCollectionViewCell" id="OBp-rh-P7j" customClass="OnboardingCollectionViewCell" customModule="JournalApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-16.666666666666668" width="413" height="698"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="i6g-0T-peP">
+                                            <rect key="frame" x="0.0" y="0.0" width="413" height="698"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qdt-L0-Lbf">
+                                                    <rect key="frame" x="16" y="589" width="381" height="121"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum Lorem" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twW-SD-qub">
+                                                            <rect key="frame" x="59.333333333333343" y="0.0" width="262.33333333333326" height="56.666666666666664"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5qi-56-Sxo">
+                                                            <rect key="frame" x="10" y="56.666666666666664" width="361" height="64.333333333333343"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="5qi-56-Sxo" firstAttribute="top" secondItem="twW-SD-qub" secondAttribute="bottom" constant="5" id="yrE-cf-kok"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Onboarding1" id="0Wu-gL-tlM">
+                                                    <rect key="frame" x="0.0" y="37" width="390" height="542"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qdt-L0-Lbf" firstAttribute="leading" secondItem="i6g-0T-peP" secondAttribute="leading" constant="16" id="1sh-4Y-RkY"/>
+                                                <constraint firstAttribute="trailing" secondItem="qdt-L0-Lbf" secondAttribute="trailing" constant="16" id="6cY-ga-ZnN"/>
+                                                <constraint firstItem="qdt-L0-Lbf" firstAttribute="top" secondItem="0Wu-gL-tlM" secondAttribute="bottom" constant="10" id="WpD-70-Onm"/>
+                                                <constraint firstItem="qdt-L0-Lbf" firstAttribute="leading" secondItem="i6g-0T-peP" secondAttribute="leading" constant="16" id="i80-XL-vO9"/>
+                                                <constraint firstAttribute="trailing" secondItem="qdt-L0-Lbf" secondAttribute="trailing" constant="16" id="mRs-Mx-Cdv"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="413" height="698"/>
+                                        <connections>
+                                            <outlet property="slideDescription" destination="5qi-56-Sxo" id="7mt-L0-OU0"/>
+                                            <outlet property="slideImageView" destination="0Wu-gL-tlM" id="oNz-iR-R68"/>
+                                            <outlet property="slideLabel" destination="twW-SD-qub" id="AJz-g1-raf"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBT-zX-lKa">
+                                <rect key="frame" x="16" y="749" width="358" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="adF-cP-cB4"/>
+                                </constraints>
+                                <state key="normal" title="Berikutnya">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextBtnClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VBF-wr-5V5"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="hi5-V8-0nw">
+                                <rect key="frame" x="135" y="702.66666666666663" width="120.33333333333331" height="26.333333333333371"/>
+                                <color key="pageIndicatorTintColor" systemColor="systemGray6Color"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IBT-zX-lKa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="0E1-Wf-UNX"/>
+                            <constraint firstItem="hi5-V8-0nw" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="9fN-Y0-ffD"/>
+                            <constraint firstItem="6Sp-Yu-Mie" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="BnZ-Ix-umC"/>
+                            <constraint firstItem="6Sp-Yu-Mie" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="30" id="DCH-U4-8V2"/>
+                            <constraint firstAttribute="bottom" secondItem="IBT-zX-lKa" secondAttribute="bottom" constant="40" id="GWV-AL-Z2j"/>
+                            <constraint firstItem="6Sp-Yu-Mie" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="KGm-gg-Xfb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="IBT-zX-lKa" secondAttribute="trailing" constant="16" id="Xwn-q3-4Hf"/>
+                            <constraint firstItem="hi5-V8-0nw" firstAttribute="top" secondItem="6Sp-Yu-Mie" secondAttribute="bottom" constant="8.5" id="vEX-PS-OWh"/>
+                            <constraint firstItem="IBT-zX-lKa" firstAttribute="top" secondItem="hi5-V8-0nw" secondAttribute="bottom" constant="20" id="xOf-DX-5M3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="6Sp-Yu-Mie" id="xVd-pm-tUn"/>
+                        <outlet property="nextBtn" destination="IBT-zX-lKa" id="oof-ev-ufY"/>
+                        <outlet property="pageCtr" destination="hi5-V8-0nw" id="46U-dP-z4E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.76923076923077" y="87.440758293838854"/>
+        </scene>
+        <!--dashboard-->
+        <scene sceneID="Egt-sb-l5V">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="dashboard" storyboardName="Main" referencedIdentifier="dashboard" id="Yc1-55-uRf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dVf-Ia-ts0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786" y="51"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Onboarding1" width="298" height="356"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
