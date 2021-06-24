@@ -83,11 +83,12 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
             
             let entity = NSEntityDescription.entity(forEntityName: "Journal", in: managedObjectContext)
             let newJournal = NSManagedObject(entity: entity!, insertInto: managedObjectContext)
-            // id here
             
             if titleTextField.text == "Insert title here..." || detailsTextView.text == "Insert detail here..." {
                 print("Isi dulu")
             } else {
+                
+                // id here
                 newJournal.setValue(titleTextField.text, forKey: "title")
                 newJournal.setValue(detailsTextView.text, forKey: "puzzle1Detail")
                 //set date

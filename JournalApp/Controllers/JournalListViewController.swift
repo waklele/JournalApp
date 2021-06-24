@@ -52,6 +52,27 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
         self.collectionView.reloadData()
     }
     
+    func removeData(dataId : Int) {
+        let journalRequestResult = NSFetchRequest<NSFetchRequestResult>(entityName: "Journal")
+        //journalRequestResult.predicate = NSPredicate(format: "id = %d", dataId)
+        
+        do {
+            let objects = try managedObjectContext.fetch(journalRequestResult)
+            let objectToBeDeleted = objects[0] as! NSManagedObject
+            managedObjectContext.delete(objectToBeDeleted)
+            print("data deleted")
+            
+            do {
+                try managedObjectContext.save()
+            } catch {
+                print("error when saving the data after deletion")
+            }
+        } catch {
+            print("Error when deleting the data!")
+        }
+        readData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? AddNewJournalController {
             vc.journalSavedDelegate = self
@@ -116,10 +137,24 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
             
             let delete = UIAction(title: "delete", image: UIImage(systemName: "trash"), attributes: .destructive) { (_) in
                 //
+                self.showDeleteWarning(dataId: indexPath.row)
             }
             
             return UIMenu(title: "", children: [delete])
         }
+    }
+    
+    func showDeleteWarning(dataId: Int) {
+        let alert = UIAlertController(title: "Warning", message: "Are you sure to delete this journal?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+            DispatchQueue.main.async {
+                self.removeData(dataId: dataId)
+            }
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(deleteAction)
+        present(alert, animated: true, completion: nil)
     }
 }
 
