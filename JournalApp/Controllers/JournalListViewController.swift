@@ -109,7 +109,18 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
         journalSelectionIndex = indexPath.row
         performSegue(withIdentifier: "editJournal", sender: nil)
     }
-
+    
+    override func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { suggestedAction in
+            
+            let delete = UIAction(title: "delete", image: UIImage(systemName: "trash"), attributes: .destructive) { (_) in
+                //
+            }
+            
+            return UIMenu(title: "", children: [delete])
+        }
+    }
 }
 
 extension JournalListViewController: journalSavedDelegate {
