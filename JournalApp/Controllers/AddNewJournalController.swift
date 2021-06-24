@@ -107,10 +107,3 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
     
     
 }
-
-extension AddNewJournalController {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-}
