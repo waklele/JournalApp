@@ -87,6 +87,20 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? JournalPuzzleViewController {
+            // id here
+            var incrementId = 0
+            if journalList.count == 0 {
+                incrementId = 1
+            } else {
+                incrementId = Int(journalList.last!.id + 1)
+            }
+            vc.title = titleTextField.text
+            vc.dataId = Int64(incrementId)
+            vc.puzzle1Detail = detailsTextView.text
+        }
+    }
 }
 
 extension AddNewJournalController {
