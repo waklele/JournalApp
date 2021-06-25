@@ -137,7 +137,8 @@ class DashboardViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? JournalPuzzleViewController {
-            vc.title = journalList[journalSelectionIndex].title 
+            vc.title = journalList[journalSelectionIndex].title
+            vc.dataId = journalList[journalSelectionIndex].id
             vc.puzzle1Detail = journalList[journalSelectionIndex].puzzle1Detail ?? ""
             vc.puzzle2Detail = journalList[journalSelectionIndex].puzzle2Detail ?? ""
             vc.puzzle3Detail = journalList[journalSelectionIndex].puzzle3Detail ?? ""
@@ -192,7 +193,7 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("\(journalList[indexPath.row].title)")
+        print(journalList[indexPath.row])
         journalSelectionIndex = indexPath.row
         performSegue(withIdentifier: "editRecentJournal", sender: nil)
     }
