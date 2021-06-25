@@ -2,7 +2,7 @@
 //  Journal+CoreDataClass.swift
 //  JournalApp
 //
-//  Created by Muhammad Rizki Miftha Alhamid on 6/16/21.
+//  Created by Muhammad Rizki Miftha Alhamid on 6/25/21.
 //
 //
 
