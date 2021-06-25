@@ -153,6 +153,12 @@ class DashboardViewController: UIViewController {
 extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if journalList.count == 0 {
+            return 0
+        }
+        if journalList.count == 1 {
+            return 1
+        }
         return 2
     }
     
@@ -169,9 +175,9 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
         }
         
         // Configure the cell
-        if journalList.count < 2 {
-            return cell
-        }
+//        if journalList.count < 2 {
+//            return cell
+//        }
         let journal = journalList[indexPath.row]
         cell.configureJournal(with: journal)
         return cell
