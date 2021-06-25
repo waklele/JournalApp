@@ -75,9 +75,10 @@ class MakingConnectionsViewController: UIViewController, UITextViewDelegate {
     @IBAction func saveConnection(_ sender: Any) {
         let journalRequestResult = NSFetchRequest<NSFetchRequestResult>(entityName: "Journal")
         journalRequestResult.predicate = NSPredicate(format: "id = %d", dataId)
-        
+        print(dataId)
         do {
             let objects = try managedObjectContext.fetch(journalRequestResult)
+            print(objects[0])
             let objectToBeEdited = objects[0] as! NSManagedObject
             
 //            objectToBeEdited.setValue(dataId, forKey: "id")

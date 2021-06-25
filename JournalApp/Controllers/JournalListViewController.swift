@@ -54,13 +54,13 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
     
     func removeData(dataId : Int) {
         let journalRequestResult = NSFetchRequest<NSFetchRequestResult>(entityName: "Journal")
-        //journalRequestResult.predicate = NSPredicate(format: "id = %d", dataId)
+        journalRequestResult.predicate = NSPredicate(format: "id = %d", dataId)
         print("\(dataId)")
         do {
             let objects = try managedObjectContext.fetch(journalRequestResult)
             let objectToBeDeleted = objects[0] as! NSManagedObject
             
-            //managedObjectContext.delete(objectToBeDeleted)
+            managedObjectContext.delete(objectToBeDeleted)
             print("data deleted")
             
             do {
@@ -80,6 +80,7 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
         }
         if let vc = segue.destination as? JournalPuzzleViewController {
             vc.title = journalList[journalSelectionIndex].title
+            vc.dataId = journalList[journalSelectionIndex].id
             vc.puzzle1Detail = journalList[journalSelectionIndex].puzzle1Detail ?? ""
             vc.puzzle2Detail = journalList[journalSelectionIndex].puzzle2Detail ?? ""
             vc.puzzle3Detail = journalList[journalSelectionIndex].puzzle3Detail ?? ""
@@ -139,7 +140,7 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
             let delete = UIAction(title: "delete", image: UIImage(systemName: "trash"), attributes: .destructive) { (_) in
                 //
                 print(self.journalList[indexPath.row])
-                //self.showDeleteWarning(dataId: self.journalList[indexPath.row].id!)
+                self.showDeleteWarning(dataId: Int(self.journalList[indexPath.row].id))
             }
             
             return UIMenu(title: "", children: [delete])

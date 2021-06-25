@@ -90,10 +90,12 @@ class JournalPuzzleViewController: UIViewController {
                 let vc = storyboard.instantiateViewController(identifier: "viewConnections") as! ViewConnectionsViewController
                 vc.puzzleType = 1
                 vc.puzzle2Detail = puzzle2Detail
+                vc.dataId = dataId
                 self.show(vc, sender: nil)
             } else {
                 let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
                 vc.puzzleType = 1
+                vc.dataId = dataId
                 self.show(vc, sender: nil)
             }
         } else if z1per > 50 && z2per > 50 {
@@ -102,10 +104,12 @@ class JournalPuzzleViewController: UIViewController {
                 let vc = storyboard.instantiateViewController(identifier: "viewConnections") as! ViewConnectionsViewController
                 vc.puzzleType = 2
                 vc.puzzle3Detail = puzzle3Detail
+                vc.dataId = dataId
                 self.show(vc, sender: nil)
             } else {
                 let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
                 vc.puzzleType = 2
+                vc.dataId = dataId
                 self.show(vc, sender: nil)
             }
         } else if z1per < 50 && z2per < 50 {
@@ -117,10 +121,12 @@ class JournalPuzzleViewController: UIViewController {
                 let vc = storyboard.instantiateViewController(identifier: "viewConnections") as! ViewConnectionsViewController
                 vc.puzzleType = 3
                 vc.puzzle4Detail = puzzle4Detail
+                vc.dataId = dataId
                 self.show(vc, sender: nil)
             } else {
                 let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
                 vc.puzzleType = 3
+                vc.dataId = dataId
                 self.show(vc, sender: nil)
             }
         }

@@ -102,7 +102,7 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
                 if journalList.count == 0 {
                     incrementId = 1
                 } else {
-                    incrementId = Int(journalList.last!.id) + 1
+                    incrementId = Int(journalList.last!.id + 1)
                 }
                 
                 newJournal.setValue(incrementId, forKey: "id")
