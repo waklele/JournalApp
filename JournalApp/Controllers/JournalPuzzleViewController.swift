@@ -10,6 +10,7 @@ import UIKit
 class JournalPuzzleViewController: UIViewController {
     @IBOutlet weak var puzzle: UIImageView!
     
+    public var dataId: Int64 = 0
     public var readingTitle = String()
     public var puzzle1Detail = String()
     public var puzzle2Detail = String()
@@ -80,18 +81,47 @@ class JournalPuzzleViewController: UIViewController {
 
          print("After Alert Touched point (\(z1per), \(z2per)")
         
+        let storyboard = UIStoryboard(name: "MakingConnections", bundle: nil)
+        
         if z1per > 50 && z2per < 50 {
             print("Kanan atas")
-            
+            if !puzzle2Detail.isEmpty {
+                let vc = storyboard.instantiateViewController(identifier: "viewConnections") as! ViewConnectionsViewController
+                vc.puzzleType = 1
+                vc.puzzle2Detail = puzzle2Detail
+                self.show(vc, sender: nil)
+            } else {
+                let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
+                vc.puzzleType = 1
+                self.show(vc, sender: nil)
+            }
         } else if z1per > 50 && z2per > 50 {
             print("Kanan bawah")
-            let vc = UIStoryboard.init(name: "MakingConnections", bundle: Bundle.main).instantiateViewController(withIdentifier: "makingConnections")
-            self.navigationController?.pushViewController(vc, animated: true)
+            if !puzzle3Detail.isEmpty {
+                let vc = storyboard.instantiateViewController(identifier: "viewConnections") as! ViewConnectionsViewController
+                vc.puzzleType = 2
+                vc.puzzle3Detail = puzzle3Detail
+                self.show(vc, sender: nil)
+            } else {
+                let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
+                vc.puzzleType = 2
+                self.show(vc, sender: nil)
+            }
         } else if z1per < 50 && z2per < 50 {
             print("Kiri atas")
-            //edit
+            //storyboard sendiri aja
         } else {
             print("Kiri bawah")
+            if !puzzle2Detail.isEmpty {
+                let vc = storyboard.instantiateViewController(identifier: "viewConnections") as! ViewConnectionsViewController
+                vc.puzzleType = 3
+                vc.puzzle4Detail = puzzle4Detail
+                self.show(vc, sender: nil)
+            } else {
+                let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
+                vc.puzzleType = 3
+                self.show(vc, sender: nil)
+            }
         }
    }
     

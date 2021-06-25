@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Connections View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="makingConnections" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viewConnections" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ViewConnectionsViewController" customModule="JournalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,25 +43,26 @@
                             <constraint firstItem="VJz-jg-MMs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="kSO-Et-jcO"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="kI1-1l-ByT">
+                        <barButtonItem key="rightBarButtonItem" title="Ubah" id="O8N-SM-cdQ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="detailsTextView" destination="VJz-jg-MMs" id="9Q3-YC-pzV"/>
+                        <outlet property="promptLabel" destination="c8s-2C-iHF" id="gpc-JK-9Zg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141" y="34"/>
+            <point key="canvasLocation" x="1050.7246376811595" y="33.482142857142854"/>
         </scene>
-        <!--View Controller-->
+        <!--Making Connections View Controller-->
         <scene sceneID="kql-jq-FeS">
             <objects>
-                <viewController id="AnL-VI-pie" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editConnections" id="AnL-VI-pie" customClass="MakingConnectionsViewController" customModule="JournalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qsl-Ww-xfS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lf8-53-nYL">
-                                <rect key="frame" x="20" y="224" width="382" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jt-KQ-uwK">
                                 <rect key="frame" x="20" y="273" width="66.5" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -78,16 +79,9 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tambah Jurnal Baru Dong" translatesAutoresizingMaskIntoConstraints="NO" id="j4z-2g-hiv">
-                                <rect key="frame" x="20" y="57" width="382" height="141"/>
+                                <rect key="frame" x="20" y="57" width="382" height="208"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmV-nh-m05">
-                                <rect key="frame" x="20" y="188" width="42" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UpV-iN-49H">
                                 <rect key="frame" x="20" y="785" width="382" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -95,6 +89,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveConnection:" destination="AnL-VI-pie" eventType="touchUpInside" id="1AU-Of-USw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LN-7j-yCi">
                                 <rect key="frame" x="353" y="721" width="35" height="34"/>
@@ -108,10 +105,16 @@
                         <viewLayoutGuide key="safeArea" id="e7y-fW-BUB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="P0a-b6-bMH"/>
+                    <connections>
+                        <outlet property="detailsTextView" destination="zXb-hg-PZI" id="cGg-Q2-WHn"/>
+                        <outlet property="promptImage" destination="j4z-2g-hiv" id="2Pk-0r-lZf"/>
+                        <outlet property="saveButton" destination="UpV-iN-49H" id="zfp-eM-Zwy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ctt-1u-aUg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1019" y="33"/>
+            <point key="canvasLocation" x="2101" y="33"/>
         </scene>
     </scenes>
     <resources>
