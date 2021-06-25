@@ -151,13 +151,11 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
         return 2
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let inset:CGFloat = 10
-        return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width/2-20, height: 162)
+        let width = collectionView.frame.size.width / 2
+        let height = collectionView.frame.size.height * 0.95
+        
+        return CGSize(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -172,6 +170,14 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
         let journal = journalList[indexPath.row]
         cell.configureJournal(with: journal)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
