@@ -14,6 +14,7 @@ protocol journalSavedDelegate: class {
 }
 
 class AddNewJournalController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
+    
     @IBOutlet weak var detailsTextView: UITextView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
@@ -21,17 +22,17 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
     
     var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     var appDelegate = UIApplication.shared.delegate as? AppDelegate
-    
-    
-    
-    private var speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "id-ID"))
-    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
-    private var recognitionTask: SFSpeechRecognitionTask?
-    private var audioEngine = AVAudioEngine()
-    var lang: String = "id-ID"
-    
     var journalList = [Journal]()
     var journalSavedDelegate: journalSavedDelegate?
+    
+    // MARK - Local properties
+    let audioEngine = AVAudioEngine()
+    let speechReconizer : SFSpeechRecognizer? = SFSpeechRecognizer(locale: Locale.init(identifier: "id-ID"))
+    let request = SFSpeechAudioBufferRecognitionRequest()
+    var task : SFSpeechRecognitionTask?
+    var isStart : Bool = false
+    
+    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,47 +42,11 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
         
         titleTextField.layer.cornerRadius = 5
         titleTextField.delegate = self
-        titleTextField.text = "Insert title here..."
-        titleTextField.textColor = UIColor.lightGray
         
         detailsTextView.layer.cornerRadius = 5
         detailsTextView.delegate = self
-        detailsTextView.text = "Insert detail here..."
-        detailsTextView.textColor = UIColor.lightGray
-        
-        startStopBtn.isEnabled = false
-        speechRecognizer?.delegate = self as? SFSpeechRecognizerDelegate
-        speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: lang))
-        SFSpeechRecognizer.requestAuthorization { (authStatus) in  //4
-                    
-                    var isButtonEnabled = false
-                    
-                    switch authStatus {  //5
-                    case .authorized:
-                        isButtonEnabled = true
-                        
-                    case .denied:
-                        isButtonEnabled = false
-                        print("User denied access to speech recognition")
-                        
-                    case .restricted:
-                        isButtonEnabled = false
-                        print("Speech recognition restricted on this device")
-                        
-                    case .notDetermined:
-                        isButtonEnabled = false
-                        print("Speech recognition not yet authorized")
-                        
-                    @unknown default:
-                        print("Error")
-                    }
-                    
-                    OperationQueue.main.addOperation() {
-                        self.startStopBtn.isEnabled = isButtonEnabled
-                    }
-                }
 
-        
+        requestPermision()
         managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
     }
     
@@ -124,136 +89,111 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
 }
 
 extension AddNewJournalController {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if titleTextField.textColor == UIColor.lightGray {
-            titleTextField.text = ""
-            titleTextField.textColor = UIColor.black
+    
+    @IBAction func startStopAct(_ sender: UIButton) {
+        isStart = !isStart
+        
+        if isStart {
+            startSpeechRecognition()
+            startStopBtn.setImage(UIImage(systemName: "stop.circle"), for: .normal)
+        } else {
+            cancelSpeechRecognition()
+            startStopBtn.setImage(UIImage(systemName: "mic.circle"), for: .normal)
         }
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if titleTextField.text == "" {
-
-            titleTextField.text = "Insert title here..."
-            titleTextField.textColor = UIColor.lightGray
-        }
-    }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if detailsTextView.textColor == UIColor.lightGray {
-            detailsTextView.text = ""
-            detailsTextView.textColor = UIColor.black
-        }
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-
-        if detailsTextView.text == "" {
-            detailsTextView.text = "Insert detail here..."
-            detailsTextView.textColor = UIColor.lightGray
-        }
-    }
-    
-    @IBAction func startStopAct(_ sender: Any) {
-        speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: lang))
-                
-                if audioEngine.isRunning {
-                    audioEngine.stop()
-                    recognitionRequest?.endAudio()
-                    startStopBtn.isEnabled = false
-//                    startStopBtn.setTitle("Start Recording", for: .normal)
-                } else {
-                    startRecording()
-//                    startStopBtn.setTitle("Stop Recording", for: .normal)
-                }
-    }
-    
-    func startRecording() {
-            
-            if recognitionTask != nil {
-                recognitionTask?.cancel()
-                recognitionTask = nil
-            }
-            
-            let audioSession = AVAudioSession.sharedInstance()
-            do {
-                try audioSession.setCategory(AVAudioSession.Category.record)
-                try audioSession.setMode(AVAudioSession.Mode.measurement)
-                try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
-            } catch {
-                print("audioSession properties weren't set because of an error.")
-            }
-            
-            recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
-            
-            let inputNode = audioEngine.inputNode
-            
-            guard let recognitionRequest = recognitionRequest else {
-                fatalError("Unable to create an SFSpeechAudioBufferRecognitionRequest object")
-            }
-            
-            recognitionRequest.shouldReportPartialResults = true
-            
-            recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
-                
-                var isFinal = false
-                
-                if result != nil {
-                    
-                    
-                    let nextString = result?.bestTranscription.formattedString
-                    print("NEXT: ",nextString!)
-                    
-                    isFinal = (result?.isFinal)!
-                    if isFinal {
-                        var prevString = self.detailsTextView.text
-                        print("PREV: ",prevString!)
-                        
-                        if prevString?.last == " " {
-                            prevString!.removeLast()
-                        }
-                        
-                        self.detailsTextView.text = "\(prevString ?? "") \(nextString ?? "")"
-                    }
-                }
-                
-                if error != nil || isFinal {
-                    self.audioEngine.stop()
-                    inputNode.removeTap(onBus: 0)
-                    
-                    self.recognitionRequest = nil
-                    self.recognitionTask = nil
-                    
+    func requestPermision() {
+        self.startStopBtn.isEnabled = false
+        SFSpeechRecognizer.requestAuthorization { authState in
+            OperationQueue.main.addOperation {
+                if authState == .authorized {
                     self.startStopBtn.isEnabled = true
+                } else if authState == .denied {
+                    self.alertView(message: "User denied the permission")
+                } else if authState == .notDetermined {
+                    self.alertView(message: "In User phone there is no speech recognition")
+                } else if authState == .restricted {
+                    self.alertView(message: "User has been restricted for using the speech recognization")
                 }
-            })
-            
-            let recordingFormat = inputNode.outputFormat(forBus: 0)
-            inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
-                self.recognitionRequest?.append(buffer)
             }
-            
-            audioEngine.prepare()
-            
-            do {
-                try audioEngine.start()
-            } catch {
-                print("audioEngine couldn't start because of an error.")
-            }
-            
-//            textView1.text = "Say something, I'm listening!"
-//            textView2.text = "Say something, I'm listening!"
-//            textField3.text = "Say something, I'm listening!"
-            
+        }
+    }
+
+    func startSpeechRecognition() {
+        print("Speech Recognition has been started")
+        let node = audioEngine.inputNode
+        let recordingFormat = node.outputFormat(forBus: 0)
+        node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, _) in
+            self.request.append(buffer)
         }
         
-        func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
-            if available {
-                print("Available...")
-                startStopBtn.isEnabled = true
-            } else {
-                print("Unavailable...")
-                startStopBtn.isEnabled = false
-            }
+        audioEngine.prepare()
+        do {
+            try audioEngine.start()
+        } catch let error {
+            alertView(message: "Error comes here for starting the audio listener \(error.localizedDescription)")
         }
+        
+        guard let myRecognization = SFSpeechRecognizer() else {
+            self.alertView(message: "Recognization is not allow on your local")
+            return
+        }
+        
+        if !myRecognization.isAvailable {
+            self.alertView(message: "Recognition is free right now, please try again after some time.")
+        }
+        
+        task = speechReconizer?.recognitionTask(with: request, resultHandler: { response, error in
+            guard let response = response else {
+                if error != nil {
+                    self.alertView(message: error.debugDescription)
+                } else {
+                    self.alertView(message: "Problem in giving the response")
+                }
+                return
+            }
+
+
+            let message = response.bestTranscription.formattedString
+            print("MESSAGE: ", message)
+
+            if response.isFinal {
+                var prevString = self.detailsTextView.text
+                print("PREV: ", prevString!)
+
+                if prevString?.last == " " {
+                    prevString!.removeLast()
+                }
+
+                self.detailsTextView.text = "\(prevString ?? "") \(message )"
+            }
+        })
+    }
+    
+    func cancelSpeechRecognition() {
+        task?.finish()
+        task?.cancel()
+        task = nil
+        
+        request.endAudio()
+        audioEngine.stop()
+        audioEngine.inputNode.removeTap(onBus: 0)
+        print("Speech Recognition has been shuted down")
+    }
+    
+    func alertView(message: String) {
+        let controller = UIAlertController.init(title: "Error occured...!", message: message, preferredStyle: .alert)
+        controller.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            controller.dismiss(animated: true, completion: nil)
+        }))
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    func restartSpeechTimer() {
+        timer.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { (timer) in
+            self.cancelSpeechRecognition()
+        })
+    }
+
 }
