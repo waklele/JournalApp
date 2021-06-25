@@ -38,12 +38,18 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         saveButton.roundedButton(radius: 10)
+        saveButton.isEnabled = false
+        saveButton.backgroundColor = UIColor.systemGray3
         self.title = ""
         
-        titleTextField.layer.cornerRadius = 5
+        titleTextField.layer.cornerRadius = 8
+        titleTextField.placeholder = "Apa yang judul yang kamu baca hari ini?"
         titleTextField.delegate = self
         
-        detailsTextView.layer.cornerRadius = 5
+        detailsTextView.layer.cornerRadius = 8
+        detailsTextView.text = "Coba ceritakan kembali apa yang kamu baca"
+        detailsTextView.textColor = UIColor.systemGray3
+        detailsTextView.font = UIFont.preferredFont(forTextStyle: .body)
         detailsTextView.delegate = self
 
         requestPermision()
@@ -58,11 +64,9 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
             let entity = NSEntityDescription.entity(forEntityName: "Journal", in: managedObjectContext)
             let newJournal = NSManagedObject(entity: entity!, insertInto: managedObjectContext)
             
-            if titleTextField.text == "Insert title here..." || detailsTextView.text == "Insert detail here..." {
-                print("Isi dulu")
-            } else {
-                
-                // id here
+            if titleTextField.text != "Apa yang judul yang kamu baca hari ini?" && detailsTextView.text != "Coba ceritakan kembali apa yang kamu baca" && titleTextField.text != "" && detailsTextView.text != "" {
+              
+                // Generate ID
                 var incrementId = 0
                 if journalList.count == 0 {
                     incrementId = 1
@@ -196,5 +200,34 @@ extension AddNewJournalController {
             self.cancelSpeechRecognition()
         })
     }
-
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if detailsTextView.textColor == UIColor.systemGray3 || detailsTextView.text == "Coba ceritakan kembali apa yang kamu baca" {
+            detailsTextView.text = ""
+            detailsTextView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        self.validateText()
+        
+        if detailsTextView.text == "" {
+            detailsTextView.text = "Coba ceritakan kembali apa yang kamu baca"
+            detailsTextView.textColor = UIColor.lightGray
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.validateText()
+    }
+    
+    func validateText() {
+        if titleTextField.text != "" && detailsTextView.textColor != UIColor.systemGray3 && detailsTextView.text != "Coba ceritakan kembali apa yang kamu baca" && detailsTextView.text != "" {
+            saveButton.isEnabled = true
+            saveButton.backgroundColor = UIColor(red: 221/255, green: 66/255, blue: 123/255, alpha: 100)
+        } else {
+            saveButton.isEnabled = false
+            saveButton.backgroundColor = UIColor.systemGray3
+        }
+    }
 }
