@@ -44,6 +44,11 @@ class DashboardViewController: UIViewController {
         checkTodaysJournal()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        readData()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
