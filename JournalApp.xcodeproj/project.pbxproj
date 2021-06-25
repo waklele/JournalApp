@@ -39,7 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2DE1171826735718003050BF /* JournalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DE1171826735718003050BF /* Nozzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nozzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE1171B26735718003050BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DE1171D26735718003050BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2DE1171F26735718003050BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		2DE1171926735718003050BF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2DE1171826735718003050BF /* JournalApp.app */,
+				2DE1171826735718003050BF /* Nozzle.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,7 +193,7 @@
 			);
 			name = JournalApp;
 			productName = JournalApp;
-			productReference = 2DE1171826735718003050BF /* JournalApp.app */;
+			productReference = 2DE1171826735718003050BF /* Nozzle.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -426,7 +426,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = id.infinitelearning.teammoneymaker.JournalApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Nozzle;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -445,7 +445,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = id.infinitelearning.teammoneymaker.JournalApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Nozzle;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
