@@ -106,3 +106,20 @@ class MakingConnectionsViewController: UIViewController, UITextViewDelegate {
         navigationController?.popViewController(animated: true)
     }
 }
+
+extension MakingConnectionsViewController {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if detailsTextView.textColor == UIColor.lightGray {
+            detailsTextView.text = ""
+            detailsTextView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+
+        if detailsTextView.text == "" {
+            detailsTextView.text = "Insert detail here..."
+            detailsTextView.textColor = UIColor.lightGray
+        }
+    }
+}
