@@ -23,6 +23,7 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
     var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     var appDelegate = UIApplication.shared.delegate as? AppDelegate
     var journalList = [Journal]()
+    var journalCount = [Journal]()
     var journalSavedDelegate: journalSavedDelegate?
     
     // MARK - Local properties
@@ -82,6 +83,7 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
                 newJournal.setValue(NSDate.now, forKey: "lastUpdateDate")
                 
                 try managedObjectContext.save()
+                print(newJournal)
                 print("save success")
                 //delegate
                 journalSavedDelegate?.journalSaved()
@@ -95,12 +97,14 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
         if let vc = segue.destination as? JournalPuzzleViewController {
             // id here
             var incrementId = 0
-            if journalList.count == 0 {
+            if journalCount.count == 0 {
                 incrementId = 1
             } else {
-                incrementId = Int(journalList.last!.id + 1)
+                incrementId = Int(journalCount.last!.id + 1)
             }
             vc.title = titleTextField.text
+            print(journalCount.last)
+            print(incrementId)
             vc.dataId = Int64(incrementId)
             vc.puzzle1Detail = detailsTextView.text
         }

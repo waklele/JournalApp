@@ -62,7 +62,6 @@ class JournalPuzzleViewController: UIViewController {
                     puzzle.image = UIImage(named: "Puzzle Incomplete 1.3")
                 } else {
                     // 1
-                    print("\(puzzle1Detail)")
                     puzzle.image = UIImage(named: "Puzzle Incomplete")
                 }
             }

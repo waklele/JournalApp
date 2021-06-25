@@ -77,6 +77,8 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? AddNewJournalController {
             vc.journalSavedDelegate = self
+            vc.journalCount = journalList.reversed()
+            print(journalList.count)
         }
         if let vc = segue.destination as? JournalPuzzleViewController {
             vc.title = journalList[journalSelectionIndex].title
