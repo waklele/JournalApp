@@ -102,6 +102,7 @@ class MakingConnectionsViewController: UIViewController, UITextViewDelegate {
             print("error2")
         }
         //self.dismiss(animated: true, completion: nil)
-        navigationController?.popToRootViewController(animated: true)
+        //navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }
