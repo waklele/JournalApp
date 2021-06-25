@@ -62,8 +62,8 @@ class MakingConnectionsViewController: UIViewController, UITextViewDelegate {
         } else if puzzleType == 3 {
             promptImage.image = UIImage(named: "Tambah Text-to-world Baru Dong")
             self.title = "Text-to-World"
-            if !puzzle3Detail.isEmpty {
-                detailsTextView.text = puzzle3Detail
+            if !puzzle4Detail.isEmpty {
+                detailsTextView.text = puzzle4Detail
                 detailsTextView.textColor = .black
             }
         } else {

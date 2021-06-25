@@ -31,8 +31,8 @@ class ViewConnectionsViewController: UIViewController, UITextViewDelegate {
         detailsTextView.text = "Insert detail here..."
         detailsTextView.textColor = UIColor.lightGray
         
-        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: nil, action: #selector(editConnections(_:)))
-        self.navigationItem.rightBarButtonItem = editButton
+//        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: nil, action: #selector(editConnections(_:)))
+//        self.navigationItem.rightBarButtonItem = editButton
         
         adjustPrompt()
     }
@@ -55,27 +55,31 @@ class ViewConnectionsViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    @objc func editConnections(_ sender: UIButton) {
+    @IBAction func editConnections(_ sender: Any) {
         print("tekan bisa")
         let storyboard = UIStoryboard(name: "MakingConnections", bundle: nil)
         if puzzleType == 1 {
             print("pindah bisa")
-            let vc = storyboard.instantiateViewController(identifier: "viewConnections") as! ViewConnectionsViewController
-            vc.puzzleType = 3
-            vc.puzzle4Detail = puzzle4Detail
+            let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
+            vc.puzzleType = 1
+            vc.puzzle2Detail = puzzle2Detail
+            vc.dataId = dataId
             self.show(vc, sender: nil)
         }
         if puzzleType == 2 {
-            let vc = storyboard.instantiateViewController(identifier: "viewConnections") as! ViewConnectionsViewController
-            vc.puzzleType = 3
-            vc.puzzle4Detail = puzzle4Detail
+            let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
+            vc.puzzleType = 2
+            vc.puzzle3Detail = puzzle3Detail
+            vc.dataId = dataId
             self.show(vc, sender: nil)
         }
         if puzzleType == 3 {
-            let vc = storyboard.instantiateViewController(identifier: "viewConnections") as! ViewConnectionsViewController
+            let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
             vc.puzzleType = 3
             vc.puzzle4Detail = puzzle4Detail
+            vc.dataId = dataId
             self.show(vc, sender: nil)
         }
     }
+    
 }

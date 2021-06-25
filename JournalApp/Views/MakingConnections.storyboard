@@ -11,19 +11,19 @@
         <!--View Connections View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="viewConnections" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ViewConnectionsViewController" customModule="JournalApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viewConnections" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ViewConnectionsViewController" customModule="Nozzle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bagaimana cerita ini mengingatkan kamu dengan cerita lain?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8s-2C-iHF">
-                                <rect key="frame" x="16" y="74" width="382" height="100.5"/>
+                                <rect key="frame" x="16" y="118" width="382" height="100.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VJz-jg-MMs">
-                                <rect key="frame" x="16" y="204.5" width="382" height="597.5"/>
+                                <rect key="frame" x="16" y="248.5" width="382" height="504.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -43,9 +43,15 @@
                             <constraint firstItem="VJz-jg-MMs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="kSO-Et-jcO"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="kI1-1l-ByT">
-                        <barButtonItem key="rightBarButtonItem" title="Ubah" id="O8N-SM-cdQ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Ubah" id="O8N-SM-cdQ">
+                            <connections>
+                                <action selector="editConnections:" destination="Y6W-OH-hqX" id="04j-GL-9q3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="detailsTextView" destination="VJz-jg-MMs" id="9Q3-YC-pzV"/>
                         <outlet property="promptLabel" destination="c8s-2C-iHF" id="gpc-JK-9Zg"/>
@@ -53,12 +59,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050.7246376811595" y="33.482142857142854"/>
+            <point key="canvasLocation" x="1960.8695652173915" y="33.482142857142854"/>
         </scene>
         <!--Making Connections View Controller-->
         <scene sceneID="kql-jq-FeS">
             <objects>
-                <viewController storyboardIdentifier="editConnections" id="AnL-VI-pie" customClass="MakingConnectionsViewController" customModule="JournalApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editConnections" id="AnL-VI-pie" customClass="MakingConnectionsViewController" customModule="Nozzle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qsl-Ww-xfS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,7 +134,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ctt-1u-aUg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2101" y="33"/>
+            <point key="canvasLocation" x="3010.144927536232" y="32.8125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6A9-1G-s9m">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3MM-aA-TeY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x1B-Jk-Lzy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="WRN-lv-64G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7m7-3J-1wp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.7246376811595" y="33.482142857142854"/>
         </scene>
     </scenes>
     <resources>
