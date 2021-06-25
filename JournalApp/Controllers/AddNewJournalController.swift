@@ -118,10 +118,10 @@ extension AddNewJournalController {
         
         if isStart {
             startSpeechRecognition()
-            startStopBtn.setImage(UIImage(systemName: "stop.circle"), for: .normal)
+            startStopBtn.setImage(UIImage(named: "Stop Speech Button"), for: .normal)
         } else {
             cancelSpeechRecognition()
-            startStopBtn.setImage(UIImage(systemName: "mic.circle"), for: .normal)
+            startStopBtn.setImage(UIImage(named: "Start Speech Button"), for: .normal)
         }
     }
     
