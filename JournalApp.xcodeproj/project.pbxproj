@@ -24,6 +24,8 @@
 		3045C0C7267B2F9F0062605D /* JournalPuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045C0C6267B2F9F0062605D /* JournalPuzzleViewController.swift */; };
 		3045C0C926809D720062605D /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045C0C826809D720062605D /* DashboardViewController.swift */; };
 		306FD7C22684EACA0027BEBF /* MakingConnections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 306FD7C12684EACA0027BEBF /* MakingConnections.storyboard */; };
+		306FD7C4268589F40027BEBF /* MakingConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306FD7C3268589F40027BEBF /* MakingConnectionsViewController.swift */; };
+		306FD7C8268594390027BEBF /* ViewConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306FD7C7268594390027BEBF /* ViewConnectionsViewController.swift */; };
 		9772F79E267B33F400CA1F67 /* AddNewJournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9772F79D267B33F400CA1F67 /* AddNewJournalController.swift */; };
 		97AE7992267A4AD800F5128E /* JournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE7991267A4AD800F5128E /* JournalModel.swift */; };
 		BD7D549526849636007CAFDD /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D549426849636007CAFDD /* UIButton.swift */; };
@@ -56,6 +58,8 @@
 		3045C0C6267B2F9F0062605D /* JournalPuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalPuzzleViewController.swift; sourceTree = "<group>"; };
 		3045C0C826809D720062605D /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashboardViewController.swift; path = JournalApp/Views/DashboardViewController.swift; sourceTree = SOURCE_ROOT; };
 		306FD7C12684EACA0027BEBF /* MakingConnections.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakingConnections.storyboard; sourceTree = "<group>"; };
+		306FD7C3268589F40027BEBF /* MakingConnectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakingConnectionsViewController.swift; sourceTree = "<group>"; };
+		306FD7C7268594390027BEBF /* ViewConnectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConnectionsViewController.swift; sourceTree = "<group>"; };
 		9772F79D267B33F400CA1F67 /* AddNewJournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewJournalController.swift; sourceTree = "<group>"; };
 		97AE7991267A4AD800F5128E /* JournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModel.swift; sourceTree = "<group>"; };
 		BD7D549426849636007CAFDD /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				3045C0BD2679F7660062605D /* JournalListCell.swift */,
 				9772F79D267B33F400CA1F67 /* AddNewJournalController.swift */,
 				3045C0C6267B2F9F0062605D /* JournalPuzzleViewController.swift */,
+				306FD7C7268594390027BEBF /* ViewConnectionsViewController.swift */,
+				306FD7C3268589F40027BEBF /* MakingConnectionsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				BD7D549D2684A16C007CAFDD /* OnboardingViewController.swift in Sources */,
 				2DE1172026735718003050BF /* ViewController.swift in Sources */,
 				9772F79E267B33F400CA1F67 /* AddNewJournalController.swift in Sources */,
+				306FD7C8268594390027BEBF /* ViewConnectionsViewController.swift in Sources */,
 				BD7D54A92684AE43007CAFDD /* OnboardingCollectionViewCell.swift in Sources */,
 				BD7D549B26849663007CAFDD /* UIColor.swift in Sources */,
 				2DE1171C26735718003050BF /* AppDelegate.swift in Sources */,
@@ -258,6 +265,7 @@
 				BD7D549926849656007CAFDD /* UITextView.swift in Sources */,
 				97AE7992267A4AD800F5128E /* JournalModel.swift in Sources */,
 				3045C0C3267A53710062605D /* Journal+CoreDataClass.swift in Sources */,
+				306FD7C4268589F40027BEBF /* MakingConnectionsViewController.swift in Sources */,
 				3045C0C926809D720062605D /* DashboardViewController.swift in Sources */,
 				2DE1171E26735718003050BF /* SceneDelegate.swift in Sources */,
 				3045C0C4267A53710062605D /* Journal+CoreDataProperties.swift in Sources */,
