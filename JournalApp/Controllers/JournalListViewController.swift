@@ -127,7 +127,7 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("\(journalList[indexPath.row].title)")
+        print("\(journalList[indexPath.row])")
         journalSelectionIndex = indexPath.row
         performSegue(withIdentifier: "editJournal", sender: nil)
     }

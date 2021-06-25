@@ -25,6 +25,7 @@ class JournalPuzzleViewController: UIViewController {
         self.puzzle.addGestureRecognizer(tapGestureRecognizer)
         
         adjustPuzzle()
+        
     }
     
     func adjustPuzzle() {
@@ -112,7 +113,7 @@ class JournalPuzzleViewController: UIViewController {
             //storyboard sendiri aja
         } else {
             print("Kiri bawah")
-            if !puzzle2Detail.isEmpty {
+            if !puzzle4Detail.isEmpty {
                 let vc = storyboard.instantiateViewController(identifier: "viewConnections") as! ViewConnectionsViewController
                 vc.puzzleType = 3
                 vc.puzzle4Detail = puzzle4Detail

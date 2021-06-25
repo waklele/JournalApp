@@ -83,22 +83,23 @@ class MakingConnectionsViewController: UIViewController, UITextViewDelegate {
             //objectToBeEdited.setValue(dataId, forKey: "id")
             objectToBeEdited.setValue(readingTitle, forKey: "title")
             if puzzleType == 1 {
-                objectToBeEdited.setValue(puzzle2Detail, forKey: "puzzle2Detail")
+                objectToBeEdited.setValue(detailsTextView.text, forKey: "puzzle2Detail")
+                print("berhasil")
             }
             if puzzleType == 2 {
-                objectToBeEdited.setValue(puzzle3Detail, forKey: "puzzle3Detail")
+                objectToBeEdited.setValue(detailsTextView.text, forKey: "puzzle3Detail")
             }
             if puzzleType == 3 {
-                objectToBeEdited.setValue(puzzle4Detail, forKey: "puzzle4Detail")
+                objectToBeEdited.setValue(detailsTextView.text, forKey: "puzzle4Detail")
             }
             
             do {
                 try managedObjectContext.save()
             } catch {
-                
+                print("error1")
             }
         } catch {
-            
+            print("error2")
         }
         //self.dismiss(animated: true, completion: nil)
         navigationController?.popToRootViewController(animated: true)

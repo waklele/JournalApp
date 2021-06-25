@@ -41,18 +41,39 @@ class ViewConnectionsViewController: UIViewController, UITextViewDelegate {
         if puzzleType == 1 {
             promptLabel.text = "Bagaimana cerita ini serupa/berbeda dengan kehidupan kamu?"
             self.title = "Text-to-Self"
+            detailsTextView.text = puzzle2Detail
         } else if puzzleType == 2 {
             promptLabel.text = "Bagaimana cerita ini mengingatkan kamu dengan cerita lain?"
             self.title = "Text-to-Text"
+            detailsTextView.text = puzzle3Detail
         } else if puzzleType == 3 {
             promptLabel.text = "Bagaimana cerita ini mengingatkan kamu pada dunia disekitarmu?"
             self.title = "Text-to-World"
+            detailsTextView.text = puzzle4Detail
         } else {
             print("error")
         }
     }
     
     @objc func editConnections() {
-        
+        let storyboard = UIStoryboard(name: "MakingConnections", bundle: nil)
+        if puzzleType == 1 {
+            let vc = storyboard.instantiateViewController(identifier: "viewConnections") as! ViewConnectionsViewController
+            vc.puzzleType = 3
+            vc.puzzle4Detail = puzzle4Detail
+            self.show(vc, sender: nil)
+        }
+        if puzzleType == 2 {
+            let vc = storyboard.instantiateViewController(identifier: "viewConnections") as! ViewConnectionsViewController
+            vc.puzzleType = 3
+            vc.puzzle4Detail = puzzle4Detail
+            self.show(vc, sender: nil)
+        }
+        if puzzleType == 3 {
+            let vc = storyboard.instantiateViewController(identifier: "viewConnections") as! ViewConnectionsViewController
+            vc.puzzleType = 3
+            vc.puzzle4Detail = puzzle4Detail
+            self.show(vc, sender: nil)
+        }
     }
 }
