@@ -31,8 +31,8 @@ class ViewConnectionsViewController: UIViewController, UITextViewDelegate {
         detailsTextView.text = "Insert detail here..."
         detailsTextView.textColor = UIColor.lightGray
         
-        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: nil, action: #selector(editConnections))
-        navigationItem.rightBarButtonItem = editButton
+        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: nil, action: #selector(editConnections(_:)))
+        self.navigationItem.rightBarButtonItem = editButton
         
         adjustPrompt()
     }
@@ -55,9 +55,11 @@ class ViewConnectionsViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    @objc func editConnections() {
+    @objc func editConnections(_ sender: UIButton) {
+        print("tekan bisa")
         let storyboard = UIStoryboard(name: "MakingConnections", bundle: nil)
         if puzzleType == 1 {
+            print("pindah bisa")
             let vc = storyboard.instantiateViewController(identifier: "viewConnections") as! ViewConnectionsViewController
             vc.puzzleType = 3
             vc.puzzle4Detail = puzzle4Detail

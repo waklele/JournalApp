@@ -196,8 +196,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O1g-lX-PyN" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="mVO-xP-3cv">
-                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mVO-xP-3cv">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -214,7 +214,7 @@
         <segue reference="4fa-y8-qTr"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="dashboard1" width="1092" height="966"/>
+        <image name="dashboard1" width="363" height="322"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
