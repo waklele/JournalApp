@@ -10,7 +10,7 @@ import CoreData
 
 private let reuseIdentifier = "JournalCell"
 
-class JournalListViewController: UICollectionViewController, UISearchBarDelegate, UICollectionViewDelegateFlowLayout {
+class JournalListViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     let searchController = UISearchController(searchResultsController: nil)
     var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     var appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -36,11 +36,14 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
         
         managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
         
-        readData()
+        readData(filterValue: "")
     }
     
-    func readData() {
+    func readData(filterValue: String) {
         let journalRequest: NSFetchRequest<Journal> = Journal.fetchRequest()
+        if !filterValue.isEmpty {
+            journalRequest.predicate = NSPredicate(format: "title BEGINSWITH[cd] %@", filterValue)
+        }
         let sortDescriptor = NSSortDescriptor(key: "lastUpdateDate", ascending: false)
         journalRequest.sortDescriptors = [sortDescriptor]
         
@@ -71,7 +74,7 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
         } catch {
             print("Error when deleting the data!")
         }
-        readData()
+        readData(filterValue: "")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -165,6 +168,13 @@ class JournalListViewController: UICollectionViewController, UISearchBarDelegate
 
 extension JournalListViewController: journalSavedDelegate {
     func journalSaved() {
-        readData()
+        readData(filterValue: "")
+    }
+}
+
+extension JournalListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("FILTER", searchText)
+        readData(filterValue: searchText)
     }
 }
