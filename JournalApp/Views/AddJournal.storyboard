@@ -11,24 +11,21 @@
         <!--Add New Journal-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="addJournal" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="AddNewJournalController" customModule="JournalApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addJournal" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="AddNewJournalController" customModule="Nozzle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OhQ-0S-Sx8">
-                                <rect key="frame" x="16" y="221" width="382" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="35" y="215" width="344" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2Ea-JE-Ly2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozm-Ql-Lny">
-                                <rect key="frame" x="16" y="270" width="55.5" height="26"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Unm-MV-yV0">
-                                <rect key="frame" x="16" y="306" width="382" height="456"/>
+                                <rect key="frame" x="35" y="285" width="344" height="482"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -37,17 +34,11 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tambah Jurnal Baru Dong" translatesAutoresizingMaskIntoConstraints="NO" id="Dh5-eB-93W">
                                 <rect key="frame" x="16" y="54" width="382" height="141"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Judul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7s-cW-bFM">
-                                <rect key="frame" x="16" y="185" width="54" height="26"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZA-pq-Lzx">
-                                <rect key="frame" x="16" y="782" width="382" height="55"/>
+                                <rect key="frame" x="35" y="787" width="344" height="50"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="YAo-4d-vUG"/>
+                                    <constraint firstAttribute="height" constant="50" id="YAo-4d-vUG"/>
                                 </constraints>
                                 <state key="normal" title="Simpan">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,9 +49,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I27-1l-99m">
-                                <rect key="frame" x="349" y="718" width="35" height="34"/>
+                                <rect key="frame" x="309" y="691" width="65" height="66"/>
                                 <color key="tintColor" red="0.86666666670000003" green="0.25882352939999997" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="mic.circle" catalog="system">
+                                <state key="normal" image="Start Speech Button">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                 </state>
                                 <connections>
@@ -71,25 +62,21 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="ozm-Ql-Lny" firstAttribute="top" secondItem="OhQ-0S-Sx8" secondAttribute="bottom" constant="15" id="0vs-fA-8ld"/>
-                            <constraint firstItem="vZA-pq-Lzx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="2S6-zd-sBG"/>
+                            <constraint firstItem="Unm-MV-yV0" firstAttribute="top" secondItem="OhQ-0S-Sx8" secondAttribute="bottom" constant="20" id="20r-ci-Smd"/>
+                            <constraint firstItem="vZA-pq-Lzx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="35" id="2S6-zd-sBG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="vZA-pq-Lzx" secondAttribute="bottom" constant="25" id="2eo-15-BHb"/>
-                            <constraint firstItem="OhQ-0S-Sx8" firstAttribute="top" secondItem="V7s-cW-bFM" secondAttribute="bottom" constant="10" id="3Wb-05-sTG"/>
-                            <constraint firstItem="Unm-MV-yV0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Aog-od-kTL"/>
-                            <constraint firstItem="Unm-MV-yV0" firstAttribute="top" secondItem="ozm-Ql-Lny" secondAttribute="bottom" constant="10" id="B1o-Jq-EAP"/>
+                            <constraint firstItem="Unm-MV-yV0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="35" id="Aog-od-kTL"/>
                             <constraint firstItem="Dh5-eB-93W" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="B5j-S3-EWY"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Unm-MV-yV0" secondAttribute="trailing" constant="16" id="Fza-z2-cNr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Unm-MV-yV0" secondAttribute="trailing" constant="35" id="Fza-z2-cNr"/>
                             <constraint firstItem="Dh5-eB-93W" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="HPb-Z9-gcO"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OhQ-0S-Sx8" secondAttribute="trailing" constant="16" id="OKg-k3-e3Q"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vZA-pq-Lzx" secondAttribute="trailing" constant="16" id="UM4-kX-ZEN"/>
-                            <constraint firstItem="ozm-Ql-Lny" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="UTu-F7-jvq"/>
-                            <constraint firstItem="OhQ-0S-Sx8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="UXb-ic-rvJ"/>
-                            <constraint firstItem="V7s-cW-bFM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="YRk-mA-WlZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OhQ-0S-Sx8" secondAttribute="trailing" constant="35" id="OKg-k3-e3Q"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vZA-pq-Lzx" secondAttribute="trailing" constant="35" id="UM4-kX-ZEN"/>
+                            <constraint firstItem="OhQ-0S-Sx8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="35" id="UXb-ic-rvJ"/>
+                            <constraint firstItem="OhQ-0S-Sx8" firstAttribute="top" secondItem="Dh5-eB-93W" secondAttribute="bottom" constant="20" id="gMz-79-b6X"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Dh5-eB-93W" secondAttribute="trailing" constant="16" id="gii-98-N6e"/>
                             <constraint firstItem="vZA-pq-Lzx" firstAttribute="top" secondItem="I27-1l-99m" secondAttribute="bottom" constant="30" id="iBU-5t-E4r"/>
-                            <constraint firstItem="V7s-cW-bFM" firstAttribute="top" secondItem="Dh5-eB-93W" secondAttribute="bottom" constant="-10" id="k12-DW-m7w"/>
                             <constraint firstItem="vZA-pq-Lzx" firstAttribute="top" secondItem="Unm-MV-yV0" secondAttribute="bottom" constant="20" id="qoJ-A0-r7e"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="I27-1l-99m" secondAttribute="trailing" constant="30" id="wpl-hr-HyV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="I27-1l-99m" secondAttribute="trailing" constant="40" id="wpl-hr-HyV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Journal" largeTitleDisplayMode="never" id="nwx-fJ-DyJ">
@@ -118,8 +105,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Start Speech Button" width="65" height="66"/>
         <image name="Tambah Jurnal Baru Dong" width="336" height="141"/>
-        <image name="mic.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
