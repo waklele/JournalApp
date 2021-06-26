@@ -39,6 +39,11 @@ class JournalListViewController: UICollectionViewController, UICollectionViewDel
         readData(filterValue: "")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        readData(filterValue: "")
+    }
+    
     func readData(filterValue: String) {
         let journalRequest: NSFetchRequest<Journal> = Journal.fetchRequest()
         if !filterValue.isEmpty {
