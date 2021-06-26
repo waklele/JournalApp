@@ -40,6 +40,11 @@ class DashboardViewController: UIViewController {
         imageButton.layer.cornerRadius = 15
         imageButton.tintColor = .white
         
+        // Customize back button
+        let backItem = UIBarButtonItem()
+        backItem.title = "Kembali"
+        navigationItem.backBarButtonItem = backItem
+        
         readData()
         checkTodaysJournal()
     }
