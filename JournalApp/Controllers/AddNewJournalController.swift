@@ -26,12 +26,14 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
     var journalCount = [Journal]()
     var journalSavedDelegate: journalSavedDelegate?
     
-    // MARK - Local properties
     let audioEngine = AVAudioEngine()
     let speechReconizer : SFSpeechRecognizer? = SFSpeechRecognizer(locale: Locale.init(identifier: "id-ID"))
     let request = SFSpeechAudioBufferRecognitionRequest()
     var task : SFSpeechRecognitionTask?
     var isStart : Bool = false
+    
+    let defaultTitle : String = "Apa yang judul yang kamu baca hari ini?"
+    let defaultDetail : String = "Coba ceritakan kembali apa yang kamu baca"
     
     var timer = Timer()
     
@@ -44,11 +46,11 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
         self.title = ""
         
         titleTextField.layer.cornerRadius = 8
-        titleTextField.placeholder = "Apa yang judul yang kamu baca hari ini?"
+        titleTextField.placeholder = defaultTitle
         titleTextField.delegate = self
         
         detailsTextView.layer.cornerRadius = 8
-        detailsTextView.text = "Coba ceritakan kembali apa yang kamu baca"
+        detailsTextView.text = defaultDetail
         detailsTextView.textColor = UIColor.systemGray3
         detailsTextView.font = UIFont.preferredFont(forTextStyle: .body)
         detailsTextView.delegate = self
@@ -65,7 +67,7 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
             let entity = NSEntityDescription.entity(forEntityName: "Journal", in: managedObjectContext)
             let newJournal = NSManagedObject(entity: entity!, insertInto: managedObjectContext)
             
-            if titleTextField.text != "Apa yang judul yang kamu baca hari ini?" && detailsTextView.text != "Coba ceritakan kembali apa yang kamu baca" && titleTextField.text != "" && detailsTextView.text != "" {
+            if titleTextField.text != defaultTitle && detailsTextView.text != defaultDetail && titleTextField.text != "" && detailsTextView.text != "" {
               
                 // Generate ID
                 var incrementId = 0
@@ -151,6 +153,7 @@ extension AddNewJournalController {
         }
         
         audioEngine.prepare()
+        
         do {
             try audioEngine.start()
         } catch let error {
@@ -181,7 +184,7 @@ extension AddNewJournalController {
             print("MESSAGE: ", message)
 
             if response.isFinal {
-                var prevString = self.detailsTextView.text
+                var prevString = self.detailsTextView.text == self.defaultDetail ?  "" : self.detailsTextView.text
                 print("PREV: ", prevString!)
 
                 if prevString?.last == " " {
@@ -189,6 +192,13 @@ extension AddNewJournalController {
                 }
 
                 self.detailsTextView.text = "\(prevString ?? "") \(message )"
+                
+                if self.detailsTextView.text == "" || self.detailsTextView.text == self.defaultDetail {
+                    self.detailsTextView.text = self.defaultDetail
+                    self.detailsTextView.textColor = UIColor.lightGray
+                } else {
+                    self.detailsTextView.textColor = UIColor.black
+                }
             }
         })
     }
@@ -220,7 +230,7 @@ extension AddNewJournalController {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if detailsTextView.textColor == UIColor.systemGray3 || detailsTextView.text == "Coba ceritakan kembali apa yang kamu baca" {
+        if detailsTextView.textColor == UIColor.systemGray3 || detailsTextView.text == defaultDetail {
             detailsTextView.text = ""
             detailsTextView.textColor = UIColor.black
         }
@@ -228,7 +238,7 @@ extension AddNewJournalController {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if detailsTextView.text == "" {
-            detailsTextView.text = "Coba ceritakan kembali apa yang kamu baca"
+            detailsTextView.text = defaultDetail
             detailsTextView.textColor = UIColor.lightGray
         }
     }
@@ -242,7 +252,7 @@ extension AddNewJournalController {
     }
     
     func validateText() {
-        if titleTextField.text != "" && detailsTextView.textColor != UIColor.systemGray3 && detailsTextView.text != "Coba ceritakan kembali apa yang kamu baca" && detailsTextView.text != "" {
+        if titleTextField.text != "" && detailsTextView.textColor != UIColor.systemGray3 && detailsTextView.text != defaultDetail && detailsTextView.text != "" {
             saveButton.isEnabled = true
             saveButton.backgroundColor = UIColor(red: 221/255, green: 66/255, blue: 123/255, alpha: 100)
         } else {
