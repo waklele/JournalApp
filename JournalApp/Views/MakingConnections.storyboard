@@ -76,7 +76,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zXb-hg-PZI">
-                                <rect key="frame" x="16" y="227" width="382" height="535"/>
+                                <rect key="frame" x="35" y="227" width="344" height="535"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -98,12 +98,15 @@
                                     <action selector="saveConnection:" destination="AnL-VI-pie" eventType="touchUpInside" id="1AU-Of-USw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LN-7j-yCi">
-                                <rect key="frame" x="349" y="718" width="35" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUs-rv-rAj">
+                                <rect key="frame" x="309" y="686" width="65" height="66"/>
                                 <color key="tintColor" red="0.86666666670000003" green="0.25882352939999997" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="mic.circle" catalog="system">
+                                <state key="normal" image="Start Speech Button">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                 </state>
+                                <connections>
+                                    <action selector="startStopAct:" destination="AnL-VI-pie" eventType="touchUpInside" id="Hys-To-lSC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="e7y-fW-BUB"/>
@@ -113,13 +116,13 @@
                             <constraint firstItem="7jt-KQ-uwK" firstAttribute="top" secondItem="j4z-2g-hiv" secondAttribute="bottom" constant="-10" id="1fk-pN-G9m"/>
                             <constraint firstItem="UpV-iN-49H" firstAttribute="leading" secondItem="e7y-fW-BUB" secondAttribute="leading" constant="16" id="2C3-9m-K1C"/>
                             <constraint firstItem="e7y-fW-BUB" firstAttribute="trailing" secondItem="UpV-iN-49H" secondAttribute="trailing" constant="16" id="3Mz-RG-xhw"/>
-                            <constraint firstItem="zXb-hg-PZI" firstAttribute="leading" secondItem="e7y-fW-BUB" secondAttribute="leading" constant="16" id="6Se-kj-r5Y"/>
-                            <constraint firstItem="e7y-fW-BUB" firstAttribute="trailing" secondItem="zXb-hg-PZI" secondAttribute="trailing" constant="16" id="AEU-gb-n8J"/>
-                            <constraint firstItem="UpV-iN-49H" firstAttribute="top" secondItem="1LN-7j-yCi" secondAttribute="bottom" constant="30" id="HCo-FU-bKG"/>
-                            <constraint firstItem="e7y-fW-BUB" firstAttribute="trailing" secondItem="1LN-7j-yCi" secondAttribute="trailing" constant="30" id="IbY-Li-mKM"/>
+                            <constraint firstItem="zXb-hg-PZI" firstAttribute="leading" secondItem="e7y-fW-BUB" secondAttribute="leading" constant="35" id="6Se-kj-r5Y"/>
+                            <constraint firstItem="e7y-fW-BUB" firstAttribute="trailing" secondItem="zXb-hg-PZI" secondAttribute="trailing" constant="35" id="AEU-gb-n8J"/>
                             <constraint firstItem="e7y-fW-BUB" firstAttribute="bottom" secondItem="UpV-iN-49H" secondAttribute="bottom" constant="25" id="NAm-iv-29U"/>
                             <constraint firstItem="e7y-fW-BUB" firstAttribute="trailing" secondItem="j4z-2g-hiv" secondAttribute="trailing" constant="16" id="NBu-pH-n5M"/>
+                            <constraint firstItem="UpV-iN-49H" firstAttribute="top" secondItem="hUs-rv-rAj" secondAttribute="bottom" constant="30" id="NK2-aY-go0"/>
                             <constraint firstItem="7jt-KQ-uwK" firstAttribute="leading" secondItem="e7y-fW-BUB" secondAttribute="leading" constant="16" id="P2Y-Km-WqQ"/>
+                            <constraint firstItem="e7y-fW-BUB" firstAttribute="trailing" secondItem="hUs-rv-rAj" secondAttribute="trailing" constant="40" id="Xme-Ix-AhI"/>
                             <constraint firstItem="UpV-iN-49H" firstAttribute="top" secondItem="zXb-hg-PZI" secondAttribute="bottom" constant="20" id="aii-YO-SjB"/>
                             <constraint firstItem="zXb-hg-PZI" firstAttribute="top" secondItem="7jt-KQ-uwK" secondAttribute="bottom" constant="10" id="kss-z0-0mh"/>
                             <constraint firstItem="j4z-2g-hiv" firstAttribute="leading" secondItem="e7y-fW-BUB" secondAttribute="leading" constant="16" id="owl-wx-Cu6"/>
@@ -130,6 +133,7 @@
                         <outlet property="detailsTextView" destination="zXb-hg-PZI" id="cGg-Q2-WHn"/>
                         <outlet property="promptImage" destination="j4z-2g-hiv" id="2Pk-0r-lZf"/>
                         <outlet property="saveButton" destination="UpV-iN-49H" id="zfp-eM-Zwy"/>
+                        <outlet property="startStopBtn" destination="hUs-rv-rAj" id="lGD-G1-brX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ctt-1u-aUg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -156,8 +160,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Start Speech Button" width="65" height="66"/>
         <image name="Tambah Jurnal Baru Dong" width="336" height="141"/>
-        <image name="mic.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
