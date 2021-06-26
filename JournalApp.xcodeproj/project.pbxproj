@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D29B45B268737FE005F19A6 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2D29B45A268737FE005F19A6 /* SF-Pro-Rounded-Bold.otf */; };
+		2D29B45D26873814005F19A6 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D29B45C26873814005F19A6 /* SF-Pro.ttf */; };
 		2DE1171C26735718003050BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1171B26735718003050BF /* AppDelegate.swift */; };
 		2DE1171E26735718003050BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1171D26735718003050BF /* SceneDelegate.swift */; };
 		2DE1172026735718003050BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1171F26735718003050BF /* ViewController.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D29B45A268737FE005F19A6 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
+		2D29B45C26873814005F19A6 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		2DE1171826735718003050BF /* Nozzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nozzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE1171B26735718003050BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DE1171D26735718003050BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D29B45926873793005F19A6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2D29B45C26873814005F19A6 /* SF-Pro.ttf */,
+				2D29B45A268737FE005F19A6 /* SF-Pro-Rounded-Bold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		2DE1170F26735718003050BF = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +115,7 @@
 		2DE1171A26735718003050BF /* JournalApp */ = {
 			isa = PBXGroup;
 			children = (
+				2D29B45926873793005F19A6 /* Fonts */,
 				BD7D54932684961F007CAFDD /* Extensions */,
 				3045C0C5267A53A90062605D /* CoreData */,
 				97AE7990267A4A6300F5128E /* Models */,
@@ -239,8 +253,10 @@
 				3045C0B82679EF120062605D /* JournalPuzzle.storyboard in Resources */,
 				3045C0C02679F7660062605D /* JournalListCell.xib in Resources */,
 				2DE1172826735719003050BF /* Assets.xcassets in Resources */,
+				2D29B45B268737FE005F19A6 /* SF-Pro-Rounded-Bold.otf in Resources */,
 				2DE1172326735718003050BF /* Main.storyboard in Resources */,
 				BD7D549F2684A188007CAFDD /* Onboarding.storyboard in Resources */,
+				2D29B45D26873814005F19A6 /* SF-Pro.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
