@@ -3,6 +3,7 @@
 //  JournalApp
 //
 //  Created by Santo Michael Sihombing on 24/06/21.
+//  Last touch by Rangga Rentya on 26/06/2021
 //
 
 import UIKit
@@ -11,6 +12,7 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var pageCtr: UIPageControl!
+    @IBOutlet weak var nextBtn2: UIButton!
     
     let onboardingSlide: [OnboardingSlide] = [
         OnboardingSlide(label: "Halo, aku Tama", description: "Selamat datang di Nozzle", image: #imageLiteral(resourceName: "Onboarding1")),
@@ -21,16 +23,25 @@ class OnboardingViewController: UIViewController {
         didSet {
             pageCtr.currentPage = currentPage
             if currentPage == onboardingSlide.count - 1 {
-                nextBtn.setTitle("Mari Mulai", for: .normal)
+                nextBtn.isHidden = false
+                nextBtn2.isHidden = true
+                nextBtn.setTitle("Ayo Mulai", for: .normal)
             } else {
-                nextBtn.setTitle("Berikutnya", for: .normal)
+                nextBtn.isHidden = true
+                nextBtn2.isHidden = false
+                nextBtn2.setImage(UIImage(named: "Arrow Button"), for: .normal)
+                nextBtn2.tintColor = .white
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextBtn.isHidden = true
         nextBtn.roundedButton(radius: 10)
+        nextBtn2.roundedButton(radius: 30)
+        nextBtn2.setImage(UIImage(named: "Arrow Button"), for: .normal)
+        nextBtn2.tintColor = .white
         print("HEllo")
         // Do any additional setup after loading the view.
         collectionView.delegate = self
@@ -40,8 +51,17 @@ class OnboardingViewController: UIViewController {
     @IBAction func nextBtnClicked(_ sender: Any) {
         
         if currentPage == onboardingSlide.count - 1 {
-            print("Next")
-//            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            notNewUser()
+        } else {
+            currentPage += 1
+            let indexPath = IndexPath(item: currentPage, section: 0)
+            
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
+    }
+    
+    @IBAction func nextBtn2Clicked(_ sender: Any) {
+        if currentPage == onboardingSlide.count - 1 {
             notNewUser()
         } else {
             currentPage += 1
