@@ -34,6 +34,12 @@ class JournalListViewController: UICollectionViewController, UICollectionViewDel
         navigationItem.searchController = searchController
         searchController.searchBar.delegate = self
         
+        
+        // Customize back button
+        let backItem = UIBarButtonItem()
+        backItem.title = "Kembali"
+        navigationItem.backBarButtonItem = backItem
+        
         managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
         
         readData(filterValue: "")
