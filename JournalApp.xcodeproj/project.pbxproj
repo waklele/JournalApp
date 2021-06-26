@@ -36,6 +36,7 @@
 		BD7D549F2684A188007CAFDD /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7D549E2684A188007CAFDD /* Onboarding.storyboard */; };
 		BD7D54A52684A985007CAFDD /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D54A42684A985007CAFDD /* OnboardingSlide.swift */; };
 		BD7D54A92684AE43007CAFDD /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D54A82684AE43007CAFDD /* OnboardingCollectionViewCell.swift */; };
+		BDCD042A26879D87002D10BC /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCD042926879D87002D10BC /* Array.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		BD7D549E2684A188007CAFDD /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		BD7D54A42684A985007CAFDD /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		BD7D54A82684AE43007CAFDD /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		BDCD042926879D87002D10BC /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 				BD7D549626849641007CAFDD /* UIViewController.swift */,
 				BD7D549826849656007CAFDD /* UITextView.swift */,
 				BD7D549A26849663007CAFDD /* UIColor.swift */,
+				BDCD042926879D87002D10BC /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				97AE7992267A4AD800F5128E /* JournalModel.swift in Sources */,
 				306FD7C4268589F40027BEBF /* MakingConnectionsViewController.swift in Sources */,
 				3045C0C926809D720062605D /* DashboardViewController.swift in Sources */,
+				BDCD042A26879D87002D10BC /* Array.swift in Sources */,
 				2DE1171E26735718003050BF /* SceneDelegate.swift in Sources */,
 				3045C0C7267B2F9F0062605D /* JournalPuzzleViewController.swift in Sources */,
 				BD7D54A52684A985007CAFDD /* OnboardingSlide.swift in Sources */,
