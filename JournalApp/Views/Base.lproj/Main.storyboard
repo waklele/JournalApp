@@ -8,6 +8,14 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Rounded-Bold.otf">
+            <string>SFProRounded-Bold</string>
+        </array>
+        <array key="SF-Pro-Rounded-Semibold.otf">
+            <string>SFProRounded-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Jurnal-Ku-->
         <scene sceneID="ySR-gF-rL1">
@@ -39,7 +47,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Jurnal-Ku" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="QOp-SQ-6DS">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="3oJ-yX-LsU"/>
+                        <barButtonItem key="backBarButtonItem" title="Kembali" id="3oJ-yX-LsU"/>
                         <barButtonItem key="rightBarButtonItem" title="Add New Journal" image="plus" catalog="system" id="v5E-m9-A0T">
                             <connections>
                                 <segue destination="NNe-9Y-dxo" kind="show" id="x63-Jp-NcI"/>
@@ -119,10 +127,10 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jurnal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKf-yt-ofF">
-                                <rect key="frame" x="20" y="566" width="91" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Catatan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKf-yt-ofF">
+                                <rect key="frame" x="20" y="566" width="113" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -130,18 +138,12 @@
                                 <rect key="frame" x="0.0" y="114" width="389" height="336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVR-r4-RPW">
-                                <rect key="frame" x="47" y="312" width="300" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvi-XI-FaA">
-                                <rect key="frame" x="289" y="566" width="85" height="30"/>
+                                <rect key="frame" x="284" y="566" width="96" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="17"/>
                                 <state key="normal" title="Lihat Semua">
-                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                    <color key="titleColor" red="0.8666666666666667" green="0.25882352941176467" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="FA4-eu-Tfo" kind="show" id="IMP-4G-lJG"/>
@@ -152,6 +154,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVR-r4-RPW">
+                                <rect key="frame" x="47" y="302" width="300" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JgB-we-hfa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -218,9 +227,6 @@
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

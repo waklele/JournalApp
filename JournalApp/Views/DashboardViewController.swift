@@ -96,7 +96,7 @@ class DashboardViewController: UIViewController {
         
         if dateFormatter.string(from: currentDate) == dateFormatter.string(from: lastJournalDate) {
             
-            imageButton.setTitle("Lihat Jurnal", for: .normal)
+            imageButton.setTitle("Lihat Catatan", for: .normal)
             // set tujuan button
             imageButton.addTarget(self, action: #selector(seeTodaysJournal(_:)), for: .touchUpInside)
             
@@ -110,7 +110,7 @@ class DashboardViewController: UIViewController {
         } else {
             bgImage.image = UIImage(named: "dashboard1")
             imageLabel.text = "Duh.. Kamu belum buat catatan hari ini"
-            imageButton.setTitle("Buat Jurnal", for: .normal)
+            imageButton.setTitle("Buat Catatan", for: .normal)
             // set tujuan button
             imageButton.addTarget(self, action: #selector(createJournal(_:)), for: .touchUpInside)
         }

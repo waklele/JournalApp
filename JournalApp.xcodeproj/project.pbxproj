@@ -64,6 +64,7 @@
 		306FD7C7268594390027BEBF /* ViewConnectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConnectionsViewController.swift; sourceTree = "<group>"; };
 		3094F50D2685DF43006F9D06 /* Journal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3094F50E2685DF43006F9D06 /* Journal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8A5A8FF6268740320014F856 /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
 		9772F79D267B33F400CA1F67 /* AddNewJournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewJournalController.swift; sourceTree = "<group>"; };
 		97AE7991267A4AD800F5128E /* JournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModel.swift; sourceTree = "<group>"; };
 		BD7D549426849636007CAFDD /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -91,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				2D29B45C26873814005F19A6 /* SF-Pro.ttf */,
+				8A5A8FF6268740320014F856 /* SF-Pro-Rounded-Semibold.otf */,
 				2D29B45A268737FE005F19A6 /* SF-Pro-Rounded-Bold.otf */,
 			);
 			path = Fonts;
