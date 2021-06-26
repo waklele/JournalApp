@@ -12,7 +12,7 @@
         <!--Jurnal-Ku-->
         <scene sceneID="ySR-gF-rL1">
             <objects>
-                <collectionViewController storyboardIdentifier="journalList" id="FA4-eu-Tfo" customClass="JournalListViewController" customModule="JournalApp" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="journalList" id="FA4-eu-Tfo" customClass="JournalListViewController" customModule="Nozzle" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rW8-bx-NSy">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,10 +82,10 @@
             </objects>
             <point key="canvasLocation" x="341" y="377"/>
         </scene>
-        <!--Jouzzle-->
+        <!--Nozzle-->
         <scene sceneID="egu-qN-xlS">
             <objects>
-                <viewController storyboardIdentifier="dashboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iJx-hr-LNx" customClass="DashboardViewController" customModule="JournalApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dashboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iJx-hr-LNx" customClass="DashboardViewController" customModule="Nozzle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yzy-BI-3QO">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,7 +156,7 @@
                         <viewLayoutGuide key="safeArea" id="JgB-we-hfa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Jouzzle" largeTitleDisplayMode="always" id="Qlv-Mk-VLo"/>
+                    <navigationItem key="navigationItem" title="Nozzle" largeTitleDisplayMode="always" id="Qlv-Mk-VLo"/>
                     <connections>
                         <outlet property="bgImage" destination="hcR-Dd-jjb" id="LcW-3O-fMt"/>
                         <outlet property="collectionView" destination="D0T-UX-LTU" id="xc2-Kr-NLO"/>
@@ -196,8 +196,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O1g-lX-PyN" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mVO-xP-3cv">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="mVO-xP-3cv">
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
