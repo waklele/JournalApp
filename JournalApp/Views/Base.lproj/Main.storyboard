@@ -98,8 +98,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catatan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKf-yt-ofF">
+                                <rect key="frame" x="20.000000000000007" y="502.00000000000006" width="101.66666666666669" height="33.666666666666686"/>
+                                <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dashboard1" translatesAutoresizingMaskIntoConstraints="NO" id="hcR-Dd-jjb">
+                                <rect key="frame" x="0.0" y="140" width="389" height="322"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvi-XI-FaA">
+                                <rect key="frame" x="276" y="502.33333333333326" width="94" height="33"/>
+                                <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="17"/>
+                                <state key="normal" title="Lihat Semua">
+                                    <color key="titleColor" red="0.8666666666666667" green="0.25882352941176467" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="FA4-eu-Tfo" kind="show" id="IMP-4G-lJG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVR-r4-RPW">
+                                <rect key="frame" x="40" y="327" width="310" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0m2-Ca-qMh">
+                                <rect key="frame" x="225" y="383" width="125" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="0jn-qx-g8h"/>
+                                    <constraint firstAttribute="width" constant="125" id="1to-U6-7Eg"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D0T-UX-LTU">
-                                <rect key="frame" x="20" y="624" width="354" height="186"/>
+                                <rect key="frame" x="18" y="570" width="354" height="212"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FYT-ba-Wv4">
@@ -127,43 +160,25 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Catatan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKf-yt-ofF">
-                                <rect key="frame" x="20" y="566" width="113" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dashboard1" translatesAutoresizingMaskIntoConstraints="NO" id="hcR-Dd-jjb">
-                                <rect key="frame" x="0.0" y="114" width="389" height="336"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvi-XI-FaA">
-                                <rect key="frame" x="284" y="566" width="96" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="17"/>
-                                <state key="normal" title="Lihat Semua">
-                                    <color key="titleColor" red="0.8666666666666667" green="0.25882352941176467" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="FA4-eu-Tfo" kind="show" id="IMP-4G-lJG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0m2-Ca-qMh">
-                                <rect key="frame" x="222" y="374" width="125" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVR-r4-RPW">
-                                <rect key="frame" x="47" y="302" width="300" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JgB-we-hfa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tVR-r4-RPW" firstAttribute="top" secondItem="hcR-Dd-jjb" secondAttribute="bottom" constant="-135" id="09u-WQ-ax7"/>
+                            <constraint firstItem="tVR-r4-RPW" firstAttribute="leading" secondItem="JgB-we-hfa" secondAttribute="leading" constant="40" id="5he-hh-zWI"/>
+                            <constraint firstItem="hcR-Dd-jjb" firstAttribute="centerX" secondItem="JgB-we-hfa" secondAttribute="centerX" id="GUP-lq-s87"/>
+                            <constraint firstItem="GKf-yt-ofF" firstAttribute="top" secondItem="hcR-Dd-jjb" secondAttribute="bottom" constant="40" id="H09-cA-iG2"/>
+                            <constraint firstItem="JgB-we-hfa" firstAttribute="trailing" secondItem="tVR-r4-RPW" secondAttribute="trailing" constant="40" id="Iml-nF-eYk"/>
+                            <constraint firstItem="GKf-yt-ofF" firstAttribute="leading" secondItem="JgB-we-hfa" secondAttribute="leading" constant="20" id="TWU-aX-OG8"/>
+                            <constraint firstItem="tVR-r4-RPW" firstAttribute="centerX" secondItem="hcR-Dd-jjb" secondAttribute="centerX" id="VZR-29-QEn"/>
+                            <constraint firstItem="JgB-we-hfa" firstAttribute="trailing" secondItem="bvi-XI-FaA" secondAttribute="trailing" constant="20" id="XxJ-gc-QlW"/>
+                            <constraint firstItem="bvi-XI-FaA" firstAttribute="centerY" secondItem="GKf-yt-ofF" secondAttribute="centerY" id="ad7-f8-L0n"/>
+                            <constraint firstItem="hcR-Dd-jjb" firstAttribute="leading" secondItem="JgB-we-hfa" secondAttribute="leading" id="djh-zX-KIE"/>
+                            <constraint firstItem="JgB-we-hfa" firstAttribute="trailing" secondItem="hcR-Dd-jjb" secondAttribute="trailing" constant="1" id="eEk-Qh-QIx"/>
+                            <constraint firstItem="0m2-Ca-qMh" firstAttribute="bottom" secondItem="hcR-Dd-jjb" secondAttribute="bottom" constant="-40" id="lKE-pv-Epy"/>
+                            <constraint firstItem="JgB-we-hfa" firstAttribute="trailing" secondItem="0m2-Ca-qMh" secondAttribute="trailing" constant="40" id="nKM-aQ-dCG"/>
+                            <constraint firstItem="hcR-Dd-jjb" firstAttribute="top" secondItem="JgB-we-hfa" secondAttribute="top" id="nWU-Ot-KGs"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Nozzle" largeTitleDisplayMode="always" id="Qlv-Mk-VLo"/>
                     <connections>
