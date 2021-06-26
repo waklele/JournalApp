@@ -14,28 +14,34 @@ protocol journalSavedDelegate: class {
 }
 
 class AddNewJournalController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
+    //MARK: - IBOutlet
+    @IBOutlet weak var detailsTextView  : UITextView!
+    @IBOutlet weak var titleTextField   : UITextField!
+    @IBOutlet weak var saveButton       : UIButton!
+    @IBOutlet weak var startStopBtn     : UIButton!
     
-    @IBOutlet weak var detailsTextView: UITextView!
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var startStopBtn: UIButton!
-    
-    var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-    var appDelegate = UIApplication.shared.delegate as? AppDelegate
-    var journalList = [Journal]()
-    var journalCount = [Journal]()
+    var managedObjectContext                                        = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    var appDelegate                                                 = UIApplication.shared.delegate as? AppDelegate
+    var journalList                                                 = [Journal]()
+    var journalCount                                                = [Journal]()
     var journalSavedDelegate: journalSavedDelegate?
     
-    let audioEngine = AVAudioEngine()
-    let speechReconizer : SFSpeechRecognizer? = SFSpeechRecognizer(locale: Locale.init(identifier: "id-ID"))
-    let request = SFSpeechAudioBufferRecognitionRequest()
-    var task : SFSpeechRecognitionTask?
-    var isStart : Bool = false
+    //MARK: - Local Properties
+    let audioEngine         : AVAudioEngine                         = AVAudioEngine()
+    let speechReconizer     : SFSpeechRecognizer?                   = SFSpeechRecognizer(locale: Locale.init(identifier: "id-ID"))
+    var request             : SFSpeechAudioBufferRecognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+    var task                : SFSpeechRecognitionTask?
+    var isStart             : Bool                                  = true
+    var isStartCount        : Int                                   = 0
+    var firstText           : Bool                                  = true
+    var textViewTouched     : Bool                                  = false
     
-    let defaultTitle : String = "Apa yang judul yang kamu baca hari ini?"
-    let defaultDetail : String = "Coba ceritakan kembali apa yang kamu baca"
-    
-    var timer = Timer()
+    fileprivate var timer:Timer?
+    private var messageStrings          : [String]                  = [String]()
+    private var tempPrevStrings         : [String]                  = [String]()
+    private var fullMessageString       : String                    = ""
+    private var singleMessageString     : String                    = ""
+    private var finalString             : String                    = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,15 +52,15 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
         self.title = ""
         
         titleTextField.layer.cornerRadius = 8
-        titleTextField.placeholder = defaultTitle
+        titleTextField.placeholder = "Apa yang judul yang kamu baca hari ini?"
         titleTextField.delegate = self
         
         detailsTextView.layer.cornerRadius = 8
-        detailsTextView.text = defaultDetail
+        detailsTextView.text = "Coba ceritakan kembali apa yang kamu baca"
         detailsTextView.textColor = UIColor.systemGray3
         detailsTextView.font = UIFont.preferredFont(forTextStyle: .body)
         detailsTextView.delegate = self
-
+        
         requestPermision()
         managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
     }
@@ -67,8 +73,8 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
             let entity = NSEntityDescription.entity(forEntityName: "Journal", in: managedObjectContext)
             let newJournal = NSManagedObject(entity: entity!, insertInto: managedObjectContext)
             
-            if titleTextField.text != defaultTitle && detailsTextView.text != defaultDetail && titleTextField.text != "" && detailsTextView.text != "" {
-              
+            if titleTextField.text != "Apa yang judul yang kamu baca hari ini?" && detailsTextView.text != "Coba ceritakan kembali apa yang kamu baca" && titleTextField.text != "" && detailsTextView.text != "" {
+                
                 // Generate ID
                 var incrementId = 0
                 if journalList.count == 0 {
@@ -116,14 +122,13 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
 extension AddNewJournalController {
     
     @IBAction func startStopAct(_ sender: UIButton) {
-        isStart = !isStart
+        //        isStart = !isStart
         
         if isStart {
+            self.isStartCount += 1
             startSpeechRecognition()
-            startStopBtn.setImage(UIImage(named: "Stop Speech Button"), for: .normal)
         } else {
             cancelSpeechRecognition()
-            startStopBtn.setImage(UIImage(named: "Start Speech Button"), for: .normal)
         }
     }
     
@@ -143,17 +148,32 @@ extension AddNewJournalController {
             }
         }
     }
-
+    
     func startSpeechRecognition() {
+        
+        self.messageStrings.removeAll()
+        self.tempPrevStrings.removeAll()
+        self.fullMessageString = ""
+        self.finalString = ""
+        self.singleMessageString = ""
+        
+        self.startStopBtn.setImage(UIImage(named: "Stop Speech Button"), for: .normal)
+        
         print("Speech Recognition has been started")
+        request = SFSpeechAudioBufferRecognitionRequest()   // recreates recognitionRequest object.
+        
+        audioEngine.inputNode.removeTap(onBus: 0)
         let node = audioEngine.inputNode
         let recordingFormat = node.outputFormat(forBus: 0)
+        request.shouldReportPartialResults = true
+        
+        
         node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, _) in
             self.request.append(buffer)
+            
         }
         
         audioEngine.prepare()
-        
         do {
             try audioEngine.start()
         } catch let error {
@@ -172,46 +192,149 @@ extension AddNewJournalController {
         task = speechReconizer?.recognitionTask(with: request, resultHandler: { response, error in
             guard let response = response else {
                 if error != nil {
-                    self.alertView(message: error.debugDescription)
+                    print("Error 1")
+                    self.cancelSpeechRecognition()
+                    self.alertView(message: "Speech Recognizer has not ready yet")
                 } else {
+                    print("Error 2")
+                    self.cancelSpeechRecognition()
                     self.alertView(message: "Problem in giving the response")
                 }
                 return
             }
-
-
-            let message = response.bestTranscription.formattedString
-            print("MESSAGE: ", message)
-
-            if response.isFinal {
-                var prevString = self.detailsTextView.text == self.defaultDetail ?  "" : self.detailsTextView.text
-                print("PREV: ", prevString!)
-
-                if prevString?.last == " " {
-                    prevString!.removeLast()
-                }
-
-                self.detailsTextView.text = "\(prevString ?? "") \(message )"
+            
+            
+            
+            if response != nil {
                 
-                if self.detailsTextView.text == "" || self.detailsTextView.text == self.defaultDetail {
-                    self.detailsTextView.text = self.defaultDetail
-                    self.detailsTextView.textColor = UIColor.lightGray
-                } else {
-                    self.detailsTextView.textColor = UIColor.black
+                self.timer?.invalidate()
+                self.timer = nil
+                
+                self.singleMessageString = response.bestTranscription.formattedString
+                print("Message -> ",self.singleMessageString)
+                
+                
+                if self.textViewTouched == false && self.isStartCount == 1{
+                    
+                    print("--- One ---")
+                    self.messageStrings.append(self.singleMessageString)
+                    self.timerReStart(condition: 1)
+                    
+                } else if self.isStartCount > 1 || self.textViewTouched == true {
+                    print("--- Two ---")
+                    self.tempPrevStrings.append(self.detailsTextView.text)
+                    self.messageStrings.append(self.singleMessageString)
+                    print("NOW: ",self.messageStrings)
+                    self.timerReStart(condition: 2)
                 }
+
+//                if self.textViewTouched == true {
+//                    print("--- ONE ---")
+//                    var prevString = self.detailsTextView.text
+//
+//                    if prevString?.last == " " {
+//                        prevString!.removeLast()
+//                    }
+//
+//                    if prevString == "Coba ceritakan kembali apa yang kamu baca" {
+//                        prevString = ""
+//                    }
+//
+//                    self.messageStrings.append("\(self.singleMessageString)")
+//                    self.timerReStart(condition: 3)
+//                }
+//
+//                if self.textViewTouched == true && self.detailsTextView.text != "" && self.detailsTextView.text != "Coba ceritakan kembali apa yang kamu baca" {
+//                    print("--- TWO ---")
+//                    if self.detailsTextView.text != self.singleMessageString {
+//                        self.messageStrings.append("\(self.detailsTextView.text ?? "") \(self.singleMessageString)")
+//                        self.detailsTextView.text = ""
+//                    }
+//
+//                }
+                
+                
+                
             }
         })
+        isStart = false
+    }
+    
+    func timerReStart(condition: Int) {
+        if condition == 1 {
+            timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.handleTimerValue1), userInfo: nil, repeats: false)
+        } else if condition == 2 {
+            timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(self.handleTimerValue2), userInfo: nil, repeats: false)
+        } else if condition == 3 {
+            
+        }
+    }
+    
+    
+    
+    @objc func handleTimerValue() {
+        print("mS: ",messageStrings)
+        print("INDEX: ",self.messageStrings.endIndex - 1)
+        
+        if task != nil {
+            if self.messageStrings.endIndex - 1 != -1 {
+                self.fullMessageString = "\(self.detailsTextView.text ?? "")\(self.messageStrings[self.messageStrings.endIndex - 1])"
+                
+                self.detailsTextView.text = self.fullMessageString
+                
+                self.messageStrings.removeAll()
+            }
+        }
+    }
+    
+    @objc func handleTimerValue1() {
+        print("mS: ",messageStrings)
+        print("INDEX: ",self.messageStrings.endIndex - 1)
+        if task != nil && self.messageStrings.endIndex - 1 != -1 {
+            
+            self.detailsTextView.text = self.messageStrings[self.messageStrings.endIndex - 1]
+            self.detailsTextView.textColor = UIColor.black
+            self.messageStrings.removeAll()
+        }
+    }
+    
+    @objc func handleTimerValue2() {
+        timer!.invalidate()
+        print("mS: ",messageStrings)
+        //        self.messageStrings = self.messageStrings.uniqued()
+        if task?.isFinishing != true && self.messageStrings.endIndex - 1 != -1 {
+            self.detailsTextView.text = "\(self.tempPrevStrings.first ?? "") \(self.messageStrings[self.messageStrings.endIndex - 1])"
+            self.detailsTextView.textColor = UIColor.black
+        }
+        
+    }
+    
+    func timerStop() {
+        guard timer != nil else { return }
+        timer?.invalidate()
+        timer = nil
     }
     
     func cancelSpeechRecognition() {
         task?.finish()
         task?.cancel()
-        task = nil
+        
+        self.messageStrings.removeAll()
+        self.tempPrevStrings.removeAll()
+        self.fullMessageString = ""
+        self.finalString = ""
+        self.singleMessageString = ""
+        isStart = true
         
         request.endAudio()
+        if audioEngine.inputNode.numberOfInputs > 0 {
+            audioEngine.inputNode.removeTap(onBus: 0)
+        }
         audioEngine.stop()
-        audioEngine.inputNode.removeTap(onBus: 0)
+
         print("Speech Recognition has been shuted down")
+        
+        self.startStopBtn.setImage(UIImage(named: "Start Speech Button"), for: .normal)
     }
     
     func alertView(message: String) {
@@ -223,36 +346,40 @@ extension AddNewJournalController {
     }
     
     func restartSpeechTimer() {
-        timer.invalidate()
+        timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { (timer) in
             self.cancelSpeechRecognition()
         })
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if detailsTextView.textColor == UIColor.systemGray3 || detailsTextView.text == defaultDetail {
+        self.textViewTouched = true
+        if detailsTextView.textColor == UIColor.systemGray3 || detailsTextView.text == "Coba ceritakan kembali apa yang kamu baca" {
             detailsTextView.text = ""
             detailsTextView.textColor = UIColor.black
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
+        
         if detailsTextView.text == "" {
-            detailsTextView.text = defaultDetail
+            detailsTextView.text = "Coba ceritakan kembali apa yang kamu baca"
+            self.textViewTouched = false
             detailsTextView.textColor = UIColor.lightGray
+        }
+        
+        if detailsTextView.text != "" && detailsTextView.text != "Coba ceritakan kembali apa yang kamu baca" {
+            self.textViewTouched = true
         }
     }
     
-    func textFieldDidChangeSelection(_ textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         self.validateText()
-    }
-    
-    func textViewDidChangeSelection(_ textView: UITextView) {
-        self.validateText()
+        self.textViewTouched = true
     }
     
     func validateText() {
-        if titleTextField.text != "" && detailsTextView.textColor != UIColor.systemGray3 && detailsTextView.text != defaultDetail && detailsTextView.text != "" {
+        if titleTextField.text != "" && detailsTextView.textColor != UIColor.systemGray3 && detailsTextView.text != "Coba ceritakan kembali apa yang kamu baca" && detailsTextView.text != "" {
             saveButton.isEnabled = true
             saveButton.backgroundColor = UIColor(red: 221/255, green: 66/255, blue: 123/255, alpha: 100)
         } else {
