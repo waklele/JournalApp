@@ -227,15 +227,17 @@ extension AddNewJournalController {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        self.validateText()
-        
         if detailsTextView.text == "" {
             detailsTextView.text = "Coba ceritakan kembali apa yang kamu baca"
             detailsTextView.textColor = UIColor.lightGray
         }
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        self.validateText()
+    }
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
         self.validateText()
     }
     
