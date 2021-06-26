@@ -28,6 +28,14 @@ class JournalPuzzleViewController: UIViewController {
         
     }
     
+    override func didMove(toParent parent: UIViewController?) {
+        super.didMove(toParent: parent)
+
+        if parent == nil {
+            debugPrint("Back Button pressed.")
+        }
+    }
+    
     func adjustPuzzle() {
         if !puzzle2Detail.isEmpty {
             if !puzzle3Detail.isEmpty {
@@ -132,9 +140,9 @@ class JournalPuzzleViewController: UIViewController {
    }
     
     
-    @IBAction func saveJournal(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
-    }
+//    @IBAction func saveJournal(_ sender: Any) {
+//        navigationController?.popToRootViewController(animated: true)
+//    }
     
     /*
      // MARK: - Navigation

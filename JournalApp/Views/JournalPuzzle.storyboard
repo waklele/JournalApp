@@ -25,7 +25,7 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="saveJournal:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qqW-lo-Lp8"/>
+                                    <segue destination="2bH-UX-fgC" kind="modal" id="rb3-C9-bCA"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPuzzle" translatesAutoresizingMaskIntoConstraints="NO" id="R0k-eA-EN6">
@@ -50,36 +50,99 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="87.723214285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Pop Up View Controller-->
         <scene sceneID="Ywk-IN-daT">
             <objects>
-                <viewController id="2bH-UX-fgC" sceneMemberID="viewController">
+                <viewController id="2bH-UX-fgC" customClass="PopUpViewController" customModule="Nozzle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4LA-gR-LIB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HWa-bD-0fw">
-                                <rect key="frame" x="87" y="294" width="240" height="333"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWa-bD-0fw">
+                                <rect key="frame" x="52" y="120" width="310" height="468"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconDudukSedih" translatesAutoresizingMaskIntoConstraints="NO" id="UYz-jz-gXE">
-                                        <rect key="frame" x="43" y="0.0" width="155" height="177"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Puzzle kamu belum lengkap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQA-vb-csC">
-                                        <rect key="frame" x="15" y="201" width="221" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puzzle kamu belum lengkap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQA-vb-csC">
+                                        <rect key="frame" x="19" y="247" width="272" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="TS0-pC-RdI"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconDudukSedih" translatesAutoresizingMaskIntoConstraints="NO" id="UYz-jz-gXE">
+                                        <rect key="frame" x="80" y="20" width="150" height="207"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNl-52-ZUj">
+                                        <rect key="frame" x="17" y="396" width="276" height="55"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tetep Simpan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFh-up-7gx">
+                                                <rect key="frame" x="86" y="17" width="104.5" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.81307050920000001" green="0.4056746417" blue="0.77684344809999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="RhX-xp-LSK"/>
+                                            <constraint firstItem="LFh-up-7gx" firstAttribute="centerY" secondItem="NNl-52-ZUj" secondAttribute="centerY" id="Urm-xL-GTJ"/>
+                                            <constraint firstItem="LFh-up-7gx" firstAttribute="centerX" secondItem="NNl-52-ZUj" secondAttribute="centerX" id="ce2-2r-Ozd"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CvO-MP-ogz">
+                                        <rect key="frame" x="17" y="321" width="276" height="55"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfF-fZ-bga">
+                                                <rect key="frame" x="101" y="12.5" width="74" height="30"/>
+                                                <state key="normal" title="Isi Kembali">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="IsiKembali:" destination="2bH-UX-fgC" eventType="touchUpInside" id="Xil-I7-sof"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.81307050920000001" green="0.4056746417" blue="0.77684344809999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="KfF-fZ-bga" firstAttribute="centerY" secondItem="CvO-MP-ogz" secondAttribute="centerY" id="26Y-EG-gvW"/>
+                                            <constraint firstAttribute="height" constant="55" id="2ue-kA-rtq"/>
+                                            <constraint firstItem="KfF-fZ-bga" firstAttribute="centerX" secondItem="CvO-MP-ogz" secondAttribute="centerX" id="LKu-yD-Jg0"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UYz-jz-gXE" secondAttribute="trailing" constant="80" id="5xz-h4-7Ab"/>
+                                    <constraint firstItem="UYz-jz-gXE" firstAttribute="leading" secondItem="HWa-bD-0fw" secondAttribute="leading" constant="80" id="EAb-Ea-Clc"/>
+                                    <constraint firstItem="WQA-vb-csC" firstAttribute="top" secondItem="UYz-jz-gXE" secondAttribute="bottom" constant="20" id="Epj-zJ-2xl"/>
+                                    <constraint firstItem="WQA-vb-csC" firstAttribute="leading" secondItem="HWa-bD-0fw" secondAttribute="leading" constant="19" id="FAT-IN-E9t"/>
+                                    <constraint firstItem="CvO-MP-ogz" firstAttribute="leading" secondItem="HWa-bD-0fw" secondAttribute="leading" constant="17" id="MAt-iF-wnW"/>
+                                    <constraint firstItem="NNl-52-ZUj" firstAttribute="top" secondItem="CvO-MP-ogz" secondAttribute="bottom" constant="20" id="R20-CT-dii"/>
+                                    <constraint firstAttribute="trailing" secondItem="CvO-MP-ogz" secondAttribute="trailing" constant="17" id="ZKq-eK-var"/>
+                                    <constraint firstAttribute="trailing" secondItem="WQA-vb-csC" secondAttribute="trailing" constant="19" id="e57-nJ-pl2"/>
+                                    <constraint firstItem="CvO-MP-ogz" firstAttribute="top" secondItem="WQA-vb-csC" secondAttribute="bottom" constant="53" id="hfm-0h-Mni"/>
+                                    <constraint firstItem="NNl-52-ZUj" firstAttribute="leading" secondItem="HWa-bD-0fw" secondAttribute="leading" constant="17" id="uMr-5g-ql9"/>
+                                    <constraint firstAttribute="bottom" secondItem="NNl-52-ZUj" secondAttribute="bottom" constant="17" id="vrT-XL-jqQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="NNl-52-ZUj" secondAttribute="trailing" constant="17" id="wDf-Tg-t7h"/>
+                                    <constraint firstItem="UYz-jz-gXE" firstAttribute="top" secondItem="HWa-bD-0fw" secondAttribute="top" constant="20" id="xMU-dV-GEE"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DUO-78-mM2"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HWa-bD-0fw" firstAttribute="leading" secondItem="DUO-78-mM2" secondAttribute="leading" constant="52" id="C2n-nf-bBf"/>
+                            <constraint firstItem="DUO-78-mM2" firstAttribute="bottom" secondItem="HWa-bD-0fw" secondAttribute="bottom" constant="220" id="ICQ-Km-nH2"/>
+                            <constraint firstItem="HWa-bD-0fw" firstAttribute="top" secondItem="DUO-78-mM2" secondAttribute="top" constant="120" id="lYh-tK-kmz"/>
+                            <constraint firstItem="DUO-78-mM2" firstAttribute="trailing" secondItem="HWa-bD-0fw" secondAttribute="trailing" constant="52" id="sh5-EF-keQ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="eLz-sq-qMr"/>
+                    <connections>
+                        <outlet property="isiKembaliButton" destination="CvO-MP-ogz" id="a55-xl-VMp"/>
+                        <outlet property="tetapSimpanButton" destination="NNl-52-ZUj" id="cSk-LE-046"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dME-MG-8wf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
