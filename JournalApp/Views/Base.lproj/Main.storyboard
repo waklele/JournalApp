@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Jurnal-Ku-->
+        <!--Catatan-Ku-->
         <scene sceneID="ySR-gF-rL1">
             <objects>
                 <collectionViewController storyboardIdentifier="journalList" id="FA4-eu-Tfo" customClass="JournalListViewController" customModule="Nozzle" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,7 +46,7 @@
                             <outlet property="delegate" destination="FA4-eu-Tfo" id="JK8-8T-ouv"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Jurnal-Ku" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="QOp-SQ-6DS">
+                    <navigationItem key="navigationItem" title="Catatan-Ku" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="QOp-SQ-6DS">
                         <barButtonItem key="backBarButtonItem" title="Kembali" id="3oJ-yX-LsU"/>
                         <barButtonItem key="rightBarButtonItem" title="Add New Journal" image="plus" catalog="system" id="v5E-m9-A0T">
                             <connections>
@@ -235,7 +235,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4fa-y8-qTr"/>
+        <segue reference="y4G-tN-VKd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="dashboard1" width="363" height="322"/>
