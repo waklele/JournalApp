@@ -76,6 +76,7 @@ class EditFirstPuzzleViewController: UIViewController, UITextViewDelegate, UITex
                 
                 objectToBeEdited.setValue(titleTextField.text, forKey: "title")
                 objectToBeEdited.setValue(detailsTextView.text, forKey: "puzzle1Detail")
+                objectToBeEdited.setValue(NSDate.now, forKey: "lastUpdateDate")
                 
                 do {
                     try managedObjectContext.save()

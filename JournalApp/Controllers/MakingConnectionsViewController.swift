@@ -113,6 +113,7 @@ class MakingConnectionsViewController: UIViewController, UITextViewDelegate {
             if puzzleType == 3 {
                 objectToBeEdited.setValue(detailsTextView.text, forKey: "puzzle4Detail")
             }
+            objectToBeEdited.setValue(NSDate.now, forKey: "lastUpdateDate")
             
             do {
                 try managedObjectContext.save()
