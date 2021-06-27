@@ -19,6 +19,7 @@ class EditFirstPuzzleViewController: UIViewController, UITextViewDelegate, UITex
     public var dataId: Int64 = 0
     public var readingTitle = String()
     public var puzzleDetail = String()
+    var itemSavedDelegate: itemSavedDelegate?
     
     var managedObjectContext                                        = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     var appDelegate                                                 = UIApplication.shared.delegate as? AppDelegate
@@ -60,8 +61,6 @@ class EditFirstPuzzleViewController: UIViewController, UITextViewDelegate, UITex
         detailsTextView.font = UIFont.preferredFont(forTextStyle: .body)
         detailsTextView.delegate = self
 
-
-        
         managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
 
     }
@@ -86,6 +85,7 @@ class EditFirstPuzzleViewController: UIViewController, UITextViewDelegate, UITex
             } catch {
                 print("error2")
             }
+            itemSavedDelegate?.itemSaved()
             //self.dismiss(animated: true, completion: nil)
             //navigationController?.popToRootViewController(animated: true)
             navigationController?.popViewController(animated: true)

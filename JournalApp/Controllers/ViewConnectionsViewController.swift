@@ -21,6 +21,12 @@ class ViewConnectionsViewController: UIViewController, UITextViewDelegate {
     public var puzzle3Detail = String()
     public var puzzle4Detail = String()
     
+    var journalList = [Journal]()
+    var itemSavedDelegate: itemSavedDelegate?
+    
+    var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    var appDelegate = UIApplication.shared.delegate as? AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -37,6 +43,13 @@ class ViewConnectionsViewController: UIViewController, UITextViewDelegate {
         navigationItem.backBarButtonItem = backItem
         
         adjustPrompt()
+        
+        managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        itemSavedDelegate?.itemSaved()
     }
     
     func adjustPrompt() {
@@ -57,6 +70,28 @@ class ViewConnectionsViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    func readData() {
+        let journalRequest: NSFetchRequest<Journal> = Journal.fetchRequest()
+        journalRequest.predicate = NSPredicate(format: "id = %d", dataId)
+        
+        do {
+            try journalList = managedObjectContext.fetch(journalRequest)
+        } catch {
+            print("Error loading the journal list")
+        }
+        
+        do {
+            try journalList = managedObjectContext.fetch(journalRequest)
+        } catch {
+            print("Error loading the journal list")
+        }
+        puzzle1Detail = journalList[0].puzzle1Detail ?? ""
+        puzzle2Detail = journalList[0].puzzle2Detail ?? ""
+        puzzle3Detail = journalList[0].puzzle3Detail ?? ""
+        puzzle4Detail = journalList[0].puzzle4Detail ?? ""
+        adjustPrompt()
+    }
+    
     @IBAction func editConnections(_ sender: Any) {
         print("tekan bisa")
         let storyboard = UIStoryboard(name: "MakingConnections", bundle: nil)
@@ -66,6 +101,7 @@ class ViewConnectionsViewController: UIViewController, UITextViewDelegate {
             vc.puzzleType = 1
             vc.puzzle2Detail = puzzle2Detail
             vc.dataId = dataId
+            vc.itemSavedDelegate = self
             self.show(vc, sender: nil)
         }
         if puzzleType == 2 {
@@ -73,6 +109,7 @@ class ViewConnectionsViewController: UIViewController, UITextViewDelegate {
             vc.puzzleType = 2
             vc.puzzle3Detail = puzzle3Detail
             vc.dataId = dataId
+            vc.itemSavedDelegate = self
             self.show(vc, sender: nil)
         }
         if puzzleType == 3 {
@@ -80,8 +117,15 @@ class ViewConnectionsViewController: UIViewController, UITextViewDelegate {
             vc.puzzleType = 3
             vc.puzzle4Detail = puzzle4Detail
             vc.dataId = dataId
+            vc.itemSavedDelegate = self
             self.show(vc, sender: nil)
         }
     }
     
+}
+
+extension ViewConnectionsViewController: itemSavedDelegate {
+    func itemSaved() {
+        readData()
+    }
 }
