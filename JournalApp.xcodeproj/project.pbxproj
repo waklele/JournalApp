@@ -44,6 +44,7 @@
 		BD7D549F2684A188007CAFDD /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7D549E2684A188007CAFDD /* Onboarding.storyboard */; };
 		BD7D54A52684A985007CAFDD /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D54A42684A985007CAFDD /* OnboardingSlide.swift */; };
 		BD7D54A92684AE43007CAFDD /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D54A82684AE43007CAFDD /* OnboardingCollectionViewCell.swift */; };
+		BDAE687B2688A24500A98859 /* JournalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAE687A2688A24500A98859 /* JournalManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		BD7D549E2684A188007CAFDD /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		BD7D54A42684A985007CAFDD /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		BD7D54A82684AE43007CAFDD /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		BDAE687A2688A24500A98859 /* JournalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				97AE7991267A4AD800F5128E /* JournalModel.swift */,
 				BD7D54A42684A985007CAFDD /* OnboardingSlide.swift */,
 				BD7D54A82684AE43007CAFDD /* OnboardingCollectionViewCell.swift */,
+				BDAE687A2688A24500A98859 /* JournalManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				97AE7992267A4AD800F5128E /* JournalModel.swift in Sources */,
 				306FD7C4268589F40027BEBF /* MakingConnectionsViewController.swift in Sources */,
 				3045C0C926809D720062605D /* DashboardViewController.swift in Sources */,
+				BDAE687B2688A24500A98859 /* JournalManager.swift in Sources */,
 				2DE1171E26735718003050BF /* SceneDelegate.swift in Sources */,
 				3045C0C7267B2F9F0062605D /* JournalPuzzleViewController.swift in Sources */,
 				BD7D54A52684A985007CAFDD /* OnboardingSlide.swift in Sources */,
