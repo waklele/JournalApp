@@ -26,6 +26,7 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -47,6 +48,7 @@ class DashboardViewController: UIViewController {
         
         readData()
         checkTodaysJournal()
+        print("Generate ID: ",JournalManager.generateId())
     }
     
     override func viewWillAppear(_ animated: Bool) {

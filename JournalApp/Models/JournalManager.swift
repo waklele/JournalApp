@@ -220,17 +220,21 @@ class JournalManager{
     
     //MARK: - generate ID
     static func generateId() -> Int64 {
-        if JournalManager.read().count == 0 {
+        
+        let journals = JournalManager.read()["data"] as! [NSManagedObject]
+        
+        if journals.count == 0 {
             return 1
             
         } else {
-            let journals = JournalManager.read()["data"] as! [NSManagedObject]
+            var ids: [Int64] = []
+            for data in journals {
+                ids.append(data.value(forKey: "id") as! Int64)
+            }
             
-            let lastJournal = journals.last!
+            let max = ids.max()!
 
-            let lastId = lastJournal.value(forKey: "id") as! Int
-            
-            return Int64(lastId + 1)
+            return Int64(max + 1)
         }
     }
 }
