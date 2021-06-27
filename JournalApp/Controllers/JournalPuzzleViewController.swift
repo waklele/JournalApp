@@ -179,6 +179,9 @@ class JournalPuzzleViewController: UIViewController {
             } else {
                 let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
                 vc.puzzleType = 1
+                
+                vc.puzzleKey = "puzzle2Detail"
+                
                 vc.dataId = dataId
                 vc.itemSavedDelegate = self
                 self.show(vc, sender: nil)
@@ -195,6 +198,9 @@ class JournalPuzzleViewController: UIViewController {
             } else {
                 let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
                 vc.puzzleType = 2
+                
+                vc.puzzleKey = "puzzle3Detail"
+                
                 vc.dataId = dataId
                 vc.itemSavedDelegate = self
                 self.show(vc, sender: nil)
@@ -220,6 +226,9 @@ class JournalPuzzleViewController: UIViewController {
             } else {
                 let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
                 vc.puzzleType = 3
+                
+                vc.puzzleKey = "puzzle4Detail"
+                
                 vc.dataId = dataId
                 vc.itemSavedDelegate = self
                 self.show(vc, sender: nil)
