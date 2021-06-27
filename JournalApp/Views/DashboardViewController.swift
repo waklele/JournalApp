@@ -52,6 +52,13 @@ class DashboardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         readData()
+        print("keluar sini")
+        if !journalList.isEmpty {
+
+            print(journalList[0])
+            // 1
+            imageButton.removeTarget(self, action: #selector(createJournal(_:)), for: .touchUpInside)
+        }
         checkTodaysJournal()
     }
     
@@ -82,6 +89,7 @@ class DashboardViewController: UIViewController {
     
     func checkTodaysJournal() {
         if journalList.isEmpty {
+            print("masuk sini")
             bgImage.image = UIImage(named: "dashboard1")
             collectionView.isHidden = true
             emptyImage.isHidden = false
@@ -105,6 +113,7 @@ class DashboardViewController: UIViewController {
             imageButton.setTitle("Lihat Catatan", for: .normal)
             // set tujuan button
             imageButton.addTarget(self, action: #selector(seeTodaysJournal(_:)), for: .touchUpInside)
+
             
             if isTodaysJournalComplete() {
                 bgImage.image = UIImage(named: "dashboard3")
