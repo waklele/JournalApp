@@ -16,7 +16,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var imageLabel: UILabel!
     @IBOutlet weak var imageButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    @IBOutlet weak var emptyImage: UIImageView!
     
     var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     var appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -83,12 +83,18 @@ class DashboardViewController: UIViewController {
     func checkTodaysJournal() {
         if journalList.isEmpty {
             bgImage.image = UIImage(named: "dashboard1")
+            collectionView.isHidden = true
+            emptyImage.isHidden = false
             imageLabel.text = "Duh.. Kamu belum buat catatan hari ini"
             imageButton.setTitle("Buat Jurnal", for: .normal)
             // set tujuan button
             imageButton.addTarget(self, action: #selector(createJournal(_:)), for: .touchUpInside)
             return
+        } else {
+            collectionView.isHidden = false
+            emptyImage.isHidden = true
         }
+        
         let currentDate = Date()
         let lastJournalDate = journalList[0].createDate ?? Date()
         let dateFormatter = DateFormatter()

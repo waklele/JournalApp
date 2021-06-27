@@ -86,18 +86,17 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
                 newJournal.setValue(incrementId, forKey: "id")
                 newJournal.setValue(titleTextField.text, forKey: "title")
                 newJournal.setValue(detailsTextView.text, forKey: "puzzle1Detail")
-                //set date
                 newJournal.setValue(NSDate.now, forKey: "createDate")
                 newJournal.setValue(NSDate.now, forKey: "lastUpdateDate")
                 
                 try managedObjectContext.save()
                 print(newJournal)
-                print("save success")
+                print("Journal successfully saved")
                 //delegate
                 journalSavedDelegate?.journalSaved()
             }
         } catch {
-            print("save error")
+            print("Failed to save journal")
         }
     }
     
