@@ -31,8 +31,10 @@ class ViewConnectionsViewController: UIViewController, UITextViewDelegate {
         detailsTextView.text = "Insert detail here..."
         detailsTextView.textColor = UIColor.lightGray
         
-//        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: nil, action: #selector(editConnections(_:)))
-//        self.navigationItem.rightBarButtonItem = editButton
+        // Customize back button
+        let backItem = UIBarButtonItem()
+        backItem.title = "Kembali"
+        navigationItem.backBarButtonItem = backItem
         
         adjustPrompt()
     }

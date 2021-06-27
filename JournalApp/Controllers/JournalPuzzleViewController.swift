@@ -29,6 +29,11 @@ class JournalPuzzleViewController: UIViewController {
         
         adjustPuzzle()
         
+        // Customize back button
+        let backItem = UIBarButtonItem()
+        backItem.title = "Kembali"
+        navigationItem.backBarButtonItem = backItem
+        
     }
     
     override func didMove(toParent parent: UIViewController?) {

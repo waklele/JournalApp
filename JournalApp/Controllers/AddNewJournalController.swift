@@ -63,6 +63,11 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
         detailsTextView.font = UIFont.preferredFont(forTextStyle: .body)
         detailsTextView.delegate = self
         
+        // Customize back button
+        let backItem = UIBarButtonItem()
+        backItem.title = "Kembali"
+        navigationItem.backBarButtonItem = backItem
+        
         requestPermision()
         managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
     }
