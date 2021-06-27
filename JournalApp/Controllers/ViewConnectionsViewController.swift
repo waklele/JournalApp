@@ -28,7 +28,7 @@ class ViewConnectionsViewController: UIViewController, UITextViewDelegate {
 
         detailsTextView.layer.cornerRadius = 5
         detailsTextView.delegate = self
-        detailsTextView.text = "Insert detail here..."
+        detailsTextView.text = "Tuliskan disini.."
         detailsTextView.textColor = UIColor.lightGray
         
         // Customize back button

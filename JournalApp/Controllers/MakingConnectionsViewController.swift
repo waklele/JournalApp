@@ -46,6 +46,7 @@ class MakingConnectionsViewController: UIViewController, UITextViewDelegate {
     private var fullMessageString       : String                    = ""
     private var singleMessageString     : String                    = ""
     private var finalString             : String                    = ""
+    private var defaultDetail           : String                    = "Tuliskan disini.."
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +56,11 @@ class MakingConnectionsViewController: UIViewController, UITextViewDelegate {
 
         detailsTextView.layer.cornerRadius = 5
         detailsTextView.delegate = self
-        detailsTextView.text = "Insert detail here..."
+        detailsTextView.text = defaultDetail
         detailsTextView.textColor = UIColor.lightGray
         
+        saveButton.isEnabled = false
+        saveButton.backgroundColor = UIColor.systemGray3
         
         managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
         
@@ -365,32 +368,33 @@ extension MakingConnectionsViewController {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         self.textViewTouched = true
-        if detailsTextView.textColor == UIColor.systemGray3 || detailsTextView.text == "Coba ceritakan kembali apa yang kamu baca" {
+        if detailsTextView.textColor == UIColor.systemGray3 || detailsTextView.text == defaultDetail {
             detailsTextView.text = ""
             detailsTextView.textColor = UIColor.black
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        
         if detailsTextView.text == "" {
-            detailsTextView.text = "Coba ceritakan kembali apa yang kamu baca"
+            detailsTextView.text = defaultDetail
             self.textViewTouched = false
             detailsTextView.textColor = UIColor.lightGray
         }
         
-        if detailsTextView.text != "" && detailsTextView.text != "Coba ceritakan kembali apa yang kamu baca" {
+        if detailsTextView.text != "" && detailsTextView.text != defaultDetail {
             self.textViewTouched = true
         }
+        
+        self.validateText()
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func textViewDidChange(_ textView: UITextView) {
         self.validateText()
-        self.textViewTouched = true
     }
+    
     
     func validateText() {
-        if detailsTextView.textColor != UIColor.systemGray3 && detailsTextView.text != "Coba ceritakan kembali apa yang kamu baca" && detailsTextView.text != "" {
+        if detailsTextView.text != "" && detailsTextView.text != defaultDetail && detailsTextView.text != "" {
             saveButton.isEnabled = true
             saveButton.backgroundColor = UIColor(red: 221/255, green: 66/255, blue: 123/255, alpha: 100)
         } else {
