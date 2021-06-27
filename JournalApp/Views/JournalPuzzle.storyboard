@@ -108,7 +108,7 @@
                                         <rect key="frame" x="17" y="231" width="250" height="39"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfF-fZ-bga">
-                                                <rect key="frame" x="83" y="3.6666666666666856" width="84" height="32"/>
+                                                <rect key="frame" x="83" y="3" width="84" height="33"/>
                                                 <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="17"/>
                                                 <state key="normal" title="Isi Kembali">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -199,7 +199,7 @@
                                 <rect key="frame" x="35" y="698" width="320" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kembali ke Beranda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kil-6c-C5B">
-                                        <rect key="frame" x="83.333333333333329" y="15" width="153.66666666666669" height="20"/>
+                                        <rect key="frame" x="81.666666666666671" y="15" width="156.66666666666663" height="20"/>
                                         <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
