@@ -17,33 +17,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efw-e0-Ig3">
-                                <rect key="frame" x="162" y="781" width="90" height="58"/>
+                                <rect key="frame" x="35" y="787" width="344" height="50"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="jY8-DX-0kL"/>
-                                    <constraint firstAttribute="height" constant="58" id="yoH-7I-jvT"/>
+                                    <constraint firstAttribute="height" constant="50" id="moT-dn-ou1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Selesai">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="2bH-UX-fgC" kind="modal" id="rb3-C9-bCA"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPuzzle" translatesAutoresizingMaskIntoConstraints="NO" id="R0k-eA-EN6">
-                                <rect key="frame" x="70" y="114" width="274" height="432"/>
+                                <rect key="frame" x="70" y="114" width="274" height="523"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="efw-e0-Ig3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="35" id="2CP-y0-hAL"/>
                             <constraint firstItem="efw-e0-Ig3" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="8J4-U6-IDH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="efw-e0-Ig3" secondAttribute="trailing" constant="35" id="DLe-E5-h25"/>
+                            <constraint firstItem="efw-e0-Ig3" firstAttribute="top" secondItem="R0k-eA-EN6" secondAttribute="bottom" constant="150" id="eOA-Gm-LDc"/>
                             <constraint firstItem="R0k-eA-EN6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="70" id="iOE-WY-46z"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="efw-e0-Ig3" secondAttribute="bottom" constant="23" id="oAf-v0-eBQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="efw-e0-Ig3" secondAttribute="bottom" constant="25" id="oAf-v0-eBQ"/>
                             <constraint firstItem="R0k-eA-EN6" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="70" id="rDz-1Y-d8i"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="R0k-eA-EN6" secondAttribute="trailing" constant="70" id="uLZ-ke-WMq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="puzzle" destination="R0k-eA-EN6" id="TH5-Rm-6Zd"/>
+                        <outlet property="saveButton" destination="efw-e0-Ig3" id="mD4-1R-xcj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -154,6 +160,9 @@
         <image name="defaultPuzzle" width="336" height="432"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -9,6 +9,7 @@ import UIKit
 
 class JournalPuzzleViewController: UIViewController {
     @IBOutlet weak var puzzle: UIImageView!
+    @IBOutlet weak var saveButton: UIButton!
     
     public var dataId: Int64 = 0
     public var readingTitle = String()
@@ -19,8 +20,9 @@ class JournalPuzzleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        saveButton.roundedButton(radius: 10)
+        
         self.title = readingTitle
-        print(readingTitle)
         puzzle.isUserInteractionEnabled = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapAction))
         self.puzzle.addGestureRecognizer(tapGestureRecognizer)
