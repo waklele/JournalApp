@@ -87,7 +87,7 @@ class JournalListViewController: UICollectionViewController, UICollectionViewDel
         if let vc = segue.destination as? AddNewJournalController {
             vc.journalSavedDelegate = self
             vc.journalCount = journalList.reversed()
-            print(journalList.count)
+            print("JOURNAL COUNT: ",journalList.count)
         }
         if let vc = segue.destination as? JournalPuzzleViewController {
             vc.readingTitle = journalList[journalSelectionIndex].title ?? ""
