@@ -22,6 +22,11 @@ class ViewFirstPuzzleViewController: UIViewController, UITextViewDelegate {
         detailsTextView.layer.cornerRadius = 5
         detailsTextView.delegate = self
         detailsTextView.textColor = .black
+    
+        // Customize back button
+        let backItem = UIBarButtonItem()
+        backItem.title = "Kembali"
+        navigationItem.backBarButtonItem = backItem
         
         adjustText()
     }

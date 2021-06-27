@@ -60,6 +60,8 @@ class EditFirstPuzzleViewController: UIViewController, UITextViewDelegate, UITex
         detailsTextView.font = UIFont.preferredFont(forTextStyle: .body)
         detailsTextView.delegate = self
 
+
+        
         managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
 
     }
