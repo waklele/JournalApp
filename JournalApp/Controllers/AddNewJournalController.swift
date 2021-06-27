@@ -42,6 +42,8 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
     private var fullMessageString       : String                    = ""
     private var singleMessageString     : String                    = ""
     private var finalString             : String                    = ""
+    private var defaultTitle            : String                    = "Apa yang judul yang kamu baca hari ini?"
+    private var defaultDetail           : String                    = "Coba ceritakan kembali apa yang kamu baca"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,11 +54,11 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
         self.title = ""
         
         titleTextField.layer.cornerRadius = 8
-        titleTextField.placeholder = "Apa yang judul yang kamu baca hari ini?"
+        titleTextField.placeholder = defaultTitle
         titleTextField.delegate = self
         
         detailsTextView.layer.cornerRadius = 8
-        detailsTextView.text = "Coba ceritakan kembali apa yang kamu baca"
+        detailsTextView.text = defaultDetail
         detailsTextView.textColor = UIColor.systemGray3
         detailsTextView.font = UIFont.preferredFont(forTextStyle: .body)
         detailsTextView.delegate = self
@@ -73,7 +75,7 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
             let entity = NSEntityDescription.entity(forEntityName: "Journal", in: managedObjectContext)
             let newJournal = NSManagedObject(entity: entity!, insertInto: managedObjectContext)
             
-            if titleTextField.text != "Apa yang judul yang kamu baca hari ini?" && detailsTextView.text != "Coba ceritakan kembali apa yang kamu baca" && titleTextField.text != "" && detailsTextView.text != "" {
+            if titleTextField.text != defaultTitle && detailsTextView.text != defaultDetail && titleTextField.text != "" && detailsTextView.text != "" {
                 
                 // Generate ID
                 var incrementId = 0
@@ -221,7 +223,7 @@ extension AddNewJournalController {
                     
                 } else if self.isStartCount > 1 || self.textViewTouched == true {
                     print("--- Two ---")
-                    self.tempPrevStrings.append(self.detailsTextView.text)
+                    self.tempPrevStrings.append(self.detailsTextView.text == self.defaultDetail ? "" : self.detailsTextView.text)
                     self.messageStrings.append(self.singleMessageString)
                     print("NOW: ",self.messageStrings)
                     self.timerReStart(condition: 2)
@@ -354,7 +356,7 @@ extension AddNewJournalController {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         self.textViewTouched = true
-        if detailsTextView.textColor == UIColor.systemGray3 || detailsTextView.text == "Coba ceritakan kembali apa yang kamu baca" {
+        if detailsTextView.textColor == UIColor.systemGray3 || detailsTextView.text == defaultDetail {
             detailsTextView.text = ""
             detailsTextView.textColor = UIColor.black
         }
@@ -362,12 +364,12 @@ extension AddNewJournalController {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if detailsTextView.text == "" {
-            detailsTextView.text = "Coba ceritakan kembali apa yang kamu baca"
+            detailsTextView.text = defaultDetail
             self.textViewTouched = false
             detailsTextView.textColor = UIColor.lightGray
         }
         
-        if detailsTextView.text != "" && detailsTextView.text != "Coba ceritakan kembali apa yang kamu baca" {
+        if detailsTextView.text != "" && detailsTextView.text != defaultDetail {
             self.textViewTouched = true
         }
         
@@ -388,7 +390,7 @@ extension AddNewJournalController {
     }
     
     func validateText() {
-        if titleTextField.text != "" && detailsTextView.textColor != UIColor.systemGray3 && detailsTextView.text != "Coba ceritakan kembali apa yang kamu baca" && detailsTextView.text != "" {
+        if titleTextField.text != "" && titleTextField.text != defaultTitle && detailsTextView.textColor != UIColor.systemGray3 && detailsTextView.text != defaultDetail && detailsTextView.text != "" {
             saveButton.isEnabled = true
             saveButton.backgroundColor = UIColor(red: 221/255, green: 66/255, blue: 123/255, alpha: 100)
         } else {
