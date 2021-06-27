@@ -68,7 +68,7 @@ class JournalManager{
             newJournal.setValue(NSDate.now, forKey: "lastUpdateDate")
             
             try managedContext.save()
-            return Response.success(data: "asd")
+            return Response.success()
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
             return Response.error(error: error)
@@ -162,7 +162,7 @@ class JournalManager{
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "id")
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Journal")
         
         fetchRequest.predicate = NSPredicate(format: "id = %@", "\(id)")
         
