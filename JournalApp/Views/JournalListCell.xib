@@ -7,28 +7,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SF-Pro-Rounded-Semibold.otf">
-            <string>SFProRounded-Semibold</string>
+        <array key="SF-Pro-Rounded-Bold.otf">
+            <string>SFProRounded-Bold</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="JournalCell" reuseIdentifier="JournalCell" id="gTV-IL-0wX" customClass="JournalListCell" customModule="Nozzle" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="164" height="159"/>
+            <rect key="frame" x="0.0" y="0.0" width="164" height="178"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="164" height="159"/>
+                <rect key="frame" x="0.0" y="0.0" width="164" height="178"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3k-CO-Jvb">
-                        <rect key="frame" x="0.0" y="0.0" width="164" height="159"/>
+                        <rect key="frame" x="0.0" y="0.0" width="164" height="178"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrh-6P-U9o">
-                                <rect key="frame" x="5" y="0.0" width="154" height="136"/>
+                                <rect key="frame" x="5" y="0.0" width="154" height="140"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Puzzle Full" translatesAutoresizingMaskIntoConstraints="NO" id="BDY-CK-fr1">
-                                        <rect key="frame" x="20" y="10" width="114" height="116"/>
+                                        <rect key="frame" x="20" y="10" width="114" height="120"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -39,11 +39,11 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timus Mas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vP1-tB-H8q">
-                                <rect key="frame" x="0.0" y="134" width="164" height="25"/>
+                                <rect key="frame" x="0.0" y="153" width="164" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="VfW-Lp-4C9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -51,7 +51,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rrh-6P-U9o" firstAttribute="leading" secondItem="v3k-CO-Jvb" secondAttribute="leading" constant="5" id="DTP-u6-1p5"/>
-                            <constraint firstAttribute="bottom" secondItem="rrh-6P-U9o" secondAttribute="bottom" constant="23" id="DZG-hM-UAs"/>
+                            <constraint firstAttribute="bottom" secondItem="rrh-6P-U9o" secondAttribute="bottom" constant="38" id="DZG-hM-UAs"/>
                             <constraint firstItem="rrh-6P-U9o" firstAttribute="top" secondItem="v3k-CO-Jvb" secondAttribute="top" id="DnW-Zp-V8k"/>
                             <constraint firstAttribute="trailing" secondItem="rrh-6P-U9o" secondAttribute="trailing" constant="5" id="Lzp-fT-dSG"/>
                             <constraint firstItem="vP1-tB-H8q" firstAttribute="leading" secondItem="v3k-CO-Jvb" secondAttribute="leading" id="Skk-A8-6qG"/>
@@ -68,13 +68,13 @@
                 <constraint firstAttribute="trailing" secondItem="v3k-CO-Jvb" secondAttribute="trailing" id="sE9-jA-wII"/>
                 <constraint firstItem="v3k-CO-Jvb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wyJ-wK-kRi"/>
             </constraints>
-            <size key="customSize" width="133" height="110"/>
+            <size key="customSize" width="133" height="129"/>
             <connections>
                 <outlet property="background" destination="rrh-6P-U9o" id="FZb-iw-k7k"/>
                 <outlet property="puzzleImage" destination="BDY-CK-fr1" id="kxL-x9-HOv"/>
                 <outlet property="titleJournal" destination="vP1-tB-H8q" id="zfd-Nm-EgL"/>
             </connections>
-            <point key="canvasLocation" x="184.05797101449278" y="84.709821428571431"/>
+            <point key="canvasLocation" x="184.05797101449278" y="91.071428571428569"/>
         </collectionViewCell>
     </objects>
     <resources>

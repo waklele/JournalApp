@@ -121,7 +121,7 @@ class JournalListViewController: UICollectionViewController, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width/2-20, height: 162)
+        return CGSize(width: UIScreen.main.bounds.width/2-20, height: 180)
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

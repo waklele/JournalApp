@@ -24,8 +24,9 @@ class JournalListCell: UICollectionViewCell {
         background.layer.shadowColor = UIColor.black.cgColor
         background.layer.shadowOffset = CGSize(width: 10.0, height: 5.0)
         background.layer.shadowRadius = 3
-        background.layer.shadowOpacity = 0.5
+        background.layer.shadowOpacity = 0.2
         background.layer.masksToBounds = false;
+        
         background.layer.shadowPath = UIBezierPath(roundedRect:background.bounds, cornerRadius:background.layer.cornerRadius).cgPath
         
         titleJournal.adjustsFontSizeToFitWidth = true
