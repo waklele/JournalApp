@@ -22,6 +22,7 @@ class SelamatViewController: UIViewController {
     
     @objc func backAction() {
         navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.isNavigationBarHidden = false
     }
     
 }
