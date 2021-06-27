@@ -79,8 +79,16 @@ class JournalPuzzleViewController: UIViewController {
     
     @objc func popUp() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "JournalPuzzle", bundle: nil)
-        let selamat = storyBoard.instantiateViewController(withIdentifier: "popUp")
-        self.present(selamat, animated: true, completion: nil)
+        let popUp = storyBoard.instantiateViewController(withIdentifier: "popUp")
+        let selamat = storyBoard.instantiateViewController(withIdentifier: "selamatView")
+        
+        if !puzzle2Detail.isEmpty, !puzzle3Detail.isEmpty, !puzzle4Detail.isEmpty {
+            self.navigationController?.pushViewController(selamat, animated: true)
+        } else {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "JournalPuzzle", bundle: nil)
+            let selamat = storyBoard.instantiateViewController(withIdentifier: "selamatView")
+            self.present(popUp, animated: true, completion: nil)
+        }
     }
     
     override func didMove(toParent parent: UIViewController?) {
