@@ -57,6 +57,7 @@ class MakingConnectionsViewController: UIViewController, UITextViewDelegate {
         detailsTextView.text = "Insert detail here..."
         detailsTextView.textColor = UIColor.lightGray
         
+        
         managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
         
         adjustPrompt()

@@ -34,7 +34,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tug-nq-YvS" secondAttribute="trailing" constant="16" id="zhV-7U-QFs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zWT-ai-rES">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="zWT-ai-rES">
                         <barButtonItem key="rightBarButtonItem" title="Ubah" id="94B-m8-jNK">
                             <connections>
                                 <action selector="editPuzzle:" destination="Y6W-OH-hqX" id="0DY-Dm-Jfb"/>
