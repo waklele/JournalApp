@@ -20,12 +20,7 @@ class JournalListViewController: UICollectionViewController, UICollectionViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-       
-        
+   
         // Register cell classes
         let nibCell = UINib(nibName: "JournalListCell", bundle: nil)
         collectionView.register(nibCell, forCellWithReuseIdentifier: reuseIdentifier)
@@ -95,7 +90,7 @@ class JournalListViewController: UICollectionViewController, UICollectionViewDel
             print(journalList.count)
         }
         if let vc = segue.destination as? JournalPuzzleViewController {
-            vc.title = journalList[journalSelectionIndex].title
+            vc.readingTitle = journalList[journalSelectionIndex].title ?? ""
             vc.dataId = journalList[journalSelectionIndex].id
             vc.puzzle1Detail = journalList[journalSelectionIndex].puzzle1Detail ?? ""
             vc.puzzle2Detail = journalList[journalSelectionIndex].puzzle2Detail ?? ""

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View First Puzzle View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="viewPuzzle" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ViewFirstPuzzleViewController" customModule="Nozzle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tug-nq-YvS">
+                                <rect key="frame" x="16" y="118" width="382" height="684"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tug-nq-YvS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="EPd-HE-CbY"/>
+                            <constraint firstItem="tug-nq-YvS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="oq5-du-yCx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="tug-nq-YvS" secondAttribute="bottom" constant="60" id="vkF-jM-V50"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tug-nq-YvS" secondAttribute="trailing" constant="16" id="zhV-7U-QFs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zWT-ai-rES">
+                        <barButtonItem key="rightBarButtonItem" title="Ubah" id="94B-m8-jNK">
+                            <connections>
+                                <action selector="editPuzzle:" destination="Y6W-OH-hqX" id="0DY-Dm-Jfb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="detailsTextView" destination="tug-nq-YvS" id="ly3-Rj-CuA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="82.366071428571431"/>
+        </scene>
+        <!--Edit First Puzzle View Controller-->
+        <scene sceneID="px6-0p-xNP">
+            <objects>
+                <viewController storyboardIdentifier="editPuzzle" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ebI-4Y-XOL" customClass="EditFirstPuzzleViewController" customModule="Nozzle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b7h-Is-j4d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GYU-1v-rLN">
+                                <rect key="frame" x="35" y="104" width="344" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="yMh-4d-6Za"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aPM-1K-Dq3">
+                                <rect key="frame" x="35" y="174" width="344" height="593"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5M-DG-RI8">
+                                <rect key="frame" x="35" y="787" width="344" height="50"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WEG-ZR-djJ"/>
+                                </constraints>
+                                <state key="normal" title="Simpan">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="savePuzzle:" destination="ebI-4Y-XOL" eventType="touchUpInside" id="wNs-IT-pFL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgf-z0-MLr">
+                                <rect key="frame" x="309" y="691" width="65" height="66"/>
+                                <color key="tintColor" red="0.86666666670000003" green="0.25882352939999997" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="Start Speech Button">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                </state>
+                                <connections>
+                                    <action selector="startStopAct:" destination="ebI-4Y-XOL" eventType="touchUpInside" id="qHr-lk-zzc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KhR-u6-0tO"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="t5M-DG-RI8" firstAttribute="top" secondItem="aPM-1K-Dq3" secondAttribute="bottom" constant="20" id="1Ht-gt-Y3Z"/>
+                            <constraint firstItem="KhR-u6-0tO" firstAttribute="bottom" secondItem="t5M-DG-RI8" secondAttribute="bottom" constant="25" id="7hl-LT-54C"/>
+                            <constraint firstItem="KhR-u6-0tO" firstAttribute="trailing" secondItem="t5M-DG-RI8" secondAttribute="trailing" constant="35" id="V3b-cq-FgV"/>
+                            <constraint firstItem="KhR-u6-0tO" firstAttribute="trailing" secondItem="GYU-1v-rLN" secondAttribute="trailing" constant="35" id="V6h-lU-2eU"/>
+                            <constraint firstItem="GYU-1v-rLN" firstAttribute="leading" secondItem="KhR-u6-0tO" secondAttribute="leading" constant="35" id="VBW-bq-gnC"/>
+                            <constraint firstItem="KhR-u6-0tO" firstAttribute="trailing" secondItem="sgf-z0-MLr" secondAttribute="trailing" constant="40" id="a4M-z7-nLm"/>
+                            <constraint firstItem="aPM-1K-Dq3" firstAttribute="top" secondItem="GYU-1v-rLN" secondAttribute="bottom" constant="20" id="fwi-Nb-aWC"/>
+                            <constraint firstItem="aPM-1K-Dq3" firstAttribute="leading" secondItem="KhR-u6-0tO" secondAttribute="leading" constant="35" id="kpr-kT-vWx"/>
+                            <constraint firstItem="t5M-DG-RI8" firstAttribute="leading" secondItem="KhR-u6-0tO" secondAttribute="leading" constant="35" id="pgD-Sg-OtP"/>
+                            <constraint firstItem="KhR-u6-0tO" firstAttribute="trailing" secondItem="aPM-1K-Dq3" secondAttribute="trailing" constant="35" id="qoF-Qq-dW1"/>
+                            <constraint firstItem="t5M-DG-RI8" firstAttribute="top" secondItem="sgf-z0-MLr" secondAttribute="bottom" constant="30" id="u7L-fK-1ib"/>
+                            <constraint firstItem="GYU-1v-rLN" firstAttribute="top" secondItem="KhR-u6-0tO" secondAttribute="top" constant="60" id="xtM-XK-RYF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailsTextView" destination="aPM-1K-Dq3" id="HYQ-9T-te1"/>
+                        <outlet property="saveButton" destination="t5M-DG-RI8" id="fja-RR-XZc"/>
+                        <outlet property="startStopBtn" destination="t5M-DG-RI8" id="gPh-Hr-MwN"/>
+                        <outlet property="titleTextField" destination="GYU-1v-rLN" id="9zi-UB-2RX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4vG-kg-J44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1955" y="82"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7qf-2S-yme">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dvJ-yr-ydH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6ol-Fs-nzE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="7J2-F5-QXk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qhf-0X-WPm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="82.366071428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Start Speech Button" width="65" height="66"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

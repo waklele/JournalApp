@@ -24,6 +24,9 @@
 		3045C0C02679F7660062605D /* JournalListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3045C0BE2679F7660062605D /* JournalListCell.xib */; };
 		3045C0C7267B2F9F0062605D /* JournalPuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045C0C6267B2F9F0062605D /* JournalPuzzleViewController.swift */; };
 		3045C0C926809D720062605D /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3045C0C826809D720062605D /* DashboardViewController.swift */; };
+		305A759926881E87008C94FE /* FirstPuzzle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305A759826881E87008C94FE /* FirstPuzzle.storyboard */; };
+		305A759B268820F4008C94FE /* ViewFirstPuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A759A268820F4008C94FE /* ViewFirstPuzzleViewController.swift */; };
+		305A759D26882311008C94FE /* EditFirstPuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A759C26882311008C94FE /* EditFirstPuzzleViewController.swift */; };
 		306FD7C22684EACA0027BEBF /* MakingConnections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 306FD7C12684EACA0027BEBF /* MakingConnections.storyboard */; };
 		306FD7C4268589F40027BEBF /* MakingConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306FD7C3268589F40027BEBF /* MakingConnectionsViewController.swift */; };
 		306FD7C8268594390027BEBF /* ViewConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306FD7C7268594390027BEBF /* ViewConnectionsViewController.swift */; };
@@ -62,6 +65,9 @@
 		3045C0BE2679F7660062605D /* JournalListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalListCell.xib; sourceTree = "<group>"; };
 		3045C0C6267B2F9F0062605D /* JournalPuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalPuzzleViewController.swift; sourceTree = "<group>"; };
 		3045C0C826809D720062605D /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashboardViewController.swift; path = JournalApp/Views/DashboardViewController.swift; sourceTree = SOURCE_ROOT; };
+		305A759826881E87008C94FE /* FirstPuzzle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstPuzzle.storyboard; sourceTree = "<group>"; };
+		305A759A268820F4008C94FE /* ViewFirstPuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFirstPuzzleViewController.swift; sourceTree = "<group>"; };
+		305A759C26882311008C94FE /* EditFirstPuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFirstPuzzleViewController.swift; sourceTree = "<group>"; };
 		306FD7C12684EACA0027BEBF /* MakingConnections.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakingConnections.storyboard; sourceTree = "<group>"; };
 		306FD7C3268589F40027BEBF /* MakingConnectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakingConnectionsViewController.swift; sourceTree = "<group>"; };
 		306FD7C7268594390027BEBF /* ViewConnectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConnectionsViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 				3045C0B22679EB810062605D /* AddJournal.storyboard */,
 				3045C0B72679EF120062605D /* JournalPuzzle.storyboard */,
 				306FD7C12684EACA0027BEBF /* MakingConnections.storyboard */,
+				305A759826881E87008C94FE /* FirstPuzzle.storyboard */,
 				3045C0BE2679F7660062605D /* JournalListCell.xib */,
 				BD7D549E2684A188007CAFDD /* Onboarding.storyboard */,
 			);
@@ -164,6 +171,8 @@
 				306FD7C7268594390027BEBF /* ViewConnectionsViewController.swift */,
 				306FD7C3268589F40027BEBF /* MakingConnectionsViewController.swift */,
 				975271D726877B8D00B6ED57 /* PopUpViewController.swift */,
+				305A759A268820F4008C94FE /* ViewFirstPuzzleViewController.swift */,
+				305A759C26882311008C94FE /* EditFirstPuzzleViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -262,6 +271,7 @@
 				3045C0C02679F7660062605D /* JournalListCell.xib in Resources */,
 				2DE1172826735719003050BF /* Assets.xcassets in Resources */,
 				2D29B45F26875A78005F19A6 /* SF-Pro-Rounded-Regular.otf in Resources */,
+				305A759926881E87008C94FE /* FirstPuzzle.storyboard in Resources */,
 				2D29B45B268737FE005F19A6 /* SF-Pro-Rounded-Bold.otf in Resources */,
 				2DE1172326735718003050BF /* Main.storyboard in Resources */,
 				BD7D549F2684A188007CAFDD /* Onboarding.storyboard in Resources */,
@@ -277,9 +287,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD7D549726849641007CAFDD /* UIViewController.swift in Sources */,
+				305A759B268820F4008C94FE /* ViewFirstPuzzleViewController.swift in Sources */,
 				3045C0BC2679F7040062605D /* JournalListViewController.swift in Sources */,
 				BD7D549526849636007CAFDD /* UIButton.swift in Sources */,
 				975271D826877B8D00B6ED57 /* PopUpViewController.swift in Sources */,
+				305A759D26882311008C94FE /* EditFirstPuzzleViewController.swift in Sources */,
 				BD7D549D2684A16C007CAFDD /* OnboardingViewController.swift in Sources */,
 				2DE1172026735718003050BF /* ViewController.swift in Sources */,
 				9772F79E267B33F400CA1F67 /* AddNewJournalController.swift in Sources */,

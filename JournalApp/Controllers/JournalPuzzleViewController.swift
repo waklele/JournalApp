@@ -19,7 +19,8 @@ class JournalPuzzleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = readingTitle
+        print(readingTitle)
         puzzle.isUserInteractionEnabled = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapAction))
         self.puzzle.addGestureRecognizer(tapGestureRecognizer)
@@ -121,7 +122,12 @@ class JournalPuzzleViewController: UIViewController {
             }
         } else if z1per < 50 && z2per < 50 {
             print("Kiri atas")
-            //storyboard sendiri aja
+            let storyboard2 = UIStoryboard(name: "FirstPuzzle", bundle: nil)
+            let vc = storyboard2.instantiateViewController(identifier: "viewPuzzle") as! ViewFirstPuzzleViewController
+            vc.dataId = dataId
+            vc.puzzleDetail = puzzle1Detail
+            vc.readingTitle = readingTitle
+            self.show(vc, sender: nil)
         } else {
             print("Kiri bawah")
             if !puzzle4Detail.isEmpty {
