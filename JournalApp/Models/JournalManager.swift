@@ -20,23 +20,45 @@ struct JournalModel {
     private var puzzle1Detail4  : String
 }
 
+struct Response {
+    
+    static func success() -> Dictionary<String, Any> {
+        return [
+            "success" : true
+        ]
+    }
+    
+    static func success(data: Any) -> Dictionary<String, Any> {
+        return [
+            "success" : true,
+            "data" : data
+        ]
+    }
+    
+    static func error(error: Any) -> Dictionary<String, Any> {
+        return [
+            "success" : false,
+            "error" : error
+        ]
+    }
+}
+
 class JournalManager{
     
     //MARK: - LOCAL PROPERTIES
     var managedObjectContext                                        = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     
-    
     //MARK: - Create new journal
-    static func create(title: String, details: String) {
+    static func create(title: String, details: String) -> Dictionary<String, Any> {
         
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return [:]}
         
         //We need to create a context from this container
         let managedContext = appDelegate.persistentContainer.viewContext
         
         //Now let’s create an entity and new user records.
         let entity = NSEntityDescription.entity(forEntityName: "Journal", in: managedContext)!
-
+        
         do {
             let newJournal = NSManagedObject(entity: entity, insertInto: managedContext)
             newJournal.setValue(JournalManager.generateId(), forKey: "id")
@@ -46,16 +68,17 @@ class JournalManager{
             newJournal.setValue(NSDate.now, forKey: "lastUpdateDate")
             
             try managedContext.save()
-            
+            return Response.success(data: "asd")
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
+            return Response.error(error: error)
         }
     }
     
     //MARK: - Read all data
-    static func read() -> Array<Any>{
+    static func read() -> Dictionary<String, Any> {
         
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return []}
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return [:]}
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
@@ -64,19 +87,19 @@ class JournalManager{
         do {
             let result = try managedContext.fetch(fetchRequest)
             
-            return result
+            return Response.success(data: result)
             
         } catch {
             
             print("Failed")
-            return []
+            return Response.error(error: error)
         }
     }
     
     //MARK: - Read specific data by ID
-    static func read(id: Int64) -> Any {
+    static func read(id: Int64) -> Dictionary<String, Any>  {
         
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return []}
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return [:]}
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
@@ -91,19 +114,19 @@ class JournalManager{
         do {
             let result = try managedContext.fetch(fetchRequest)
             
-            return result
+            return Response.success(data: result)
             
         } catch {
             print("Failed")
             
-            return []
+            return Response.error(error: error)
         }
     }
     
     //MARK: - Update Journal - Title and Details
-    static func updateJournal(id: Int64, title: String, detail: String) {
+    static func updateJournal(id: Int64, title: String, detail: String) -> Dictionary<String, Any>  {
         
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return [:] }
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
@@ -122,17 +145,20 @@ class JournalManager{
             
             do{
                 try managedContext.save()
+                return Response.success()
             } catch {
                 print(error)
+                return Response.error(error: error)
             }
         } catch {
             print(error)
+            return Response.error(error: error)
         }
     }
     
     //MARK: - Update Making Connections - Details of connection
-    static func updateMakingConnections(id: Int64, key: String, detail: String) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+    static func updateMakingConnections(id: Int64, key: String, detail: String) -> Dictionary<String, Any> {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return [:] }
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
@@ -149,18 +175,21 @@ class JournalManager{
             
             do{
                 try managedContext.save()
+                return Response.success()
             } catch {
                 print(error)
+                return Response.error(error: error)
             }
         } catch {
             print(error)
+            return Response.error(error: error)
         }
     }
     
     //MARK: - Delete journal by ID
-    static func delete(id: Int64) {
+    static func delete(id: Int64) -> Dictionary<String, Any> {
         
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return [:] }
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
@@ -177,12 +206,15 @@ class JournalManager{
             
             do {
                 try managedContext.save()
+                return Response.success()
             } catch {
                 print(error)
+                return Response.error(error: error)
             }
             
         } catch {
             print(error)
+            return Response.error(error: error)
         }
     }
     
@@ -192,12 +224,13 @@ class JournalManager{
             return 1
             
         } else {
-            let journals = JournalManager.read().last as! NSManagedObject
+            let journals = JournalManager.read()["data"] as! [NSManagedObject]
             
-            let lastId = journals.value(forKey: "id") as! Int
+            let lastJournal = journals.last!
+
+            let lastId = lastJournal.value(forKey: "id") as! Int
             
             return Int64(lastId + 1)
-            
         }
     }
 }
