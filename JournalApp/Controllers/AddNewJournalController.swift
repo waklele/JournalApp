@@ -362,7 +362,6 @@ extension AddNewJournalController {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        
         if detailsTextView.text == "" {
             detailsTextView.text = "Coba ceritakan kembali apa yang kamu baca"
             self.textViewTouched = false
@@ -379,6 +378,14 @@ extension AddNewJournalController {
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.validateText()
         self.textViewTouched = true
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        self.validateText()
+    }
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        self.validateText()
     }
     
     func validateText() {
