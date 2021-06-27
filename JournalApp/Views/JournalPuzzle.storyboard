@@ -68,7 +68,7 @@
         <!--Pop Up View Controller-->
         <scene sceneID="Ywk-IN-daT">
             <objects>
-                <viewController id="2bH-UX-fgC" customClass="PopUpViewController" customModule="Nozzle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="popUp" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2bH-UX-fgC" customClass="PopUpViewController" customModule="Nozzle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4LA-gR-LIB">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

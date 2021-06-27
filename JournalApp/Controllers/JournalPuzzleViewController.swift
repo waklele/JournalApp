@@ -34,6 +34,23 @@ class JournalPuzzleViewController: UIViewController {
         backItem.title = "Kembali"
         navigationItem.backBarButtonItem = backItem
         
+        self.tabBarController?.navigationItem.hidesBackButton = true
+        let view = UIView()
+        let button = UIButton(type: .system)
+        button.semanticContentAttribute = .forceLeftToRight
+        button.setImage(UIImage(systemName : "chevron.backward"), for: .normal)
+        button.setTitle("Kembali", for: .normal)
+        button.addTarget(self, action: #selector(popUp), for: .touchUpInside)
+        button.sizeToFit()
+        view.addSubview(button)
+        view.frame = button.bounds
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: view)
+    }
+    
+    @objc func popUp() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "JournalPuzzle", bundle: nil)
+        let selamat = storyBoard.instantiateViewController(withIdentifier: "popUp")
+        self.present(selamat, animated: true, completion: nil)
     }
     
     override func didMove(toParent parent: UIViewController?) {
