@@ -58,6 +58,7 @@ class MakingConnectionsViewController: UIViewController, UITextViewDelegate {
         detailsTextView.delegate = self
         detailsTextView.text = defaultDetail
         detailsTextView.textColor = UIColor.lightGray
+        detailsTextView.autocorrectionType = UITextAutocorrectionType.no
         
         saveButton.isEnabled = false
         saveButton.backgroundColor = UIColor.systemGray3

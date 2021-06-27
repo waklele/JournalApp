@@ -53,12 +53,14 @@ class EditFirstPuzzleViewController: UIViewController, UITextViewDelegate, UITex
         titleTextField.layer.cornerRadius = 8
         titleTextField.text = readingTitle
         titleTextField.textColor = UIColor.systemGray3
+        titleTextField.autocorrectionType = UITextAutocorrectionType.no
         titleTextField.delegate = self
         
         detailsTextView.layer.cornerRadius = 8
         detailsTextView.text = puzzleDetail
         detailsTextView.textColor = UIColor.systemGray3
         detailsTextView.font = UIFont.preferredFont(forTextStyle: .body)
+        detailsTextView.autocorrectionType = UITextAutocorrectionType.no
         detailsTextView.delegate = self
 
         managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext

@@ -56,12 +56,14 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
         titleTextField.layer.cornerRadius = 8
         titleTextField.placeholder = defaultTitle
         titleTextField.delegate = self
+        titleTextField.autocorrectionType = UITextAutocorrectionType.no
         
         detailsTextView.layer.cornerRadius = 8
         detailsTextView.text = defaultDetail
         detailsTextView.textColor = UIColor.systemGray3
         detailsTextView.font = UIFont.preferredFont(forTextStyle: .body)
         detailsTextView.delegate = self
+        detailsTextView.autocorrectionType = UITextAutocorrectionType.no
         
         // Customize back button
         let backItem = UIBarButtonItem()
