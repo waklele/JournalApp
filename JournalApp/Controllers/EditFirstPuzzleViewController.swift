@@ -40,6 +40,8 @@ class EditFirstPuzzleViewController: UIViewController, UITextViewDelegate, UITex
     private var fullMessageString       : String                    = ""
     private var singleMessageString     : String                    = ""
     private var finalString             : String                    = ""
+    private var defaultDetail           : String                    = "Coba ceritakan kembali apa yang kamu baca"
+    private var defaultTitle          : String                    = "Coba diisi judul ceritanya ya"
     
     
     override func viewDidLoad() {
@@ -331,32 +333,60 @@ extension EditFirstPuzzleViewController {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         self.textViewTouched = true
-        if detailsTextView.textColor == UIColor.systemGray3 || detailsTextView.text == "Coba ceritakan kembali apa yang kamu baca" {
-            detailsTextView.text = ""
+        if detailsTextView.textColor == UIColor.systemGray3 || detailsTextView.text != defaultDetail {
             detailsTextView.textColor = UIColor.black
+        } else if detailsTextView.text == defaultDetail {
+            detailsTextView.textColor = UIColor.black
+            detailsTextView.text = ""
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        
         if detailsTextView.text == "" {
-            detailsTextView.text = "Coba ceritakan kembali apa yang kamu baca"
+            detailsTextView.text = defaultDetail
             self.textViewTouched = false
             detailsTextView.textColor = UIColor.lightGray
         }
         
-        if detailsTextView.text != "" && detailsTextView.text != "Coba ceritakan kembali apa yang kamu baca" {
+        if detailsTextView.text != "" && detailsTextView.text != defaultDetail {
             self.textViewTouched = true
+        }
+        
+        self.validateText()
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.textViewTouched = true
+        if titleTextField.textColor == UIColor.systemGray3 || titleTextField.text != defaultTitle {
+            titleTextField.textColor = UIColor.black
+        }
+        
+        if titleTextField.text == defaultTitle {
+            titleTextField.textColor = UIColor.black
+            titleTextField.text = ""
         }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.validateText()
         self.textViewTouched = true
+        if titleTextField.text == "" {
+            titleTextField.text = defaultTitle
+            self.textViewTouched = false
+            titleTextField.textColor = UIColor.lightGray
+        }
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        self.validateText()
+    }
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        self.validateText()
     }
     
     func validateText() {
-        if titleTextField.text != "" && detailsTextView.textColor != UIColor.systemGray3 && detailsTextView.text != "Coba ceritakan kembali apa yang kamu baca" && detailsTextView.text != "" {
+        if titleTextField.text != "" && detailsTextView.textColor != UIColor.systemGray3 && detailsTextView.text != "" {
             saveButton.isEnabled = true
             saveButton.backgroundColor = UIColor(red: 221/255, green: 66/255, blue: 123/255, alpha: 100)
         } else {
