@@ -61,6 +61,9 @@ class MakingConnectionsViewController: UIViewController, UITextViewDelegate {
         managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
         
         adjustPrompt()
+        
+        
+        JournalManager.create(title: "Hallo", details: "Ini test")
     }
     
     func adjustPrompt() {
