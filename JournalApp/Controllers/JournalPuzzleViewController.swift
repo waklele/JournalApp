@@ -28,7 +28,6 @@ class JournalPuzzleViewController: UIViewController {
         super.viewDidLoad()
         saveButton.roundedButton(radius: 10)
         
-        self.title = readingTitle
         puzzle.isUserInteractionEnabled = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapAction))
         self.puzzle.addGestureRecognizer(tapGestureRecognizer)
@@ -70,6 +69,7 @@ class JournalPuzzleViewController: UIViewController {
         } catch {
             print("Error loading the journal list")
         }
+        readingTitle = journalList[0].title ?? ""
         puzzle1Detail = journalList[0].puzzle1Detail ?? ""
         puzzle2Detail = journalList[0].puzzle2Detail ?? ""
         puzzle3Detail = journalList[0].puzzle3Detail ?? ""
@@ -112,6 +112,7 @@ class JournalPuzzleViewController: UIViewController {
     }
     
     func adjustPuzzle() {
+        self.title = readingTitle
         if !puzzle2Detail.isEmpty {
             if !puzzle3Detail.isEmpty {
                 if !puzzle4Detail.isEmpty {
@@ -173,11 +174,14 @@ class JournalPuzzleViewController: UIViewController {
                 vc.puzzleType = 1
                 vc.puzzle2Detail = puzzle2Detail
                 vc.dataId = dataId
-                //vc.itemSavedDelegate = self
+                vc.itemSavedDelegate = self
                 self.show(vc, sender: nil)
             } else {
                 let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
                 vc.puzzleType = 1
+                
+                //vc.puzzleKey = "puzzle2Detail"
+                
                 vc.dataId = dataId
                 vc.itemSavedDelegate = self
                 self.show(vc, sender: nil)
@@ -189,11 +193,14 @@ class JournalPuzzleViewController: UIViewController {
                 vc.puzzleType = 2
                 vc.puzzle3Detail = puzzle3Detail
                 vc.dataId = dataId
-                //vc.itemSavedDelegate = self
+                vc.itemSavedDelegate = self
                 self.show(vc, sender: nil)
             } else {
                 let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
                 vc.puzzleType = 2
+                
+                //vc.puzzleKey = "puzzle3Detail"
+                
                 vc.dataId = dataId
                 vc.itemSavedDelegate = self
                 self.show(vc, sender: nil)
@@ -205,7 +212,7 @@ class JournalPuzzleViewController: UIViewController {
             vc.dataId = dataId
             vc.puzzleDetail = puzzle1Detail
             vc.readingTitle = readingTitle
-            //vc.itemSavedDelegate = self
+            vc.itemSavedDelegate = self
             self.show(vc, sender: nil)
         } else {
             print("Kiri bawah")
@@ -214,11 +221,14 @@ class JournalPuzzleViewController: UIViewController {
                 vc.puzzleType = 3
                 vc.puzzle4Detail = puzzle4Detail
                 vc.dataId = dataId
-                //vc.itemSavedDelegate = self
+                vc.itemSavedDelegate = self
                 self.show(vc, sender: nil)
             } else {
                 let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
                 vc.puzzleType = 3
+                
+                //vc.puzzleKey = "puzzle4Detail"
+                
                 vc.dataId = dataId
                 vc.itemSavedDelegate = self
                 self.show(vc, sender: nil)

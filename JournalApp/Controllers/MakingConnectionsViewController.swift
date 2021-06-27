@@ -63,7 +63,7 @@ class MakingConnectionsViewController: UIViewController, UITextViewDelegate {
         saveButton.backgroundColor = UIColor.systemGray3
         
         managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
-        
+        print(JournalManager.generateId())
         adjustPrompt()
     }
     
@@ -116,6 +116,7 @@ class MakingConnectionsViewController: UIViewController, UITextViewDelegate {
             if puzzleType == 3 {
                 objectToBeEdited.setValue(detailsTextView.text, forKey: "puzzle4Detail")
             }
+            objectToBeEdited.setValue(NSDate.now, forKey: "lastUpdateDate")
             
             do {
                 try managedObjectContext.save()
