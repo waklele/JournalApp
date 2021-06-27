@@ -335,6 +335,7 @@ extension AddNewJournalController {
         print("Speech Recognition has been shuted down")
         
         self.startStopBtn.setImage(UIImage(named: "Start Speech Button"), for: .normal)
+        self.validateText()
     }
     
     func alertView(message: String) {
@@ -371,6 +372,8 @@ extension AddNewJournalController {
         if detailsTextView.text != "" && detailsTextView.text != "Coba ceritakan kembali apa yang kamu baca" {
             self.textViewTouched = true
         }
+        
+        self.validateText()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
