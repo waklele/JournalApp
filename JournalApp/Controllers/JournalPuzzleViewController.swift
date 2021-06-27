@@ -119,13 +119,13 @@ class JournalPuzzleViewController: UIViewController {
                     // full
                     puzzle.image = UIImage(named: "Puzzle Full")
                 } else {
-                    // 1, 2, 3
-                    puzzle.image = UIImage(named: "Puzzle Incomplete 2.1")
+                    // 1, 2, 4
+                    puzzle.image = UIImage(named: "Puzzle Incomplete 2.2")
                 }
             } else {
                 if !puzzle4Detail.isEmpty {
-                    // 1, 2, 4
-                    puzzle.image = UIImage(named: "Puzzle Incomplete 2.2")
+                    // 1, 2, 3
+                    puzzle.image = UIImage(named: "Puzzle Incomplete 2.1")
                 } else {
                     // 1, 2
                     puzzle.image = UIImage(named: "Puzzle Incomplete 1.1")
@@ -137,13 +137,13 @@ class JournalPuzzleViewController: UIViewController {
                     // 1, 3, 4
                     puzzle.image = UIImage(named: "Puzzle Incomplete 2.3")
                 } else {
-                    // 1, 3
-                    puzzle.image = UIImage(named: "Puzzle Incomplete 1.2")
+                    // 1, 4
+                    puzzle.image = UIImage(named: "Puzzle Incomplete 1.3")
                 }
             } else {
                 if !puzzle4Detail.isEmpty {
-                    // 1, 4
-                    puzzle.image = UIImage(named: "Puzzle Incomplete 1.3")
+                    // 1, 3
+                    puzzle.image = UIImage(named: "Puzzle Incomplete 1.2")
                 } else {
                     // 1
                     puzzle.image = UIImage(named: "Puzzle Incomplete")
@@ -186,8 +186,8 @@ class JournalPuzzleViewController: UIViewController {
                 vc.itemSavedDelegate = self
                 self.show(vc, sender: nil)
             }
-        } else if z1per > 50 && z2per > 50 {
-            print("Kanan bawah")
+        } else if z1per < 50 && z2per > 50 {
+            print("Kiri bawah")
             if !puzzle3Detail.isEmpty {
                 let vc = storyboard.instantiateViewController(identifier: "viewConnections") as! ViewConnectionsViewController
                 vc.puzzleType = 2
@@ -215,7 +215,7 @@ class JournalPuzzleViewController: UIViewController {
             vc.itemSavedDelegate = self
             self.show(vc, sender: nil)
         } else {
-            print("Kiri bawah")
+            print("Kanan bawah")
             if !puzzle4Detail.isEmpty {
                 let vc = storyboard.instantiateViewController(identifier: "viewConnections") as! ViewConnectionsViewController
                 vc.puzzleType = 3

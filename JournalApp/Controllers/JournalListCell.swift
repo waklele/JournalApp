@@ -43,13 +43,13 @@ class JournalListCell: UICollectionViewCell {
                     // full
                     puzzleImage.image = UIImage(named: "Puzzle Full")
                 } else {
-                    // 1, 2, 3
-                    puzzleImage.image = UIImage(named: "Puzzle Incomplete 2.1")
+                    // 1, 2, 4
+                    puzzleImage.image = UIImage(named: "Puzzle Incomplete 2.2")
                 }
             } else {
                 if !(model.puzzle4Detail?.isEmpty ?? true) {
-                    // 1, 2, 4
-                    puzzleImage.image = UIImage(named: "Puzzle Incomplete 2.2")
+                    // 1, 2, 3
+                    puzzleImage.image = UIImage(named: "Puzzle Incomplete 2.1")
                 } else {
                     // 1, 2
                     puzzleImage.image = UIImage(named: "Puzzle Incomplete 1.1")
@@ -61,13 +61,13 @@ class JournalListCell: UICollectionViewCell {
                     // 1, 3, 4
                     puzzleImage.image = UIImage(named: "Puzzle Incomplete 2.3")
                 } else {
-                    // 1, 3
-                    puzzleImage.image = UIImage(named: "Puzzle Incomplete 1.2")
+                    // 1, 4
+                    puzzleImage.image = UIImage(named: "Puzzle Incomplete 1.3")
                 }
             } else {
                 if !(model.puzzle4Detail?.isEmpty ?? true) {
-                    // 1, 4
-                    puzzleImage.image = UIImage(named: "Puzzle Incomplete 1.3")
+                    // 1, 3
+                    puzzleImage.image = UIImage(named: "Puzzle Incomplete 1.2")
                 } else {
                     // 1
                     puzzleImage.image = UIImage(named: "Puzzle Incomplete")
