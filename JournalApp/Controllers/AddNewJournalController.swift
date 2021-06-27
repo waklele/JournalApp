@@ -69,42 +69,12 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
         navigationItem.backBarButtonItem = backItem
         
         requestPermision()
-        managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
     }
     
     @IBAction func saveJournal(_ sender: Any) {
-        let journalRequest: NSFetchRequest<Journal> = Journal.fetchRequest()
-        do {
-            try journalList = managedObjectContext.fetch(journalRequest)
-            
-            let entity = NSEntityDescription.entity(forEntityName: "Journal", in: managedObjectContext)
-            let newJournal = NSManagedObject(entity: entity!, insertInto: managedObjectContext)
-            
-            if titleTextField.text != defaultTitle && detailsTextView.text != defaultDetail && titleTextField.text != "" && detailsTextView.text != "" {
-                
-                // Generate ID
-                var incrementId = 0
-                if journalList.count == 0 {
-                    incrementId = 1
-                } else {
-                    incrementId = Int(journalList.last!.id + 1)
-                }
-                
-                newJournal.setValue(incrementId, forKey: "id")
-                newJournal.setValue(titleTextField.text, forKey: "title")
-                newJournal.setValue(detailsTextView.text, forKey: "puzzle1Detail")
-                newJournal.setValue(NSDate.now, forKey: "createDate")
-                newJournal.setValue(NSDate.now, forKey: "lastUpdateDate")
-                
-                try managedObjectContext.save()
-                print(newJournal)
-                print("Journal successfully saved")
-                //delegate
-                journalSavedDelegate?.journalSaved()
-            }
-        } catch {
-            print("Failed to save journal")
-        }
+        
+        let _ = JournalManager.create(title: titleTextField.text!, details: detailsTextView.text!)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

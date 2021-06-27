@@ -59,7 +59,7 @@ class MakingConnectionsViewController: UIViewController, UITextViewDelegate {
         
         
         managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
-        
+        print(JournalManager.generateId())
         adjustPrompt()
     }
     
