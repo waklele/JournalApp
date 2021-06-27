@@ -10,6 +10,7 @@
     <customFonts key="customFonts">
         <array key="SF-Pro.ttf">
             <string>SFPro-Bold</string>
+            <string>SFPro-Medium</string>
             <string>SFPro-Regular</string>
             <string>SFPro-Semibold</string>
         </array>
@@ -72,42 +73,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWa-bD-0fw">
-                                <rect key="frame" x="52" y="120" width="286" height="416"/>
+                                <rect key="frame" x="53" y="200" width="284" height="336"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puzzle kamu belum lengkap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQA-vb-csC">
-                                        <rect key="frame" x="19" y="195" width="248" height="21"/>
+                                        <rect key="frame" x="19" y="190" width="246" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="TS0-pC-RdI"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconDudukSedih" translatesAutoresizingMaskIntoConstraints="NO" id="UYz-jz-gXE">
-                                        <rect key="frame" x="80" y="20" width="126" height="155"/>
+                                        <rect key="frame" x="80" y="20" width="124" height="150"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNl-52-ZUj">
-                                        <rect key="frame" x="17" y="344" width="252" height="55"/>
+                                        <rect key="frame" x="17" y="280" width="250" height="39"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tetep Simpan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFh-up-7gx">
-                                                <rect key="frame" x="73.666666666666657" y="17" width="104.66666666666666" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kembali ke Beranda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFh-up-7gx">
+                                                <rect key="frame" x="48" y="9.6666666666666856" width="154" height="20"/>
+                                                <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="17"/>
                                                 <color key="textColor" red="0.8666666666666667" green="0.25882352941176467" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="RhX-xp-LSK"/>
+                                            <constraint firstAttribute="height" constant="39" id="RhX-xp-LSK"/>
                                             <constraint firstItem="LFh-up-7gx" firstAttribute="centerY" secondItem="NNl-52-ZUj" secondAttribute="centerY" id="Urm-xL-GTJ"/>
                                             <constraint firstItem="LFh-up-7gx" firstAttribute="centerX" secondItem="NNl-52-ZUj" secondAttribute="centerX" id="ce2-2r-Ozd"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CvO-MP-ogz">
-                                        <rect key="frame" x="17" y="269" width="252" height="55"/>
+                                        <rect key="frame" x="17" y="231" width="250" height="39"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfF-fZ-bga">
-                                                <rect key="frame" x="89" y="12.666666666666686" width="74" height="30"/>
+                                                <rect key="frame" x="83" y="3.6666666666666856" width="84" height="32"/>
+                                                <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="17"/>
                                                 <state key="normal" title="Isi Kembali">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -116,10 +118,10 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.81307050920000001" green="0.4056746417" blue="0.77684344809999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.86666666670000003" green="0.25882352939999997" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="KfF-fZ-bga" firstAttribute="centerY" secondItem="CvO-MP-ogz" secondAttribute="centerY" id="26Y-EG-gvW"/>
-                                            <constraint firstAttribute="height" constant="55" id="2ue-kA-rtq"/>
+                                            <constraint firstAttribute="height" constant="39" id="2ue-kA-rtq"/>
                                             <constraint firstItem="KfF-fZ-bga" firstAttribute="centerX" secondItem="CvO-MP-ogz" secondAttribute="centerX" id="LKu-yD-Jg0"/>
                                         </constraints>
                                     </view>
@@ -131,10 +133,10 @@
                                     <constraint firstItem="WQA-vb-csC" firstAttribute="top" secondItem="UYz-jz-gXE" secondAttribute="bottom" constant="20" id="Epj-zJ-2xl"/>
                                     <constraint firstItem="WQA-vb-csC" firstAttribute="leading" secondItem="HWa-bD-0fw" secondAttribute="leading" constant="19" id="FAT-IN-E9t"/>
                                     <constraint firstItem="CvO-MP-ogz" firstAttribute="leading" secondItem="HWa-bD-0fw" secondAttribute="leading" constant="17" id="MAt-iF-wnW"/>
-                                    <constraint firstItem="NNl-52-ZUj" firstAttribute="top" secondItem="CvO-MP-ogz" secondAttribute="bottom" constant="20" id="R20-CT-dii"/>
+                                    <constraint firstItem="NNl-52-ZUj" firstAttribute="top" secondItem="CvO-MP-ogz" secondAttribute="bottom" constant="10" id="R20-CT-dii"/>
                                     <constraint firstAttribute="trailing" secondItem="CvO-MP-ogz" secondAttribute="trailing" constant="17" id="ZKq-eK-var"/>
                                     <constraint firstAttribute="trailing" secondItem="WQA-vb-csC" secondAttribute="trailing" constant="19" id="e57-nJ-pl2"/>
-                                    <constraint firstItem="CvO-MP-ogz" firstAttribute="top" secondItem="WQA-vb-csC" secondAttribute="bottom" constant="53" id="hfm-0h-Mni"/>
+                                    <constraint firstItem="CvO-MP-ogz" firstAttribute="top" secondItem="WQA-vb-csC" secondAttribute="bottom" constant="20" id="hfm-0h-Mni"/>
                                     <constraint firstItem="NNl-52-ZUj" firstAttribute="leading" secondItem="HWa-bD-0fw" secondAttribute="leading" constant="17" id="uMr-5g-ql9"/>
                                     <constraint firstAttribute="bottom" secondItem="NNl-52-ZUj" secondAttribute="bottom" constant="17" id="vrT-XL-jqQ"/>
                                     <constraint firstAttribute="trailing" secondItem="NNl-52-ZUj" secondAttribute="trailing" constant="17" id="wDf-Tg-t7h"/>
@@ -145,15 +147,16 @@
                         <viewLayoutGuide key="safeArea" id="DUO-78-mM2"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="HWa-bD-0fw" firstAttribute="leading" secondItem="DUO-78-mM2" secondAttribute="leading" constant="52" id="C2n-nf-bBf"/>
+                            <constraint firstItem="HWa-bD-0fw" firstAttribute="leading" secondItem="DUO-78-mM2" secondAttribute="leading" constant="53" id="C2n-nf-bBf"/>
                             <constraint firstItem="DUO-78-mM2" firstAttribute="bottom" secondItem="HWa-bD-0fw" secondAttribute="bottom" constant="220" id="ICQ-Km-nH2"/>
-                            <constraint firstItem="HWa-bD-0fw" firstAttribute="top" secondItem="DUO-78-mM2" secondAttribute="top" constant="120" id="lYh-tK-kmz"/>
-                            <constraint firstItem="DUO-78-mM2" firstAttribute="trailing" secondItem="HWa-bD-0fw" secondAttribute="trailing" constant="52" id="sh5-EF-keQ"/>
+                            <constraint firstItem="HWa-bD-0fw" firstAttribute="top" secondItem="DUO-78-mM2" secondAttribute="top" constant="200" id="lYh-tK-kmz"/>
+                            <constraint firstItem="DUO-78-mM2" firstAttribute="trailing" secondItem="HWa-bD-0fw" secondAttribute="trailing" constant="53" id="sh5-EF-keQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eLz-sq-qMr"/>
                     <connections>
                         <outlet property="isiKembaliButton" destination="CvO-MP-ogz" id="a55-xl-VMp"/>
+                        <outlet property="popUp" destination="HWa-bD-0fw" id="dU3-Mf-Sa9"/>
                         <outlet property="tetapSimpanButton" destination="NNl-52-ZUj" id="cSk-LE-046"/>
                     </connections>
                 </viewController>
@@ -196,7 +199,7 @@
                                 <rect key="frame" x="35" y="698" width="320" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kembali ke Beranda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kil-6c-C5B">
-                                        <rect key="frame" x="81.666666666666686" y="14.666666666666631" width="157" height="20.666666666666671"/>
+                                        <rect key="frame" x="83.333333333333329" y="15" width="153.66666666666669" height="20"/>
                                         <fontDescription key="fontDescription" name="SFPro-Semibold" family="SF Pro" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
