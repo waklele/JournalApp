@@ -85,7 +85,7 @@ class JournalListViewController: UICollectionViewController, UICollectionViewDel
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? AddNewJournalController {
-            vc.journalSavedDelegate = self
+            vc.itemSavedDelegate = self
             vc.journalCount = journalList.reversed()
             print("JOURNAL COUNT: ",journalList.count)
         }
@@ -172,8 +172,8 @@ class JournalListViewController: UICollectionViewController, UICollectionViewDel
     }
 }
 
-extension JournalListViewController: journalSavedDelegate {
-    func journalSaved() {
+extension JournalListViewController: itemSavedDelegate {
+    func itemSaved() {
         readData(filterValue: "")
     }
 }

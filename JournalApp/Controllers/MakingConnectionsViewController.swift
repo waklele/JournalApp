@@ -27,6 +27,7 @@ class MakingConnectionsViewController: UIViewController, UITextViewDelegate {
     public var puzzle3Detail = String()
     public var puzzle4Detail = String()
     
+    var itemSavedDelegate: itemSavedDelegate?
     var journalList = [Journal]()
     
     //MARK: - Local Properties
@@ -118,6 +119,8 @@ class MakingConnectionsViewController: UIViewController, UITextViewDelegate {
             } catch {
                 print("error1")
             }
+            
+            itemSavedDelegate?.itemSaved()
         } catch {
             print("error2")
         }

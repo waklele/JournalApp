@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class JournalPuzzleViewController: UIViewController {
     @IBOutlet weak var puzzle: UIImageView!
@@ -17,6 +18,11 @@ class JournalPuzzleViewController: UIViewController {
     public var puzzle2Detail = String()
     public var puzzle3Detail = String()
     public var puzzle4Detail = String()
+    
+    var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    var appDelegate = UIApplication.shared.delegate as? AppDelegate
+    
+    var journalList = [Journal]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +51,30 @@ class JournalPuzzleViewController: UIViewController {
         view.addSubview(button)
         view.frame = button.bounds
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: view)
+        
+        managedObjectContext = appDelegate?.persistentContainer.viewContext as! NSManagedObjectContext
+    }
+    
+    func readData() {
+        let journalRequest: NSFetchRequest<Journal> = Journal.fetchRequest()
+        journalRequest.predicate = NSPredicate(format: "id = %d", dataId)
+        
+        do {
+            try journalList = managedObjectContext.fetch(journalRequest)
+        } catch {
+            print("Error loading the journal list")
+        }
+        
+        do {
+            try journalList = managedObjectContext.fetch(journalRequest)
+        } catch {
+            print("Error loading the journal list")
+        }
+        puzzle1Detail = journalList[0].puzzle1Detail ?? ""
+        puzzle2Detail = journalList[0].puzzle2Detail ?? ""
+        puzzle3Detail = journalList[0].puzzle3Detail ?? ""
+        puzzle4Detail = journalList[0].puzzle4Detail ?? ""
+        adjustPuzzle()
     }
     
     @objc func popUp() {
@@ -135,11 +165,13 @@ class JournalPuzzleViewController: UIViewController {
                 vc.puzzleType = 1
                 vc.puzzle2Detail = puzzle2Detail
                 vc.dataId = dataId
+                //vc.itemSavedDelegate = self
                 self.show(vc, sender: nil)
             } else {
                 let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
                 vc.puzzleType = 1
                 vc.dataId = dataId
+                vc.itemSavedDelegate = self
                 self.show(vc, sender: nil)
             }
         } else if z1per > 50 && z2per > 50 {
@@ -149,11 +181,13 @@ class JournalPuzzleViewController: UIViewController {
                 vc.puzzleType = 2
                 vc.puzzle3Detail = puzzle3Detail
                 vc.dataId = dataId
+                //vc.itemSavedDelegate = self
                 self.show(vc, sender: nil)
             } else {
                 let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
                 vc.puzzleType = 2
                 vc.dataId = dataId
+                vc.itemSavedDelegate = self
                 self.show(vc, sender: nil)
             }
         } else if z1per < 50 && z2per < 50 {
@@ -163,6 +197,7 @@ class JournalPuzzleViewController: UIViewController {
             vc.dataId = dataId
             vc.puzzleDetail = puzzle1Detail
             vc.readingTitle = readingTitle
+            //vc.itemSavedDelegate = self
             self.show(vc, sender: nil)
         } else {
             print("Kiri bawah")
@@ -171,29 +206,22 @@ class JournalPuzzleViewController: UIViewController {
                 vc.puzzleType = 3
                 vc.puzzle4Detail = puzzle4Detail
                 vc.dataId = dataId
+                //vc.itemSavedDelegate = self
                 self.show(vc, sender: nil)
             } else {
                 let vc = storyboard.instantiateViewController(identifier: "editConnections") as! MakingConnectionsViewController
                 vc.puzzleType = 3
                 vc.dataId = dataId
+                vc.itemSavedDelegate = self
                 self.show(vc, sender: nil)
             }
         }
    }
     
-    
-//    @IBAction func saveJournal(_ sender: Any) {
-//        navigationController?.popToRootViewController(animated: true)
-//    }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+}
+
+extension JournalPuzzleViewController: itemSavedDelegate {
+    func itemSaved() {
+        readData()
+    }
 }

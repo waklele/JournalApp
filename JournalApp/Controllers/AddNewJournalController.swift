@@ -9,8 +9,8 @@ import UIKit
 import CoreData
 import Speech
 
-protocol journalSavedDelegate: class {
-    func journalSaved()
+protocol itemSavedDelegate: class {
+    func itemSaved()
 }
 
 class AddNewJournalController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
@@ -24,7 +24,7 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
     var appDelegate                                                 = UIApplication.shared.delegate as? AppDelegate
     var journalList                                                 = [Journal]()
     var journalCount                                                = [Journal]()
-    var journalSavedDelegate: journalSavedDelegate?
+    var itemSavedDelegate: itemSavedDelegate?
     
     //MARK: - Local Properties
     let audioEngine         : AVAudioEngine                         = AVAudioEngine()
@@ -100,7 +100,7 @@ class AddNewJournalController: UIViewController, UITextViewDelegate, UITextField
                 print(newJournal)
                 print("Journal successfully saved")
                 //delegate
-                journalSavedDelegate?.journalSaved()
+                itemSavedDelegate?.itemSaved()
             }
         } catch {
             print("Failed to save journal")

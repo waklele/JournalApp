@@ -169,7 +169,7 @@ class DashboardViewController: UIViewController {
             vc.puzzle4Detail = journalList[journalSelectionIndex].puzzle4Detail ?? ""
         }
         if let vc = segue.destination as? AddNewJournalController {
-            vc.journalSavedDelegate = self
+            vc.itemSavedDelegate = self
         }
     }
 
@@ -223,8 +223,8 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
     
 }
 
-extension DashboardViewController: journalSavedDelegate {
-    func journalSaved() {
+extension DashboardViewController: itemSavedDelegate {
+    func itemSaved() {
         readData()
     }
 }
