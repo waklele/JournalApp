@@ -39,6 +39,18 @@ class JournalPuzzleViewController: UIViewController {
         }
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if !puzzle2Detail.isEmpty, !puzzle3Detail.isEmpty, !puzzle4Detail.isEmpty {
+             print("Full semuaa")
+            let storyBoard: UIStoryboard = UIStoryboard(name: "JournalPuzzle", bundle: nil)
+            let selamat = storyBoard.instantiateViewController(withIdentifier: "selamatView")
+            self.navigationController?.pushViewController(selamat, animated: true)
+             return false
+        } else {
+            return true
+        }
+    }
+    
     func adjustPuzzle() {
         if !puzzle2Detail.isEmpty {
             if !puzzle3Detail.isEmpty {

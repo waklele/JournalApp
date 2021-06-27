@@ -85,7 +85,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tetep Simpan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFh-up-7gx">
                                                 <rect key="frame" x="86" y="17" width="104.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.81307050920000001" green="0.4056746417" blue="0.77684344809999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" red="0.8666666666666667" green="0.25882352941176467" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -154,9 +154,83 @@
             </objects>
             <point key="canvasLocation" x="769.56521739130437" y="87.723214285714278"/>
         </scene>
+        <!--Selamat View Controller-->
+        <scene sceneID="OWU-iY-qPA">
+            <objects>
+                <viewController storyboardIdentifier="selamatView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TIs-MC-cNI" customClass="SelamatViewController" customModule="Nozzle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vhY-bc-M9L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CC4-x3-JtQ">
+                                <rect key="frame" x="35" y="752" width="344" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kembali ke Beranda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kil-6c-C5B">
+                                        <rect key="frame" x="73.5" y="16.5" width="197" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.86666666670000003" green="0.25882352939999997" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="Kil-6c-C5B" firstAttribute="centerX" secondItem="CC4-x3-JtQ" secondAttribute="centerX" id="3Vf-MY-ZgH"/>
+                                    <constraint firstItem="Kil-6c-C5B" firstAttribute="centerY" secondItem="CC4-x3-JtQ" secondAttribute="centerY" id="GjS-rY-rYD"/>
+                                    <constraint firstAttribute="height" constant="60" id="zvy-if-qJQ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kamu berhasil melengkapi puzzle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJg-ik-Hq1">
+                                <rect key="frame" x="69.5" y="613" width="275" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="0iJ-XM-fRk"/>
+                                    <constraint firstAttribute="width" constant="275" id="2O0-z4-qn3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selamat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5d5-r9-9Z1">
+                                <rect key="frame" x="147" y="563" width="120" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="HO4-rX-7U6"/>
+                                    <constraint firstAttribute="height" constant="40" id="Ufw-e4-USs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconDudukSelamat" translatesAutoresizingMaskIntoConstraints="NO" id="kOw-3R-yTM">
+                                <rect key="frame" x="57" y="80" width="300" height="453"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HWP-wO-QSH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5d5-r9-9Z1" firstAttribute="centerX" secondItem="vhY-bc-M9L" secondAttribute="centerX" id="7LR-7c-qnA"/>
+                            <constraint firstItem="5d5-r9-9Z1" firstAttribute="top" secondItem="kOw-3R-yTM" secondAttribute="bottom" constant="30" id="7UM-gF-Ez5"/>
+                            <constraint firstItem="HWP-wO-QSH" firstAttribute="bottom" secondItem="CC4-x3-JtQ" secondAttribute="bottom" constant="50" id="7aq-n3-Xjl"/>
+                            <constraint firstItem="CC4-x3-JtQ" firstAttribute="leading" secondItem="HWP-wO-QSH" secondAttribute="leading" constant="35" id="FV1-nN-Sx6"/>
+                            <constraint firstItem="HWP-wO-QSH" firstAttribute="trailing" secondItem="kOw-3R-yTM" secondAttribute="trailing" constant="57" id="OZ5-FI-8bO"/>
+                            <constraint firstItem="CC4-x3-JtQ" firstAttribute="top" secondItem="EJg-ik-Hq1" secondAttribute="bottom" constant="114" id="ZlM-E8-Q6H"/>
+                            <constraint firstItem="EJg-ik-Hq1" firstAttribute="centerX" secondItem="vhY-bc-M9L" secondAttribute="centerX" id="dNo-gx-WHW"/>
+                            <constraint firstItem="HWP-wO-QSH" firstAttribute="trailing" secondItem="CC4-x3-JtQ" secondAttribute="trailing" constant="35" id="dO3-iV-rMV"/>
+                            <constraint firstItem="EJg-ik-Hq1" firstAttribute="top" secondItem="5d5-r9-9Z1" secondAttribute="bottom" constant="10" id="gJL-g4-Hrx"/>
+                            <constraint firstItem="kOw-3R-yTM" firstAttribute="top" secondItem="vhY-bc-M9L" secondAttribute="top" constant="80" id="mpW-48-uBx"/>
+                            <constraint firstItem="kOw-3R-yTM" firstAttribute="leading" secondItem="HWP-wO-QSH" secondAttribute="leading" constant="57" id="rbw-3k-Uga"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="kembaliButton" destination="CC4-x3-JtQ" id="YGb-zR-mZU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VbZ-sb-ffh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492.753623188406" y="87.723214285714278"/>
+        </scene>
     </scenes>
     <resources>
         <image name="IconDudukSedih" width="420" height="483"/>
+        <image name="IconDudukSelamat" width="502" height="552"/>
         <image name="defaultPuzzle" width="336" height="432"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
