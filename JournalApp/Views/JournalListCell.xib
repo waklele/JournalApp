@@ -28,13 +28,13 @@
                                 <rect key="frame" x="5" y="0.0" width="154" height="140"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Puzzle Full" translatesAutoresizingMaskIntoConstraints="NO" id="BDY-CK-fr1">
-                                        <rect key="frame" x="25" y="10" width="104" height="120"/>
+                                        <rect key="frame" x="30" y="10" width="94" height="120"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="BDY-CK-fr1" secondAttribute="trailing" constant="25" id="8dq-p8-r8r"/>
+                                    <constraint firstAttribute="trailing" secondItem="BDY-CK-fr1" secondAttribute="trailing" constant="30" id="8dq-p8-r8r"/>
                                     <constraint firstItem="BDY-CK-fr1" firstAttribute="top" secondItem="rrh-6P-U9o" secondAttribute="top" constant="10" id="CIT-x3-cTr"/>
-                                    <constraint firstItem="BDY-CK-fr1" firstAttribute="leading" secondItem="rrh-6P-U9o" secondAttribute="leading" constant="25" id="TYt-I2-nVL"/>
+                                    <constraint firstItem="BDY-CK-fr1" firstAttribute="leading" secondItem="rrh-6P-U9o" secondAttribute="leading" constant="30" id="TYt-I2-nVL"/>
                                     <constraint firstAttribute="bottom" secondItem="BDY-CK-fr1" secondAttribute="bottom" constant="10" id="lV4-gv-vDl"/>
                                 </constraints>
                             </view>

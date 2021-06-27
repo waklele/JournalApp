@@ -13,6 +13,8 @@ class SelamatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        kembaliButton.layer.cornerRadius = 8
+        
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationController?.isNavigationBarHidden = true
         kembaliButton.layer.cornerRadius = 15

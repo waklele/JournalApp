@@ -148,7 +148,7 @@ class JournalListViewController: UICollectionViewController, UICollectionViewDel
         
         return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { suggestedAction in
             
-            let delete = UIAction(title: "delete", image: UIImage(systemName: "trash"), attributes: .destructive) { (_) in
+            let delete = UIAction(title: "Hapus Catatan", image: UIImage(systemName: "trash"), attributes: .destructive) { (_) in
                 //
                 print(self.journalList[indexPath.row])
                 self.showDeleteWarning(dataId: Int(self.journalList[indexPath.row].id))
@@ -159,9 +159,9 @@ class JournalListViewController: UICollectionViewController, UICollectionViewDel
     }
     
     func showDeleteWarning(dataId: Int) {
-        let alert = UIAlertController(title: "Warning", message: "Are you sure to delete this journal?", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+        let alert = UIAlertController(title: "Peringatan", message: "Apakah kamu yakin menghapus catatan ini?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Batalkan", style: .cancel, handler: nil)
+        let deleteAction = UIAlertAction(title: "Hapus", style: .destructive) { _ in
             DispatchQueue.main.async {
                 self.removeData(dataId: dataId)
             }

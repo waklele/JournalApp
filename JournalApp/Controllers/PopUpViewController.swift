@@ -10,6 +10,7 @@ import UIKit
 class PopUpViewController: UIViewController {
     @IBOutlet weak var isiKembaliButton: UIView!
     @IBOutlet weak var tetapSimpanButton: UIView!
+    @IBOutlet weak var popUp: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +20,12 @@ class PopUpViewController: UIViewController {
         self.isiKembaliButton.addGestureRecognizer(dismiss)
         self.tetapSimpanButton.addGestureRecognizer(save)
         
-        isiKembaliButton.layer.cornerRadius = 15
+        popUp.layer.cornerRadius = 8
+        
+        isiKembaliButton.layer.cornerRadius = 8
         isiKembaliButton.backgroundColor = .init(red: 221/255, green: 66/255, blue: 123/255, alpha: 1)
         
-        tetapSimpanButton.layer.cornerRadius = 15
+        tetapSimpanButton.layer.cornerRadius = 8
         tetapSimpanButton.layer.masksToBounds = true
         tetapSimpanButton.layer.borderColor = .init(red: 221/255, green: 66/255, blue: 123/255, alpha: 1)
         tetapSimpanButton.layer.borderWidth = 1.0
