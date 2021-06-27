@@ -58,6 +58,9 @@ class DashboardViewController: UIViewController {
             print(journalList[0])
             // 1
             imageButton.removeTarget(self, action: #selector(createJournal(_:)), for: .touchUpInside)
+        } else {
+            //2
+            imageButton.removeTarget(self, action: #selector(seeTodaysJournal(_:)), for: .touchUpInside)
         }
         checkTodaysJournal()
     }
