@@ -99,7 +99,7 @@ class DashboardViewController: UIViewController {
             collectionView.isHidden = true
             emptyImage.isHidden = false
             imageLabel.text = "Duh.. Kamu belum buat catatan hari ini"
-            imageButton.setTitle("Buat Jurnal", for: .normal)
+            imageButton.setTitle("Buat Catatan", for: .normal)
             // set tujuan button
             imageButton.addTarget(self, action: #selector(createJournal(_:)), for: .touchUpInside)
             return
